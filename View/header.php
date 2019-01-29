@@ -10,9 +10,7 @@
 <body>
 <header>
 <div style="display:inline; width:100%;">
-<h2 style="float:left; text-align:left;">Account<h2>
 <h1>Berwyn Buses</h1>
-<h2 style="float:right;">Vehicles</h2>
 </div>
 </header>
     
