@@ -1,4 +1,4 @@
-<?php require_once "../Model/imports.php";?>
+<?php require "../Controller/controller.php";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,11 +22,11 @@
         <tbody>
         <?php foreach ($results as $vehicle): ?>
             <tr>
-                <td><?= $vehicle->vehicleName?></td>
-                <td><?= $vehicle->numberOfPassengers?></td>
-                <td><?= $vehicle->CPCRequired?></td>
-                <td><?= $vehicle->PCVRequired?></td>
-                <td><?= $vehicle->price?></td>
+                <td><?=$vehicle->vehicleName?></td>
+                <td><?=$vehicle->numberOfPassengers?></td>
+                <td><?=$vehicle->CPCRequired?></td>
+                <td><?=$vehicle->PCVRequired?></td>
+                <td><?=$vehicle->price?></td>
             </tr>
         <?php endforeach ?>     
         </tbody>    
