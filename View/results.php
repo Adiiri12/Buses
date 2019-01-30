@@ -1,4 +1,4 @@
-<?php require_once "../Controller/controller.php";?>
+<?php require_once "../Model/imports.php";?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -6,6 +6,7 @@ function getAllVehicles() {
         $statement = $pdo->prepare("SELECT * FROM Vehicles");
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_CLASS, "Vehicle");
-        return results;
+        return $results;
     }
+
 ?>
