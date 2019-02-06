@@ -1,3 +1,5 @@
+<!-- THIS PAGE WILL NOT BE IN WEBSITE!! SHOWS THE VIEW FOR ALL VEHICLES AND BASIC PHP -->
+
 <?php require "../Controller/controller.php";?>
 
 <!DOCTYPE html>

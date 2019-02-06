@@ -1,0 +1,24 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    border: 0%;
+}
+nav {
+    background-color: #888A8A;
+}
+
+h1 {
+    display: inline;
+    text-decoration: none;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+}
+
+img {
+    height: 2rem;
+    width: 2rem;
+    padding: 0%;
+    background-color: #888A8A;
+    border-color: #888A8A;
+
+}
