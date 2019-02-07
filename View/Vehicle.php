@@ -80,21 +80,31 @@
 			  <tr>
 				<th class="th-sm">Vehicle
 				</th>
-				<th class="th-sm">Vehicle Model
+				<th class="th-sm">Number of Passengers
+				</th>
+				<th class="th-sm">CPC Required
+				</th>
+				<th class="th-sm">PCV Required
 				</th>
 				<th class="th-sm">Price
 				</th>
-				<th class="th-sm">Licence Type
-				</th>
-				<th class="th-sm">Availability
-				</th>
 			  </tr>
 			</thead>
-			<?php foreach ($results as $vehicle): ?>
+			<?php foreach ($results as $vehicle):
+			//SEPERATE CONCERNS
+			$cpcx = "";
+			 $cpc =	$vehicle->CPCRequired;
+			 if($cpc == 1) {
+					$cpcx = "Yes";
+			 }
+			 else {
+				 $cpcx = "No";
+			 }
+				?>
             <tr>
                 <td><?=$vehicle->vehicleName?></td>
                 <td><?=$vehicle->numberOfPassengers?></td>
-                <td><?=$vehicle->CPCRequired?></td>
+                <td><?=$cpcx?></td>
                 <td><?=$vehicle->PCVRequired?></td>
                 <td><?=$vehicle->price?></td>
             </tr>
@@ -106,23 +116,8 @@
 	
 
 </main>
-	
-	
-	
-<footer>
-	<!-- Copyright -->
-	<div class="footer-copyright text-center py-3">© 2018 Copyright:
-		<a href="#"> Kingston.Sugery</a>
-	</div>
-	<!-- Copyright -->
 
-</footer>
-<!-- Footer -->
-
-
-
-
-
+<?php include_once"footer.php" ?>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
