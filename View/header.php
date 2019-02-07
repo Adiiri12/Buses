@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
 </head>
 <body>
+    <div style="padding-bottom:2rem;">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
     <a class="navbar-title"><h1>Berwyn Buses </h1></a>
@@ -24,14 +25,15 @@
 
         <div class="collapse navbar-collapse" id="mainNavBar">
            <ul class="nav navbar-nav">
-               <li>Home</li>
+               <a href="index.php"><li>Home</li></a>
                <li>Account</li>
-               <li>Vehicles</li>
+               <a href="Vehicle.php"><li>Vehicles</li></a>
            </ul>
         </div>
 
     </div>
 </nav>
+</div>
 
 
 

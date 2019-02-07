@@ -1,3 +1,4 @@
+<?php include_once"header.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,57 +7,13 @@
 	<title>Index Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="Style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header>			
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-			<div class="container">
-					<a class="navbar-brand" href="Home.html">Best Surgeon</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-	
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="Home.html">About Us</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Service.html">Services</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Contact.html">Contact Us</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="Booking.html">Book Appointment</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-
-      
-   </header>
 
 <main class = "main">
-		
-	
-	      <div id="container" class="container-fluid">
-		   <div id="jumbotron" class="jumbotron jumbotron text-black">
-		   <div class="container">
-			<div class ="row">
-			<div class ="col-xl-12">
-					<h1 class="display-4">Kingston Surgery</h1>
-					<p class="lead">Welcome to the leading surgery center in Kingston to create a booking click button</p>
-				<div class="row">
-				<div class ="col-lg-12">  
-			 </div>
-			</div> 
-		</div>
-	</div>
-  </div>
+
 				<div class="container">
 						<div id="searchFormContainer" class="col-lg-12 col- p-4 bg-success text-white bg-dark border border-bginfo rounded shadow shadow-lg">
 						<h1 class="display-6">Search for vehicle</h1>
@@ -127,18 +84,18 @@
 				</th>
 				<th class="th-sm">Licence Type
 				</th>
-				<th class="th-sm">Avalabilty
+				<th class="th-sm">Availability
 				</th>
 			  </tr>
 			</thead>
-			<?php foreach ($results as $student) : ?>
+
             <tr>
-                <td><?= $student ->id ?></td>
-                <td><?= $student ->givenName ?></td>
-                <td><?= $student ->familyName ?></td>
-                <td><?= $student -> getFullName()?></td>
+                <td>Dummy Data</td>
+                <td>Dummy Data</td>
+                <td>Dummy Data</td>
+				<td>Dummy Data</td>
+				<td>Dummy Data</td>
             </tr>
-            <?php endforeach?>
         </tbody>
 	</table>
 </div>

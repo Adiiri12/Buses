@@ -1,7 +1,6 @@
 * {
     padding: 0%;
     margin: 0%;
-    border: 0%;
 }
 nav {
     background-color: #888A8A;
@@ -10,8 +9,6 @@ nav {
 h1 {
     display: inline;
     text-decoration: none;
-    color: black;
-    font-family: 'Quicksand', sans-serif;
 }
 
 img {
