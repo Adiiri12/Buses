@@ -9,7 +9,7 @@
      <link rel="stylesheet" href="styles.css" class="stylesheet">
      <title>Berwyn Buses</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <style>
+ <!--    <style>
      div {
      width: 35px;
      height: 5px;
@@ -37,7 +37,7 @@
      height: 400px;
      overflow: scroll;
      }
-     </style>
+     </style> -->
  </head>
  <body>
  <div></div>

@@ -1,4 +1,6 @@
 <?php include_once"header.php" ?>
+<?php require "../Controller/controller.php";?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,14 +90,15 @@
 				</th>
 			  </tr>
 			</thead>
-
+			<?php foreach ($results as $vehicle): ?>
             <tr>
-                <td>Dummy Data</td>
-                <td>Dummy Data</td>
-                <td>Dummy Data</td>
-				<td>Dummy Data</td>
-				<td>Dummy Data</td>
+                <td><?=$vehicle->vehicleName?></td>
+                <td><?=$vehicle->numberOfPassengers?></td>
+                <td><?=$vehicle->CPCRequired?></td>
+                <td><?=$vehicle->PCVRequired?></td>
+                <td><?=$vehicle->price?></td>
             </tr>
+        <?php endforeach ?>     
         </tbody>
 	</table>
 </div>
