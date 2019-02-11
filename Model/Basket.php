@@ -1,7 +1,7 @@
 <?php
     class Basket {
 
-        private $vehicles;
+        private $vehicles = [];
 
 
         function __get ($name){
@@ -10,6 +10,11 @@
 
         function __set ($name, $value){
             $this->$name = $value;
+        }
+
+        function addToBasket($vehicle) {
+            $vehicles[] = $vehicle;
+            echo '<script>console.log($vehicle)</script>';
         }
 
     }

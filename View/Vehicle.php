@@ -1,4 +1,4 @@
-<?php include_once"header.php" ?>
+<?php include_once "header.php" ?>
 <?php require "../Controller/controller.php";?>
 
 <!DOCTYPE html>
@@ -12,10 +12,9 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+	<br>
 
 <main class = "main">
-
 				<div class="container">
 						<div id="searchFormContainer" class="col-lg-12 col- p-4 bg-success text-white bg-dark border border-bginfo rounded shadow shadow-lg">
 						<h1 class="display-6">Search for vehicle</h1>
@@ -88,11 +87,14 @@
 				</th>
 				<th class="th-sm">Price
 				</th>
+				<th class="th-sm">Add to basket
+				</th>
+				</th>
 			  </tr>
 			</thead>
 			<?php foreach ($results as $vehicle):
-			//SEPERATE CONCERNS
-			$cpcx = "";
+			//TODO:SEPERATE CONCERNS
+			 $cpcx = "";
 			 $cpc =	$vehicle->CPCRequired;
 			 if($cpc == 1) {
 					$cpcx = "Yes";
@@ -107,6 +109,7 @@
                 <td><?=$cpcx?></td>
                 <td><?=$vehicle->PCVRequired?></td>
                 <td><?=$vehicle->price?></td>
+								<td><button type="submit">Add to basket</button></td>
             </tr>
         <?php endforeach ?>     
         </tbody>
