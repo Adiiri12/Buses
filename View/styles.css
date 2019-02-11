@@ -9,12 +9,12 @@ html {
     font-family: Helvetica;
 }
 
-.nav {
+/*.nav {
     border-bottom: 1px solid #EAEAEB;
     text-align: right;
     height: 70px;
     line-height: 70px;
-}
+}*/
 
 .nav h1 {
     float:left;
@@ -87,3 +87,23 @@ img {
         display: block;
     }
  }
+
+   
+    .column1 {
+    float: left;
+    width: 70%;
+    padding: 10px;
+    height: 800px; 
+    }
+    .column2 {
+    border-left: 1px solid black;
+    float: right;
+    width: 30%;
+    padding: 10px;
+    height: 800px; 
+    }
+    div.scroll {
+    width: 270px;
+    height: 400px;
+    overflow: scroll;
+    }

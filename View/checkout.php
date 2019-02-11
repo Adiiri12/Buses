@@ -4,7 +4,6 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="styles.css" class="stylesheet">
      <title>Berwyn Buses</title>
@@ -40,14 +39,9 @@
      </style> -->
  </head>
  <body>
- <div></div>
- <div></div>
- <div></div>
- 
- 
  <h2>CHECKOUT</h2>
  
-     <div class="column1" style="background-color:#aaa;">
+     <div class="column1">
          <form>
              Email:&emsp;&emsp;&emsp;&nbsp;<input type="email" name="email"><br><br>
              First Name:&emsp;<input type="text" name="firstname"><br><br>
@@ -58,18 +52,14 @@
          <p style="margin-left:110px">Total: £330</p>
          <button type="button" style="margin-left:100px">CHECKOUT</button> 
      </div>
-     <div class="column2" style="background-color:#bbb;">
+     <div class="column2">
          <div class="scroll">
-             <img src="photos/flintstones.jpg" alt="6 seat MVP"style="width:200px;height:200px;">
+             <img src="assets/myBigBus.jpg" alt="6 seat MVP"style="width:200px;height:200px;">
              <p>6 seat MVP</p>
-             <img src="photos/mcqueen.jpg" alt="10 seat VIP"style="width:200px;height:200px;">
+             <img src="assets/trolley.png" alt="10 seat VIP"style="width:200px;height:200px;">
              <p>10 seat VIP</p>
          </div>
      </div>
- 
- 
- 
- 
 <?php include_once"footer.php" ?>
  
  </body>
