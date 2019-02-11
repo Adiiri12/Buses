@@ -20,13 +20,13 @@
 				<div class="container" style ="padding-bottom:15px;">
 						<div id="searchFormContainer" class="col-lg-12 col- p-4 bg-success text-white bg-dark border border-bginfo">
 						<h1 class="display-6">Search for vehicle</h1>
-					   <form action="../Controller/Vehicle.php" method="GET" >
+					   <form action="../Controller/Vehicle.php" method="get" >
 								<div class="row">
 								   <div class="form-group col-lg 4 col-sm-6">
 									   <input type="search" class="form-control search-slt" name="price" placeholder="Price">
 								   </div>
 								   <div class="form-group col-md-2 col-sm-6">
-										<input type = "submit" class= "btn btn-danger wrn-btn" value ="search" name ="search" />
+										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn">Search</button>
 									</div>
 						</form>
 						</div>

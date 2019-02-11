@@ -11,14 +11,19 @@ function getAllVehicles(){
 }
 function getVehicleByPrice($price)
 {  
-if($price ="")
+   if($price == "")
 
   {
       return getAllVehicles();
   }
     global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE price = ? and price > ? order by price");
-    $statement->execute([$price,$price]);
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE price >= ? ORDER BY price");
+    $statement->execute([$price]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
+}
+
+function getVehicleByName()
+{
+    
 }
