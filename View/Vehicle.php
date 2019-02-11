@@ -22,17 +22,11 @@
 						<h1 class="display-6">Search for vehicle</h1>
 					   <form action="../Controller/Vehicle.php" method="GET" >
 								<div class="row">
-								   <div class="form-group col-lg 4  col-sm-6">
-									   <input type="search" class="form-control search-slt" name="vehicle" placeholder="Vehicle">
-								   </div>
-								   <div class="form-group col-lg 4 col-sm-6">
-									   <input type="search" class="form-control search-slt" name="passenges" placeholder="No Seats">
-								   </div>
 								   <div class="form-group col-lg 4 col-sm-6">
 									   <input type="search" class="form-control search-slt" name="price" placeholder="Price">
 								   </div>
 								   <div class="form-group col-md-2 col-sm-6">
-										<button type = "submit" class= "btn btn-danger wrn-btn" >Search</button>
+										<input type = "submit" class= "btn btn-danger wrn-btn" value ="search" name ="search" />
 									</div>
 						</form>
 						</div>
