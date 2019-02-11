@@ -1,5 +1,5 @@
-<?php include_once "header.php" ?>
-<?php require "../Controller/controller.php";?>
+<?php include_once"header.php" ?>
+<?php require "../Controller/Vehicle.php";?>
 
 <!DOCTYPE html>
 <html>
@@ -12,68 +12,36 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<br>
+	
 
 <main class = "main">
-				<div class="container">
-						<div id="searchFormContainer" class="col-lg-12 col- p-4 bg-success text-white bg-dark border border-bginfo rounded shadow shadow-lg">
-						<h1 class="display-6">Search for vehicle</h1>
-					   <form action="../Controller/controller.php" method="post" >
-								<div class="row">
-								   <div class="form-group col-lg 4 col-md-2 col-sm-6">
-									   <input type="text" class="form-control search-slt" placeholder="Pickup">
-								   </div>
-								   <div class="form-group col-lg 4 col-sm-6">
-									   <input type="text" class="form-control search-slt" placeholder="Drop-Off">
-								   </div>
-								   <div class="form-group col-lg 4 col-sm-6">
-									   <select class="form-control search-slt" id="exampleFormControlSelect1">
-										   <option value ="vehicle">Vehicles</option>
+             <!-- Search Form -->
 
-										   <option value => Example one</option>
-										   <option>Example one</option>
-										   <option>Example one</option>
-										   <option>Example one</option>
-										   <option>Example one</option>
-										   <option>Example one</option>
-									   </select>
+				<div class="container" style ="padding-bottom:15px;">
+						<div id="searchFormContainer" class="col-lg-12 col- p-4 bg-success text-white bg-dark border border-bginfo">
+						<h1 class="display-6">Search for vehicle</h1>
+					   <form action="../Controller/Vehicle.php" method="GET" >
+								<div class="row">
+								   <div class="form-group col-lg 4  col-sm-6">
+									   <input type="search" class="form-control search-slt" name="vehicle" placeholder="Vehicle">
 								   </div>
 								   <div class="form-group col-lg 4 col-sm-6">
-									   <select class="form-control search-slt" id="exampleFormControlSelect1">
-										   <option>Price</option>
-										   <option>£60</option>
-										   <option>£70</option>
-										   <option>£80</option>
-										   <option>£90</option>
-										   <option>£100</option>
-										   <option>£110</option>
-										   <option>£120</option>
-									   </select>
+									   <input type="search" class="form-control search-slt" name="passenges" placeholder="No Seats">
+								   </div>
+								   <div class="form-group col-lg 4 col-sm-6">
+									   <input type="search" class="form-control search-slt" name="price" placeholder="Price">
+								   </div>
+								   <div class="form-group col-md-2 col-sm-6">
+										<button type = "submit" class= "btn btn-danger wrn-btn" >Search</button>
 									</div>
-									<div class="form-group col-lg 4 col-sm-6">
-											<input type="text" class="form-control search-slt" placeholder="No Of Passengers">
-										</div>
-									   <div class="form-group col-lg 4 col-sm-6">
-											<select class="form-control search-slt" id="exampleFormControlSelect1">
-												<option value>Driving licence</option>
-												<option>B1</option>
-												<option>D1</option>
-											</select>
-										</div>
-									</div>
-										<div class="form-group col-md-2 col-sm-6">
-										<button type="button" class="btn btn-danger wrn-btn">Search</button>
-									</div>
-								</div>
-							   </div>
-							   </div>
-							</div>
+						</form>
 						</div>
-					 </form>
-	<!-- SearchForm-->
-		
-	<div class="container">
+					</div>
+				</div>
+	
+    <div class="container">
 	 <div class="jumbtron">
+		 <div class="border-box">
 	    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 			<thead>
 			  <tr>
@@ -87,14 +55,11 @@
 				</th>
 				<th class="th-sm">Price
 				</th>
-				<th class="th-sm">Add to basket
-				</th>
-				</th>
 			  </tr>
 			</thead>
 			<?php foreach ($results as $vehicle):
-			//TODO:SEPERATE CONCERNS
-			 $cpcx = "";
+			//SEPERATE CONCERNS
+			$cpcx = "";
 			 $cpc =	$vehicle->CPCRequired;
 			 if($cpc == 1) {
 					$cpcx = "Yes";
@@ -109,7 +74,6 @@
                 <td><?=$cpcx?></td>
                 <td><?=$vehicle->PCVRequired?></td>
                 <td><?=$vehicle->price?></td>
-								<td><button type="submit">Add to basket</button></td>
             </tr>
         <?php endforeach ?>     
         </tbody>
