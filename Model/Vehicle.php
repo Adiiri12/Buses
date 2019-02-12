@@ -6,6 +6,7 @@
         private $CPCRequired;
         private $PCVRequired;
         private $price;
+        private $links;
 
         function __get($name) {
             return $this->$name;

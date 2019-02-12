@@ -14,68 +14,84 @@
 <body>
 	
 
-<main class = "main">
-             <!-- Search Form -->
+<main class = "main"> 
 
-				<div class="container" style ="padding-bottom:15px;">
-						<div id="searchFormContainer" class="col-lg-12 col- p-4 bg-success text-white bg-dark border border-bginfo">
-						<h1 class="display-6">Search for vehicle</h1>
-					   <form action="../Controller/Vehicle.php" method="get" >
-								<div class="row">
-								   <div class="form-group col-lg 4 col-sm-6">
-									   <input type="search" class="form-control search-slt" name="price" placeholder="Price">
-								   </div>
-								   <div class="form-group col-md-2 col-sm-6">
-										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn">Search</button>
-									</div>
-						</form>
-						</div>
-					</div>
-				</div>
-	
+
+<!-- Search Form -->
+
+			 
     <div class="container">
-	 <div class="jumbtron">
-		 <div class="border-box">
-	    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-			<thead>
-			  <tr>
-				<th class="th-sm">Vehicle
-				</th>
-				<th class="th-sm">Number of Passengers
-				</th>
-				<th class="th-sm">CPC Required
-				</th>
-				<th class="th-sm">PCV Required
-				</th>
-				<th class="th-sm">Price
-				</th>
-			  </tr>
-			</thead>
-			<?php foreach ($results as $vehicle):
-			//SEPERATE CONCERNS
-			$cpcx = "";
-			 $cpc =	$vehicle->CPCRequired;
-			 if($cpc == 1) {
-					$cpcx = "Yes";
-			 }
-			 else {
-				 $cpcx = "No";
-			 }
-				?>
-            <tr>
-                <td><?=$vehicle->vehicleName?></td>
-                <td><?=$vehicle->numberOfPassengers?></td>
-                <td><?=$cpcx?></td>
-                <td><?=$vehicle->PCVRequired?></td>
-                <td><?=$vehicle->price?></td>
-            </tr>
-        <?php endforeach ?>     
-        </tbody>
-	</table>
-</div>
-</div>
-	
+       <div class ="row my-4">
+		  <div class="col-md-12">
+			 <div class="card" style="padding:0;">
+                    <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Vehicles</h5>
+                       <div class="card-body">
+					   <form action="../Controller/Vehicle.php" method="get">
+                            <div class="form-row mb-3">
+                                <div class="col">
+                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle">
+                                  </div>
+                                   <div class="col">
+                                     <input type="text" class="form-control" placeholder="Price" name="price">
+                                 </div>
+								 <div class="col">
+                                     <input type="text" class="form-control" placeholder="No Seats" name="Passengers">
+                                 </div>
+							</div>
+								 <div class="form-row mb-3 ">
+										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button>
+								</div>
+                      </form>
+                </div>
+            </div>
+		</div>
+	</div>
+<!-- Search Form -->
 
+
+
+			 <div class="row my-4">
+				<div class="col-md-12">
+				  <div class="card" style="padding:0;">
+                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">List Of Vehicles</h5>
+                            <div class="card-body">
+							     <div class ="container">
+							        <div class ="row">
+								         <?php foreach ($results as $vehicle):
+			                              //SEPERATE CONCERNS
+			                               $cpcx = "";
+			                                 $cpc =	$vehicle->CPCRequired;
+			                                          if($cpc == 1) {
+					                                            $cpcx = "Yes";
+			                                                        }
+			                                          else {
+				                                            $cpcx = "No";
+			                                                }
+				                                        ?>
+														<div class="card-deck">
+                                                            <div class="card  mb-5" style="width:240px;">
+										                         <div class="card-header">
+																 <?=$vehicle->vehicleName?>
+										                        </div>
+                                                                    <img class="card-img-top" style="height:180px" src="<?=$vehicle->links?>" alt="Card image cap">
+										                                    <ul class="list-group list-group-flush">
+                                                                               <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfPassengers?></li>
+                                                                               <li class="list-group-item">Price: <?=$vehicle->price?></li>
+                                                                             </ul>
+                                                            </div>
+														</div>
+
+										                 <?php endforeach ?>     
+						               
+							         </div>
+				                 </div>
+				              </div>
+							</div>
+					 </div>
+		         </div>
+			</div>
+
+         
 </main>
 
 <?php include_once"footer.php" ?>

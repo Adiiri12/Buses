@@ -11,13 +11,15 @@ if (!isset($_REQUEST["search"]))
       $results = getAllVehicles();
       echo "<br> IF statwement </br>";
       }
+ else
+   {
+      $price = $_REQUEST["price"];
+      $numberOfPassengers = $_REQUEST["Passengers"];
+      $vehicleName = $_REQUEST["Vehicle"];
+      $results = getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers);
 
-else
-      {
-         $search = $_REQUEST["price"];
-         $results = getVehicleByPrice($search);
-         echo "<br> else statement </br>";
-    }
+        echo "<br> else statement </br>";
+   }
 
   require_once "../View/Vehicle.php";
 ?>
