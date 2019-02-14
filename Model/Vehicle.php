@@ -1,11 +1,11 @@
 <?php
     class Vehicle {
         private $id;
-        private $vehicleName;
-        private $numberOfPassengers;
-        private $CPCRequired;
-        private $PCVRequired;
-        private $price;
+        private $vehicleMake;
+        private $numberOfSeats;
+        private $vehicleType;
+        private $licenceRequried;
+        private $hourlyPrice;
         private $links;
 
         function __get($name) {

@@ -32,10 +32,30 @@
                                  <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle">
                                   </div>
                                    <div class="col">
-                                     <input type="text" class="form-control" placeholder="Price" name="price">
-                                 </div>
+									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1">
+										   <option value ="">Price</option>
+										   <option value ="15">£15</option>
+										   <option value ="20">£20</option>
+										   <option value ="30">£30</option>
+										   <option value ="40">£40</option>
+										   <option value ="50">£50</option>
+										   <option value ="60">£60</option>
+										   <option value ="70">£70</option>
+										   <option value ="80">£80</option>
+									   </select>
+									</div>
 								 <div class="col">
-                                     <input type="text" class="form-control" placeholder="No Seats" name="Passengers">
+								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1">
+										   <option value ="">Passengers</option>
+										   <option value ="15">15</option>
+										   <option value ="20">20</option>
+										   <option value ="30">30</option>
+										   <option value ="40">40</option>
+										   <option value ="50">50</option>
+										   <option value ="60">60</option>
+										   <option value ="70">70</option>
+										   <option value ="80">80</option>
+									   </select>
                                  </div>
 							</div>
 								 <div class="form-row mb-3 ">
@@ -57,36 +77,18 @@
                             <div class="card-body">
 							     <div class ="container">
 							        <div class ="row">
-								         <?php foreach ($results as $vehicle):
-			                              //SEPERATE CONCERNS
-			                               $cpcx = "";
-			                                 $cpc =	$vehicle->CPCRequired;
-			                                          if($cpc == 1) {
-					                                            $cpcx = "Yes";
-			                                                        }
-			                                          else {
-				                                            $cpcx = "No";
-			                                                }
-				                                        ?>
-														<div class="card-deck">
-                                                            <div class="card  mb-5" style="width:240px;">
+								         <?php foreach ($results as $vehicle):?>
+														<div class="card-deck col" style ="padding-right:15px;padding-left:15px;">
+                                                            <div class="card mb-5" style="width:240px;">
 										                         <div class="card-header">
-																 <?=$vehicle->vehicleName?>
+																 <?=$vehicle->vehicleMake?>
 										                        </div>
                                                                     <img class="card-img-top" style="height:180px" src="<?=$vehicle->links?>" alt="Card image cap">
 										                                    <ul class="list-group list-group-flush" style=" list-style-type: none;">
-                                                                               <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfPassengers?></li>
-                                                                               <li class="list-group-item">Price: <?=$vehicle->price?></li>
-																																							 <li><button type="submit" onclick="addToBasket(<?=$vehicle->id?>)" 
-  style=" display: block;
-  width: 100%;
-  border: none;
-  background-color: #4CAF50;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;">
-																																																					Add to Basket</button></li>
-                                                                             </ul>
+                                                                               <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
+                                                                               <li class="list-group-item">Price: <?=$vehicle->hourlyPrice?></li>
+													                          <li><button type="submit" onclick="addToBasket(<?=$vehicle->id?>)" class="btn btn-primary" >Add to Basket</button></li>
+                                                                         </ul>
                                                             </div>
 														</div>
 

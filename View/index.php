@@ -16,10 +16,10 @@
 <div>
 <h1 style="text-align:center; color:white;"> Enquire about a vehicle today!</h1>
 </div>
-       <div class ="row my-4"">
+       <div class ="row my-4">
 		  <div class="col-md-12">
 			 <div class="card" style="padding:0;">
-<!-- SEARCH FORM!!-->
+<!-- SEARCH FORM -->
 <br>
                        <div class="card-body">
 					   <form action="../Controller/Vehicle.php" method="get">
@@ -27,13 +27,11 @@
                                 <div class="col" style="text-align:center;">
                                  <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" style="width:20%;"><br>
                                   </div>
-                                   <div class="col">
                                      <input type="text" class="form-control" placeholder="Price" name="price" style="width:20%;"><br>
                                  </div>
-								 <div class="col">
                                      <input type="text" class="form-control" placeholder="No Seats" name="Passengers" style="width:20%;"><br>
                                  </div>
-							</div>
+							      </div>
 								 <div class="form-row mb-3 ">
 										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button><br>
 								</div>
