@@ -74,9 +74,18 @@
 																 <?=$vehicle->vehicleName?>
 										                        </div>
                                                                     <img class="card-img-top" style="height:180px" src="<?=$vehicle->links?>" alt="Card image cap">
-										                                    <ul class="list-group list-group-flush">
+										                                    <ul class="list-group list-group-flush" style=" list-style-type: none;">
                                                                                <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfPassengers?></li>
                                                                                <li class="list-group-item">Price: <?=$vehicle->price?></li>
+																																							 <li><button type="submit" 
+  style=" display: block;
+  width: 100%;
+  border: none;
+  background-color: #4CAF50;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;">
+																																																					Add to Basket</button></li>
                                                                              </ul>
                                                             </div>
 														</div>

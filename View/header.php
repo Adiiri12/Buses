@@ -17,12 +17,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home</a></li>
+        <li class="active"><a href="../View/index.php">Home</a></li>
         <li><a href="#">Book Now</a></li>
         <li><a href="Vehicle.php">Vehicles</a></li>
         <li><a href="#">Account</a></li>
       </ul>
-      <a href= "basket.php"class="nav navbar-nav navbar-right"><img src="assets/trolley.png"> </a>
+      <a href= "basket.php"class="nav navbar-nav navbar-right" ><img src="assets/trolley.png" style="height:4rem;"> </a>
     </div>
   </div>
 </nav>
