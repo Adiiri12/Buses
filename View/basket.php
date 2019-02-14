@@ -14,6 +14,8 @@
 	    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 			<thead>
 			  <tr>
+          <th class="th-sm">
+          </th>
 				<th class="th-sm">Vehicle
 				</th>
 				<th class="th-sm">Price

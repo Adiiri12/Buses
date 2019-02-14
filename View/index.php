@@ -26,19 +26,19 @@
       <div class="item active">
         <img src="./assets/myBigBus.jpg" alt="The Bus 1" style="width:100%;">
         <h3>New Bus here</h3>
-        <p>50% off! Expired 03/07/19</p>
+        <p>50% off! Expires 03/07/19</p>
       </div>
 
       <div class="item">
         <img src="./assets/myBigBus.jpg" alt="The Bus 2" style="width:100%;">
         <h3>New Bus here</h3>
-        <p>50% off! Expired 03/07/19</p>
+        <p>50% off! Expires 03/07/19</p>
       </div>
     
       <div class="item">
         <img src="./assets/myBigBus.jpg" alt="The Bus 3" style="width:100%;">
         <h3>New Bus here</h3>
-        <p>50% off! Expired 03/07/19</p>
+        <p>50% off! Expires 03/07/19</p>
       </div>
     </div>
 
