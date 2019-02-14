@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Berwyn Buses | Basket</title>
+    <script src="./js/basketControl.js"></script>
 </head>
 <body>
 <div class="container">
 	 <div class="jumbtron">
 	    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+
+
 			<thead>
 			  <tr>
           <th class="th-sm">
@@ -22,12 +25,20 @@
 				</th>
 			  </tr>
 			</thead>
-			<?php foreach ($vehicle as $vehicles):?>
-            <tr>
-                <td><?=$vehicle->vehicleName?></td>
-                <td><?=$vehicle->price?></td>
-            </tr>
-        <?php endforeach ?>     
+
+
+          <tr>
+          
+            <td>
+            </td>
+
+            <td>
+            </td>
+
+            <td>
+            </td>
+
+          </tr>   
         </tbody>
     </table>
     

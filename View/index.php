@@ -19,6 +19,7 @@
        <div class ="row my-4"">
 		  <div class="col-md-12">
 			 <div class="card" style="padding:0;">
+<!-- SEARCH FORM!!-->
 <br>
                        <div class="card-body">
 					   <form action="../Controller/Vehicle.php" method="get">
@@ -42,6 +43,8 @@
 		</div>
 	</div>
 </div>
+<!-- SEARCH FORM END!!-->
+
 <!-- CAROUSEL!!-->
 <div class="container">
   <h2 style="text-align:center;">Promotions!</h2>  
@@ -89,3 +92,5 @@
 <!-- CAROUSEL END!!-->
 </body>
 </html>
+
+<?php include_once "footer.php" ?>

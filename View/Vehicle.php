@@ -1,4 +1,4 @@
-<?php include_once"header.php" ?>
+<?php include_once "header.php" ?>
 <?php require "../Controller/Vehicle.php";?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 	<title>Berwyn Buses | Vehicle</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="style.css">
+	<script src="./js/basketControl.js"></script>
 </head>
 <body>
 	
@@ -77,7 +77,7 @@
 										                                    <ul class="list-group list-group-flush" style=" list-style-type: none;">
                                                                                <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfPassengers?></li>
                                                                                <li class="list-group-item">Price: <?=$vehicle->price?></li>
-																																							 <li><button type="submit" 
+																																							 <li><button type="submit" onclick="addToBasket(<?=$vehicle->id?>)" 
   style=" display: block;
   width: 100%;
   border: none;
