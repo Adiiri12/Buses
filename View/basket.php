@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Berwyn Buses | Basket</title>
-    <script src="./js/basketControl.js"></script>
+    <script src="../View/js/basketControl.js"></script>
 </head>
 <body>
 <div class="container">
@@ -42,7 +42,7 @@
         </tbody>
     </table>
     
-    <button type="button" class="btn btn-danger wrn-btn">Checkout</button>
+    <button type="Submit" class="btn btn-danger wrn-btn" name="Checkout">Checkout</button>
 </div>
 </div>
 </body>
