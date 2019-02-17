@@ -1,5 +1,5 @@
 <?php include_once "header.php" ?>
-<?php require "../Controller/Vehicle.php";?>
+<?php require "../Controller/Vehicle.php"?>
 
 <!DOCTYPE html>
 <html>
@@ -87,7 +87,7 @@
 										                                    <ul class="list-group list-group-flush" style=" list-style-type: none;">
                                                                                <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
                                                                                <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
-													                          <li><button type="submit" onclick="addToBasket(<?=$vehicle->id?>)" class="btn btn-primary" id="buttonForVehicle">Add to Basket</button></li>
+													                          <li><button type="submit" onclick="addToBasket(<?=$vehicle->vehicle_id?>)" class="btn btn-primary" id="buttonForVehicle">Add to Basket</button></li>
                                                                          </ul>
                                                             </div>
 														</div>

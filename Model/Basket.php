@@ -12,9 +12,8 @@
             $this->$name = $value;
         }
 
-        function addToBasket($vehicle) {
-            $vehicles[] = $vehicle;
-            echo '<script>console.log($vehicle)</script>';
+        function addToBasket($id) {
+            $vehicles[] = $id;
         }
 
     }
