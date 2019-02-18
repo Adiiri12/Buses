@@ -1,3 +1,4 @@
+
 var vehicles =[];
 
 function addToBasket (integer) {
@@ -7,4 +8,13 @@ function addToBasket (integer) {
     {
         console.log(vehicles[i]);
     }
+}
+
+function checkID(integer) {
+ if(vehicles.includes(integer)) {
+     return true;
+ }
+ else {
+     return false;
+ }
 }

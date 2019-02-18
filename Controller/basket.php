@@ -6,11 +6,10 @@ if(!isset($_SESSION))
 } 
 require_once "../Model/Basket.php";
 require_once "../Model/dataAccess.php";
+require_once "../Model/Vehicle.php";
 
-if (!isset($_REQUEST["Checkout"]))
-      {  
-        //$results = getAllVehicles();
-      }
+
+        $results = getVehiclesById();
  
 
   require_once "../View/basket.php";
