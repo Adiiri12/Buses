@@ -5,7 +5,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <link rel="stylesheet" href="styles.css" class="stylesheet">
+     <link rel="stylesheet" href="../View/styles/styles.css" class="stylesheet">
      <title>Berwyn Buses</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
  <!--    <style>
@@ -50,7 +50,7 @@
          <p>6 seat MPV: £55 x 4hr = £220</p>
          <p>10 seat VIP: £55 x 2hr =<u> £110</u></p>
          <p style="margin-left:110px">Total: £330</p>
-         <button type="button" style="margin-left:100px">CHECKOUT</button> 
+         <a href="process.php"><button type="button" style="margin-left:100px">CHECKOUT</button></a> 
      </div>
      <div class="column2">
          <div class="scroll">
