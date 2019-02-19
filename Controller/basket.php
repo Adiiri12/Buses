@@ -10,7 +10,7 @@ require_once "../Model/Vehicle.php";
 
 
         $results = getVehiclesById();
- 
+        //$results = addbasket($id);
 
   require_once "../View/basket.php";
 ?>
