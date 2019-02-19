@@ -103,7 +103,7 @@
 										                                    <ul class="list-group list-group-flush" style=" list-style-type: none;">
                                                                                <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
                                                                                <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
-													                          <li><button type="submit" class="btn btn-primary" id="buttonForVehicle">Add to Basket</button></li>
+													                          <li><button type="submit" class="btn btn-primary" id="buttonForVehicle" style="width:100%;">Add to Basket</button></li>
                                                                          </ul>
                                                             </div>
 														</div>
