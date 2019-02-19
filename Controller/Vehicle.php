@@ -26,7 +26,7 @@ if (!isset($_REQUEST["search"]))
          }
          elseif($vehicleName != "" && $price == "" && $numberOfPassengers =="" && $licenceRequried == "" ) 
          {
-           $results = getVehicleByModel($vehicleName);
+           $results = getVehicleByModel($vehicleName); 
          }
          elseif($price !== "" && $vehicleName == "" && $numberOfPassengers == "" && $licenceRequried == "")
         {
@@ -53,6 +53,23 @@ if (!isset($_REQUEST["search"]))
         {
            $results = getVehicleByPriceAndLicence($price,$licenceRequried);
         }
+        elseif($vehicleName != "" && $price != "" && $licenceRequried == "" && $numberOfPassengers == "")
+        {
+           $results = getVehicleByModelAndPrice($vehicleName,$price);
+        }
+        elseif($vehicleName != "" && $price != "" && $licenceRequried != "" && $numberOfPassengers == "")
+        {
+           $results = getVehicleByModelAndPriceAndLicenceRequried($vehicleName,$price,$licenceRequried);
+        }
+        elseif($vehicleName != "" && $price != "" && $numberOfPassengers != "" && $licenceRequried == "")
+        {
+           $results = getVehicleByModelAndPriceAndNumberOfPassengers($vehicleName,$price,$numberOfPassengers);
+        }
+        elseif($licenceRequried != "" && $price != "" && $numberOfPassengers != "" && $vehicleName == "")
+        {
+           $results = getVehicleByPriceAndNumberOfPassengersAndLicenceRequried($licenceRequried,$price,$numberOfPassengers);
+        }
+
     }
          
 

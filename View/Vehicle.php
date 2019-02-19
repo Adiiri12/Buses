@@ -28,6 +28,9 @@
                        <div class="card-body">
 					   <form action="../Controller/Vehicle.php" method="get">
                             <div class="form-row mb-3">
+							  <div class = "col">
+							    <input id="date" data-provide="datapicker" class ="form-control" placeholder="Avaliabilty">
+								</div>
                                 <div class="col">
                                  <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle">
                                   </div>

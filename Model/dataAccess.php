@@ -78,7 +78,38 @@ function getVehicleByModelAndSeats($numberOfPassengers,$vehicleName)
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
 }
-
+function getVehicleByModelAndPrice($vehicleName,$price)
+{
+    global $pdo;  
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND hourlyPrice >= ?  ORDER BY hourlyPrice");
+    $statement->execute([$vehicleName,$price]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results;
+}
+function getVehicleByModelAndPriceAndLicenceRequried($vehicleName,$price,$licenceRequried)
+{
+    global $pdo;  
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND hourlyPrice >= ? AND licenceRequried = ? ORDER BY hourlyPrice");
+    $statement->execute([$vehicleName,$price,$licenceRequried]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results; 
+}
+function getVehicleByModelAndPriceAndNumberOfPassengers($vehicleName,$price,$numberOfPassengers)
+{
+    global $pdo;  
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND hourlyPrice >= ? AND numberOfSeats >= ? ORDER BY hourlyPrice");
+    $statement->execute([$vehicleName,$price,$numberOfPassengers]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results; 
+}
+function getVehicleByPriceAndNumberOfPassengersAndLicenceRequried($licenceRequried,$price,$numberOfPassengers)
+{
+    global $pdo;  
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  licenceRequried = ? AND hourlyPrice >= ? AND numberOfSeats >= ? ORDER BY hourlyPrice");
+    $statement->execute([$licenceRequried,$price,$numberOfPassengers]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results; 
+}
 function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceRequried)
 {  
   
