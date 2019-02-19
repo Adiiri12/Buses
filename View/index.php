@@ -12,24 +12,27 @@
 </head>
 <body>
 			 
-<div >
 
 
+
+  
+<!-- Search Form -->
+
+			 
+<div class="container">
        <div class ="row my-4">
 		  <div class="col-md-12">
-			 <div class="card" style="padding:0;background-image:url(./assets/heroImage.jpg);"> 
-<!-- SEARCH FORM -->
-<br>
-<h1 style="text-align:center; color:white;"> Enquire about a vehicle today!</h1><br>
-                       <div>
-                       <form action="../Controller/Vehicle.php" method="get">
+			 <div class="card" style="padding:0;">
+                    <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Vehicles</h5>
+                       <div class="card-body">
+					   <form action="../Controller/Vehicle.php" method="get">
                             <div class="form-row mb-3">
                                 <div class="col">
-                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle"><br/>
+                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle">
                                   </div>
                                    <div class="col">
 									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1">
-										   <option value ="">Minimum Price</option>
+										   <option value ="">Price</option>
 										   <option value ="15">£15</option>
 										   <option value ="20">£20</option>
 										   <option value ="30">£30</option>
@@ -39,7 +42,7 @@
 										   <option value ="70">£70</option>
 										   <option value ="80">£80</option>
 									   </select>
-									</div><br/>
+									</div>
 								 <div class="col">
 								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1">
 										   <option value ="">Passengers</option>
@@ -52,8 +55,16 @@
 										   <option value ="70">70</option>
 										   <option value ="80">80</option>
 									   </select>
-                                 </div><br/>
+                                 </div>
+								 <div class ="col">
+								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1">
+								           <option value ="">LicenceRequried</option>
+										   <option value ="D1">MiniBus(D1)</option>
+										   <option value ="D">Bus(D)</option>
+								    </select>
+								</div>
 							</div>
+									
 								 <div class="form-row mb-3 ">
 										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button>
 								</div>
@@ -62,8 +73,7 @@
             </div>
 		</div>
 	</div>
-</div>
-<!-- SEARCH FORM END!!-->
+<!-- Search Form -->
 
 
 
