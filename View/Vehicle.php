@@ -57,7 +57,15 @@
 										   <option value ="80">80</option>
 									   </select>
                                  </div>
+								 <div class ="col">
+								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1">
+								           <option value ="">LicenceRequried</option>
+										   <option value ="D1">MiniBus(D1)</option>
+										   <option value ="D">Bus(D)</option>
+								    </select>
+								</div>
 							</div>
+									
 								 <div class="form-row mb-3 ">
 										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button>
 								</div>
