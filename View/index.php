@@ -22,18 +22,40 @@
 <!-- SEARCH FORM -->
 <br>
                        <div class="card-body">
-					   <form action="../Controller/Vehicle.php" method="get">
+                       <form action="../Controller/Vehicle.php" method="get">
                             <div class="form-row mb-3">
-                                <div class="col" style="text-align:center;">
-                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" style="width:20%;"><br>
+                                <div class="col">
+                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" style="width:20%;"><br/>
                                   </div>
-                                     <input type="text" class="form-control" placeholder="Price" name="price" style="width:20%;"><br>
-                                 </div>
-                                     <input type="text" class="form-control" placeholder="No Seats" name="Passengers" style="width:20%;"><br>
-                                 </div>
-							      </div>
+                                   <div class="col">
+									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1"  style="width:20%;">
+										   <option value ="">Minimum Price</option>
+										   <option value ="15">£15</option>
+										   <option value ="20">£20</option>
+										   <option value ="30">£30</option>
+										   <option value ="40">£40</option>
+										   <option value ="50">£50</option>
+										   <option value ="60">£60</option>
+										   <option value ="70">£70</option>
+										   <option value ="80">£80</option>
+									   </select>
+									</div><br/>
+								 <div class="col">
+								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1"  style="width:20%;">
+										   <option value ="">Passengers</option>
+										   <option value ="15">15</option>
+										   <option value ="20">20</option>
+										   <option value ="30">30</option>
+										   <option value ="40">40</option>
+										   <option value ="50">50</option>
+										   <option value ="60">60</option>
+										   <option value ="70">70</option>
+										   <option value ="80">80</option>
+									   </select>
+                                 </div><br/>
+							</div>
 								 <div class="form-row mb-3 ">
-										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button><br>
+										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button>
 								</div>
                       </form>
                 </div>

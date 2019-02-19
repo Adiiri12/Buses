@@ -13,16 +13,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.php">Berwyn Buses</a>
+      <a class="navbar-brand" href="../View/index.php">Berwyn Buses</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="../View/index.php">Home</a></li>
-        <li><a href="#">Book Now</a></li>
+        <li><a href="#">About Us</a></li>
         <li><a href="Vehicle.php">Vehicles</a></li>
         <li><a href="#">Account</a></li>
       </ul>
-      <a href= "basket.php"class="nav navbar-nav navbar-right" ><img src="assets/trolley.png" style="height:4rem;"> </a>
+      <a href= "basket.php"class="nav navbar-nav navbar-right" ><img src="../View/assets/trolley.png" style="height:4rem;"> </a>
     </div>
   </div>
 </nav>
