@@ -5,30 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <title>Berwyn Buses | Home</title>
 </head>
 <body>
 			 
-<div  style="background-image:url(./assets/heroImage.jpg);">
-<div>
-<h1 style="text-align:center; color:white;"> Enquire about a vehicle today!</h1>
-</div>
+<div >
+
+
        <div class ="row my-4">
 		  <div class="col-md-12">
-			 <div class="card" style="padding:0;">
+			 <div class="card" style="padding:0;background-image:url(./assets/heroImage.jpg);"> 
 <!-- SEARCH FORM -->
 <br>
-                       <div class="card-body">
+<h1 style="text-align:center; color:white;"> Enquire about a vehicle today!</h1><br>
+                       <div>
                        <form action="../Controller/Vehicle.php" method="get">
                             <div class="form-row mb-3">
                                 <div class="col">
-                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" style="width:20%;"><br/>
+                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle"><br/>
                                   </div>
                                    <div class="col">
-									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1"  style="width:20%;">
+									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1">
 										   <option value ="">Minimum Price</option>
 										   <option value ="15">£15</option>
 										   <option value ="20">£20</option>
@@ -41,7 +41,7 @@
 									   </select>
 									</div><br/>
 								 <div class="col">
-								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1"  style="width:20%;">
+								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1">
 										   <option value ="">Passengers</option>
 										   <option value ="15">15</option>
 										   <option value ="20">20</option>
@@ -65,50 +65,51 @@
 </div>
 <!-- SEARCH FORM END!!-->
 
+
+
 <!-- CAROUSEL!!-->
-<div class="container">
-  <h2 style="text-align:center;">Promotions!</h2>  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
+<div class="bd-example">
+<h2 style="text-align:center;">Promotions!</h2>  
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
     </ol>
-
-    <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <div class="item active">
-        <img src="./assets/myBigBus.jpg" alt="The Bus 1" style="width:100%;">
-        <h3>New Bus here</h3>
-        <p>50% off! Expires 03/07/19</p>
+      <div class="carousel-item active">
+        <img src="./assets/myBigBus.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Bus Number 1</h5>
+          <p>50% off! Expires 03/07/19</p>
+        </div>
       </div>
-
-      <div class="item">
-        <img src="./assets/myBigBus.jpg" alt="The Bus 2" style="width:100%;">
-        <h3>New Bus here</h3>
-        <p>50% off! Expires 03/07/19</p>
+      <div class="carousel-item">
+        <img src="./assets/myBigBus.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Bus Number 2</h5>
+          <p>50% off! Expires 03/07/19</p>
+        </div>
       </div>
-    
-      <div class="item">
-        <img src="./assets/myBigBus.jpg" alt="The Bus 3" style="width:100%;">
-        <h3>New Bus here</h3>
-        <p>50% off! Expires 03/07/19</p>
+      <div class="carousel-item">
+        <img src="./assets/myBigBus.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Bus Number 3</h5>
+          <p>50% off! Expires 03/07/19</p>
+        </div>
       </div>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
-  </div>
 </div>
+
 <!-- CAROUSEL END!!-->
 </body>
 </html>
