@@ -4,12 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>Berwyn Buses | Vehicle</title>
+</head>
+<head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Berwyn Buses | Vehicle</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-	<script src="../View/js/basketControl.js"></script>
+
 </head>
 <body>
 	
@@ -95,7 +103,7 @@
 										                                    <ul class="list-group list-group-flush" style=" list-style-type: none;">
                                                                                <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
                                                                                <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
-													                          <li><button type="submit" onclick="addToBasket(<?=$vehicle->vehicle_id?>)" class="btn btn-primary" id="buttonForVehicle">Add to Basket</button></li>
+													                          <li><button type="submit" class="btn btn-primary" id="buttonForVehicle" style="width:100%;">Add to Basket</button></li>
                                                                          </ul>
                                                             </div>
 														</div>
