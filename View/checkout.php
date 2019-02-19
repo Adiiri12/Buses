@@ -8,35 +8,6 @@
      <link rel="stylesheet" href="../View/styles/styles.css" class="stylesheet">
      <title>Berwyn Buses</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
- <!--    <style>
-     div {
-     width: 35px;
-     height: 5px;
-     background-color: black;
-     margin: 6px 0;
-     }
-     * {
-     box-sizing: border-box;
-     }
-     .column1 {
-     float: left;
-     width: 70%;
-     padding: 10px;
-     height: 800px; 
-     }
-     .column2 {
-     float: right;
-     width: 30%;
-     padding: 10px;
-     height: 800px; 
-     }
-     div.scroll {
-     background-color:#bbb;
-     width: 270px;
-     height: 400px;
-     overflow: scroll;
-     }
-     </style> -->
  </head>
  <body>
  <h2>CHECKOUT</h2>

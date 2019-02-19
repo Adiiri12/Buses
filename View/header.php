@@ -20,7 +20,7 @@
         <li class="active"><a href="../View/index.php">Home</a></li>
         <li><a href="#">Book Now</a></li>
         <li><a href="Vehicle.php">Vehicles</a></li>
-        <li><a href="#">Account</a></li>
+        <li><a href="account.php">Account</a></li>
       </ul>
       <a href= "basket.php"class="nav navbar-nav navbar-right" ><img src="assets/trolley.png" style="height:4rem;"> </a>
     </div>
