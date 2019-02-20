@@ -1,16 +1,27 @@
 <?php
-
-if(!isset($_SESSION)) 
+if(!isset($_SESSION)){
+  session_start(); 
+}
+if(!isset($_SESSION["basket"])) 
 { 
-    session_start(); 
+   $_SESSION["basket"] = [];   
+   $basket = [];
 } 
-require_once "../Model/Basket.php";
-require_once "../Model/dataAccess.php";
-require_once "../Model/Vehicle.php";
 
 
-        $results = getVehiclesById();
-        //$results = addbasket($id);
+if(isset($_POST['submit']))
+{
+  $myVar ="harry";
+  $_SESSION["basket"][] = $myVar;
+  $basket = $_SESSION["basket"];
+  require_once "../View/Vehicle.php";
+  
+} 
 
-  require_once "../View/basket.php";
+
+
+
+$basket = $_SESSION["basket"];
+
+
 ?>

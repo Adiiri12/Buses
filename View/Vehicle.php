@@ -1,5 +1,6 @@
 <?php include_once "header.php" ?>
 <?php require "../Controller/Vehicle.php"?>
+<?php require "../Controller/basket.php"?>
 
 <!DOCTYPE html>
 <html>
@@ -102,12 +103,16 @@
 										                         <div class="card-header">
 																 <?=$vehicle->vehicleMake?>
 										                        </div>
-                                                                    <img class="card-img-top" style="height:180px" src="<?=$vehicle->links?>" alt="Card image cap">
-										                                    <ul class="list-group list-group-flush" style=" list-style-type: none;">
-                                                                               <li class="list-group-item">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
-                                                                               <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
-													                          <li><button type="submit" class="btn btn-primary" id="buttonForVehicle" style="width:100%;">Add to Basket</button></li>
-                                                                         </ul>
+                                              <img class="card-img-top" style="height:180px" src="<?=$vehicle->links?>" alt="Card image cap">
+										                        <ul class="list-group list-group-flush" style=" list-style-type: none;">
+                                              <li class="list-group-item" name="nos">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
+                                              <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
+													              			<form action="../Controller/basket.php" method="post">
+																								<li>
+																									<input value="Add To Basket" type="submit" class="btn btn-primary" name="submit" style="width:100%;">
+																								</li> 
+																							</form>
+                                            </ul>
                                                             </div>
 														</div>
 
@@ -120,6 +125,9 @@
 					 </div>
 		         </div>
 			</div>
+
+
+
 
          
 </main>
