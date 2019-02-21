@@ -122,7 +122,6 @@
 
 <!-- CAROUSEL END!!-->
 </body>
-<a href= "http://uniqurate.kingston.ac.uk/jira/secure/RapidBoard.jspa?rapidView=58&view=planning&selectedIssue=A3BUS-17&versions=visible&epics=visible">Link to Jira page</p></a>
 </html>
 
 <?php include_once "footer.php" ?>
