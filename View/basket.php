@@ -18,7 +18,7 @@
 
 <?php if(count($make)==0): ?>
 <br>
-  <h1>Nothing in basket at the moment! Get shopping... Even though we are only in it for the ad revenue</h1>
+  <h2>Nothing in basket at the moment! Get shopping... Even though we are only in it for the ad revenue</h2>
   <a href="../View/Vehicle.php"><button type="Submit" class="btn btn-danger wrn-btn" name="Back To Browse">&larr; Back To Browse</button></a>
 <?php endif ?>
 
@@ -54,6 +54,7 @@
             <tr>
             <td><b>Total</b></td>
             <td><b>£<?= array_sum($price) / 2?></b></td>
+            <td></td>
             <td></td>
             </tr>    
 
