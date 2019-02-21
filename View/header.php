@@ -29,8 +29,8 @@
       <li class="nav-item active">
         <a class="nav-link" href="../View/account.php">Account</a>
       </li>
-      <a href= "../View/basket.php"class="nav navbar-nav navbar-right" ><img src="../View/assets/trolley.png" style="height:2rem;"> </a>
     </ul>
+    <span class="navbar-text"><a href= "../View/basket.php"class="nav navbar-nav navbar-right" ><img src="../View/assets/trolley.png" style="height:2rem; width :2rem; float: right;"></a> </span>
   </div>
 </nav>
 

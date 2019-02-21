@@ -109,7 +109,9 @@
                                               <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
 													              			<form action="../Controller/basket.php" method="post">
 																								<li>
-																								<input value=<?=$vehicle->vehicleMake?> type="hidden" name="id">
+																									<input value=<?=$vehicle->vehicleMake?> type="hidden" name="make">
+																									<input value=<?=$vehicle->hourlyPrice?> type="hidden" name="price">
+																									<input value=<?=$vehicle->links?> type="hidden" name="links">
 																									<input value="Add To Basket" type="submit" class="btn btn-primary" name="submit" style="width:100%;">
 																								</li> 
 																							</form>
@@ -126,7 +128,6 @@
 					 </div>
 		         </div>
 			</div>
-
 
 
 

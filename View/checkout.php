@@ -5,7 +5,6 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <link rel="stylesheet" href="../View/styles/styles.css" class="stylesheet">
      <title>Berwyn Buses</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
@@ -23,14 +22,14 @@
          <p style="margin-left:110px">Total: £330</p>
          <a href="process.php"><button type="button" style="margin-left:100px">CHECKOUT</button></a> 
      </div>
-     <div class="column2">
+<!--     <div class="column2">
          <div class="scroll">
              <img src="assets/myBigBus.jpg" alt="6 seat MVP"style="width:200px;height:200px;">
              <p>6 seat MVP</p>
              <img src="assets/myBigBus.jpg" alt="10 seat VIP"style="width:200px;height:200px;">
              <p>10 seat VIP</p>
          </div>
-     </div>
+     </div>-->
 <?php include_once"footer.php" ?>
  
  </body>
