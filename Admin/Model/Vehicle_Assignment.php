@@ -1,10 +1,7 @@
 <?php
-    class Account {
-        private $accountId;
-        private $email;
-        private $username;       
-        private $user_password;
-
+    class Vehicle_Assignment {
+        private $booking_id;
+        private $vehicle_id;
 
         function __get($name) {
             return $this->$name;

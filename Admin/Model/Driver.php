@@ -1,10 +1,9 @@
 <?php
-    class Account {
-        private $accountId;
-        private $email;
-        private $username;       
-        private $user_password;
-
+    class Driver {
+        private $driver_id;
+        private $driver_name;
+        private $driver_surname;
+        private $phone_number;
 
         function __get($name) {
             return $this->$name;

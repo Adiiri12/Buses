@@ -3,7 +3,7 @@
         private $accountId;
         private $email;
         private $username;       
-        private $user_password;
+        private $password;
 
 
         function __get($name) {

@@ -1,10 +1,9 @@
 <?php
-    class Account {
-        private $accountId;
-        private $email;
-        private $username;       
-        private $user_password;
-
+    class Promotions {
+        private $promotion_id;
+        private $vehicle_id;
+        private $promotionDate;
+        private $promotionExpiryDate;
 
         function __get($name) {
             return $this->$name;
