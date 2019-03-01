@@ -132,6 +132,10 @@ Function getAdminByLoggin($User,$Pass)
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
     return $results;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0ff2d9c87eed25234aff6372e5990e9a1535d486
 
 Function createAdminAccount($admin)
 {
