@@ -2,7 +2,6 @@
     class Admin {
         private $admin_id;
         private $email_address;
-        private $email_address;
         private $username;
         private $user_password;
         private $admin_name;
