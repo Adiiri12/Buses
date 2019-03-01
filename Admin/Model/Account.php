@@ -1,9 +1,10 @@
 <?php
-    class Admin {
-        private $admin_id;
-        private $username;
-        private $user_password;
-        private $admin_name;
+    class Account {
+        private $accountId;
+        private $email;
+        private $username;       
+        private $password;
+
 
         function __get($name) {
             return $this->$name;

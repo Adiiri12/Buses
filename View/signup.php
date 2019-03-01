@@ -15,6 +15,7 @@
        <h1>Sign Up</h1>
        <p>Please fill in this form to create an account.</p>
        <hr>
+       <form action="../Controller/account.php">
        <label for="email"><b>Email</b></label>
        <input type="text" placeholder="Enter Email" name="email" required><br>
 
@@ -34,6 +35,7 @@
          <button type="button" class="cancelbtn">Cancel</button>
          <button type="submit" class="signupbtn">Sign Up</button>
        </div>
+       </form>
      </div>
 <?php include_once"footer.php" ?>
  

@@ -1,9 +1,7 @@
 <?php
-    class Admin {
-        private $admin_id;
-        private $username;
-        private $user_password;
-        private $admin_name;
+    class Vehicle_Assignment {
+        private $booking_id;
+        private $vehicle_id;
 
         function __get($name) {
             return $this->$name;

@@ -1,9 +1,9 @@
 <?php
-    class Admin {
-        private $admin_id;
-        private $username;
-        private $user_password;
-        private $admin_name;
+    class Driver {
+        private $driver_id;
+        private $driver_name;
+        private $driver_surname;
+        private $phone_number;
 
         function __get($name) {
             return $this->$name;
