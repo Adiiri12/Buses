@@ -2,7 +2,6 @@
     class Vehicle {
 
         private $vehicle_id;
-        private $vehicle_id;
         private $vehicleMake;
         private $numberOfSeats;
         private $vehicleType;
