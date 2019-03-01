@@ -4,6 +4,7 @@ require_once "../Model/Admin.php";
 if(!isset($_SESSION)){
   session_start(); 
 }
+/*
 if ( isset( $_SESSION['Admin_id'] ) ) {
   // $message = "Welcome" + $_SESSION['Admin_id'];
 } 
@@ -13,6 +14,11 @@ else {
   header('Location:   ../View/Login.php?NOTADMIN');
   exit();
 }
+
+After everyone has created a login we will close the page with a session 
+
+*/
+
 if (isset($_POST["LogIn"]))
 {
     $email = $_POST["email"];

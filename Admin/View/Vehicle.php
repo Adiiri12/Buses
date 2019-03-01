@@ -23,7 +23,7 @@ require_once "../View/index.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body class ="modal-open">
+<body class>
 	
  
 
