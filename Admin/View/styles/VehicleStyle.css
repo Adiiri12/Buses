@@ -1,0 +1,10 @@
+html,body {
+    height: 100%;
+    padding-right:0px!important;
+  }
+  modal-open {
+    overflow: visible;
+}
+.modal-open {
+    padding-right:0px!important;
+}

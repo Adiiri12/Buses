@@ -115,10 +115,50 @@ function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceR
   
 
     global $pdo;
-    $statement = $pdo->prepare("SELECT * FROM `Vehicles` WHERE hourlyPrice >=? and vehicleMake =? and numberOfSeats >= ? and licenceRequried = ? ORDER BY hourlyPrice");
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE hourlyPrice >=? and vehicleMake =? and numberOfSeats >= ? and licenceRequried = ? ORDER BY hourlyPrice");
     $statement->execute([$price,$vehicleName,$numberOfPassengers,$licenceRequried]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
 }
 /* Vehicle data Access */
 
+/* Admin data Access */
+
+Function getAdminByLoggin($User,$Pass)
+{
+    global $pdo;
+    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =? and user_password =?");
+    $statement->execute([$User,$Pass]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
+    return $results;
+}
+
+Function createAdminAccount($admin)
+{
+    global $pdo;
+    $statement = $pdo->prepare("INSERT INTO admin (email_address,username,user_password,admin_name)
+                                 VALUES (?,?,?,?)");
+    $statement->execute([$admin->email_address,$admin->username,$admin->user_password,$admin->admin_name]);
+
+}
+
+Function checkUserExists($user)
+{
+    global $pdo;
+    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =?");
+    $statement->execute([$user]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
+    return $results;
+}
+
+Function AddNewVehicle($admin)
+{
+    global $pdo;
+    $statement = $pdo->prepare("INSERT INTO Vehicles (vehicleMake,numberOfSeats,vehicleType,licenceRequried
+                                                      hourlyPrice,links)
+                                                     VALUES (?,?,?,?,?,?)");
+    $statement->execute([$admin->vehicleMake,$admin->numberOfSeats,$admin->vehicleType,$admin->licenceRequried,
+                         $admin->hourlyPrice,$admin->links]);
+
+
+}
