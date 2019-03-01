@@ -1,6 +1,10 @@
 <?php
     class Vehicle {
+<<<<<<< HEAD
         private $vehicle_id;
+=======
+        private $id;
+>>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
         private $vehicleMake;
         private $numberOfSeats;
         private $vehicleType;

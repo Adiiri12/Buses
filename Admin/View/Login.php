@@ -14,10 +14,22 @@
 <body class="text-center">
     <form class="form-signin" method="Post" action ="../Controller/Login.php">
       <h1 class="h3 mb-3 font-weight-normal">Admin Sign In</h1>
+<<<<<<< HEAD
       <label for="UserName" class="sr-only">username</label>
       <input type="text" id="UserName" name = "User" class="form-control" placeholder="UserName" required >
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" name ="Pass" class="form-control" placeholder="Password" required>
+=======
+      <?php
+      if(isset($message)) {
+                 echo $message;
+                        }
+                    ?>
+      <label for="UserName" class="sr-only">Email address</label>
+      <input type="text" id="UserName" name = "UserName" class="form-control" placeholder="UserName" required >
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name ="Password" class="form-control" placeholder="Password" required>
+>>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
       <button class="btn btn-lg btn-primary btn-block" name="LogIn" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>

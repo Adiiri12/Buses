@@ -2,7 +2,7 @@
     class Admin {
         private $admin_id;
         private $username;
-        private $password;
+        private $user_password;
         private $admin_name;
 
         function __get($name) {
