@@ -1,10 +1,6 @@
-
 <?php
-<<<<<<< HEAD
-$pdo = new PDO("mysql:host=localhost;dbname=test1","Abdullahi","Morning8",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-=======
 $pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
->>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
+
 
 /* Vehicle data Access */
 function getAllVehicles(){
@@ -119,11 +115,7 @@ function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceR
   
 
     global $pdo;
-<<<<<<< HEAD
     $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE hourlyPrice >=? and vehicleMake =? and numberOfSeats >= ? and licenceRequried = ? ORDER BY hourlyPrice");
-=======
-    $statement = $pdo->prepare("SELECT * FROM `Vehicles` WHERE hourlyPrice >=? and vehicleMake =? and numberOfSeats >= ? and licenceRequried = ? ORDER BY hourlyPrice");
->>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
     $statement->execute([$price,$vehicleName,$numberOfPassengers,$licenceRequried]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
@@ -135,11 +127,7 @@ function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceR
 Function getAdminByLoggin($User,$Pass)
 {
     global $pdo;
-<<<<<<< HEAD
     $statement = $pdo->prepare("SELECT * FROM admin WHERE username =? and user_password =?");
-=======
-    $statement = $pdo->prepare("SELECT * FROM 'Admin' WHERE username = ? and user_password = ?");
->>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
     $statement->execute([$User,$Pass]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
     return $results;
@@ -175,5 +163,3 @@ Function AddNewVehicle($admin)
 
 
 }
-=======
->>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
