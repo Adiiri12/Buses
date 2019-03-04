@@ -147,9 +147,10 @@ Function checkUserExists($user)
     global $pdo;
     $statement = $pdo->prepare("SELECT * FROM admin WHERE username =?");
     $statement->execute([$user]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
+    $results = $statement->fetch(PDO::FETCH_ASSOC);
     return $results;
 }
+
 
 Function AddNewVehicle($admin)
 {

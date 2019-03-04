@@ -23,10 +23,13 @@ require_once "../View/index.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body class>
-	
- 
+<body class >
+<?php if($Vehicle): ?>
 
+  <span style="color:Green"><?=$Vehicle?></span>
+
+<?php endif ?>
+	
 
 <!-- Search Form -->
 
@@ -59,34 +62,63 @@ require_once "../View/index.php";
         </button>
       </div>
       <div class="modal-body">
-      <form class="form-horizontal" role="form" action >
+      <form class="form-horizontal" role="form" action = "../Controller/Vehicle.php" method="POST" >
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
-                              for="inputEmail3">Email</label>
+                              for="InputvehicleName">vehicleName</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" 
-                        id="inputEmail3" placeholder="Email"/>
+                        <input type="text" class="form-control" 
+                        id="InputvehicleName" placeholder="vehicleName"
+                        name = "vehicleMake" requried/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="inputPassword3" >Password</label>
+                          for="inputVehicleType" >VehicleModel</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control"
-                            id="inputPassword3" placeholder="Password"/>
+                        <input type="text" class="form-control"
+                            id="inputVehicleType" placeholder="vehicleType"
+                            name = "vehicleType" required/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="Vehicle" >Password</label>
+                          for="InputnumberOfSeats" >NumberOfSeats</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control"
-                            id="Vehicle" placeholder="Password"/>
+                        <input type="number" class="form-control"
+                            id="InputnumberOfSeats" placeholder="NumberOfSeats"
+                            name = "numberOfSeats" required/>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="InputlicenceRequried">LicenceRequried</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            id="InputlicenceRequried" placeholder="LicenceRequried"
+                            name = "licenceRequried" required/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="InputhourlyPrice">HourlyPrice</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control"
+                            id="InputhourlyPrice" placeholder="HourlyPrice"
+                            name="hourlyPrice" required/>
+                    </div>
+                  </div><div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="Inputlinks">Imagelinks</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            id="Inputlinks" placeholder="Imagelinks" name="links" required/>
+                    </div>
+                  </div>
+
                   <div class="form-group text-centre">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="Submit" class="btn btn-primary">Sign in</button>
+                      <button type="Submit" name = "Submit" class="btn btn-primary">Add Vehicle</button>
                     </div>
                   </div>
                 </form>

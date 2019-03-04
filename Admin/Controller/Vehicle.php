@@ -35,10 +35,28 @@ else {
       $admin->vehicleType = htmlentities($vehicleType);
       $admin->numberOfSeats = htmlentities($numberOfSeats);
       $admin->hourlyPrice = htmlentities($hourlyPrice);
+      $admin->licenceRequried = htmlentities($licenceRequried);
       $admin->links = htmlentities($links);
 
 
-     $Vehicle = "$vehicleMake has been added";
+      $results = CheckVehicleExists($vehicleName,$vehicleType);
+      $CHECK = $results;
+
+     if($CHECK)
+     {
+      header('Location:   ../Controller/Vehicle.php?VehicleAlreadyExists');
+      exit();
+     }
+
+     else
+     {
+      AddNewVehicle($admin);
+      $Vehicle = "$vehicleMake has been added";
+      header('Location:   ../Controller/Vehicle.php?Vehicle'.$vehicleMake.'hasbeenadded');
+      exit();
+     }
+    
+     
 
   }
 

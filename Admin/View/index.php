@@ -1,3 +1,6 @@
+<?php
+require_once "../Controller/index.php"
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +21,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="../View/index.php">Berwyn Buses</a>
+  <a class="navbar-brand" href="../View/index.php">Admin</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -26,13 +29,13 @@
         <a class="nav-link" href="../View/index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="#">Promotions</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="../View/Vehicle.php">Vehicles</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="../View/account.php">Account</a>
+        <a class="nav-link" href="#">Bookings</a>
       </li>
       </ul>
       <ul class = "navbar-nav navbar-right">
@@ -42,6 +45,5 @@
     </ul>
   </div>
 </nav>
-    <h1>Welcome</h1>
 </body>
 </html>
