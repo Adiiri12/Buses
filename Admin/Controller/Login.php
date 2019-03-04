@@ -29,7 +29,7 @@ if (isset($_POST["LogIn"]))
         {
             $_SESSION['Admin_id'] = $results;
             $_SESSION['Admin_name'] = $results->admin_name;
-            header('Location:   ../View/Index.php?loginSuccess');
+            header('Location:   ../View/index.php?loginSuccess');
             exit();
         }
         else
