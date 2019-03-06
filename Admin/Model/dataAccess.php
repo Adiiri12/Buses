@@ -124,11 +124,11 @@ function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceR
 
 /* Admin data Access */
 
-Function getAdminByLoggin($User,$Pass)
+Function getAdminByLoggin($User)
 {
     global $pdo;
-    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =? and user_password =?");
-    $statement->execute([$User,$Pass]);
+    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =? LIMIT 1");
+    $statement->execute([$User]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
     return $results;
 }
@@ -142,14 +142,18 @@ Function createAdminAccount($admin)
 
 }
 
-Function checkUserExists($user)
-{
-    global $pdo;
-    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =?");
-    $statement->execute([$user]);
-    $results = $statement->fetch(PDO::FETCH_ASSOC);
-    return $results;
+/* Function checkUserExists($user)
+ {
+     global $pdo;
+     $statement = $pdo->prepare("SELECT * FROM admin WHERE username =?");
+     $statement->execute([$user]);
+     $results = $statement->fetch(PDO::FETCH_ASSOC);
+     return $results;
 }
+*/
+
+
+
 
 
 Function AddNewVehicle($admin)

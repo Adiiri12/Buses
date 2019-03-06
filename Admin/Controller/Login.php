@@ -10,10 +10,9 @@ if (isset($_POST["LogIn"]))
 {
     $User = $_POST["User"];
     $Pass = $_POST["Pass"];
-    $results = checkUserExists($User);
+    $results = getAdminByLoggin($User);
     $message=" ";
-
-
+ /*
     if($results == false)
     {
         $message ="UserName/Password Incorrect";
@@ -21,34 +20,12 @@ if (isset($_POST["LogIn"]))
         exit();
     }
         else{
-            
-            $HashedPass = $results['password'];
             $validpassword = password_verify($Pass, $results['user_password']);
 
         if($validpassword)
         {
             $_SESSION['Admin_id'] = $results;
-            $_SESSION['Admin_name'] = $results->admin_name;
-            header('Location:   ../View/index.php?loginSuccess');
-            exit();
-        }
-        else
-        {
-            header('Location:   ../View/Login.php?IncorrectPassword');
-            exit();
-        }
-      }
-}
-    /*else if($results->user_password == false)
-    {
-        $message ="UserName/Password Incorrect";
-        header('Location:   ../View/Login.php?IncorrectPassword');
-        exit();
-    }
-      elseif($HashedPass == password_verify($Pass, $HashedPass))
-        {
-            $_SESSION['Admin_id'] = $results;
-            $_SESSION['Admin_name'] = $results->admin_name;
+            $_SESSION['Admin_name'] = $results->['admin_name'];
             header('Location:   ../View/Index.php?loginSuccess');
             exit();
         }
@@ -57,13 +34,39 @@ if (isset($_POST["LogIn"]))
             header('Location:   ../View/Login.php?IncorrectPassword');
             exit();
         }
+      }
+      */
+    if($results[0]->username == false)
+    {
+        $message ="UserName/Password Incorrect";
+         header('Location:   ../View/Login.php?IncorrectPassword');
+         exit();
+    }
+      else
+      {
+          $HashedPass = $results[0]->user_password;
+          $validpassword = password_verify($Pass, $HashedPass);
+
+          if($validpassword)
+        {
+            $_SESSION['Admin_id'] = $results[0]->username;
+            $_SESSION['Admin_name'] = $results[0]->admin_name;
+             header('Location:   ../View/Index.php?loginSuccess');
+            exit();
+        }
+        else
+        {
+            header('Location:   ../View/Login.php?IncorrectPassword');
+           exit();
+        }
+    }
         
 
-        header('Location:   ../View/Login.php?NoHelp');
-        exit(); 
+         header('Location:   ../View/Login.php?NoHelp');
+        
 
     }
-    */
+    
 
    require_once "../View/Login.php";
 

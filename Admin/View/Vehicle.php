@@ -24,7 +24,7 @@ require_once "../View/index.php";
 
 </head>
 <body class >
-<?php if($Vehicle): ?>
+<?php if($Vehicle != " "): ?>
 
   <span style="color:Green"><?=$Vehicle?></span>
 
@@ -145,11 +145,13 @@ require_once "../View/index.php";
                                                 <tr>
                                                 <th scope="col">id</th>
                                                 <th scope="col">vehicleMake</th>
-                                                <th scope="col">numberOfSeats</th>
+                                                <th scope="col" >numberOfSeats</th>
                                                 <th scope="col">vehicleType</th>
                                                 <th scope="col">licenceRequried</th>
                                                 <th scope="col">hourlyPrice</th>
                                                 <th scope="col">links</th>
+                                                <th width = "30">Edit</th>
+                                                <th width = "30">Delete</th>
 
                                                </tr>
                                         </thead>
@@ -162,8 +164,8 @@ require_once "../View/index.php";
                                                <td><?=$vehicle->vehicleType?></td>
                                                <td><?=$vehicle->licenceRequried?></td>
                                                <td><?=$vehicle->hourlyPrice?></td>
-                                               <td style="word-wrap: break-word"><?=$vehicle->links?></td>
-                                              </tr>
+                                               <td><img src=<?=$vehicle->links?> alt="Smiley face" height="50" width="50"></td>
+                                              </tr><
                                               <?php endforeach ?>  
                                          </tbody>
                                     </table>

@@ -46,4 +46,10 @@ require_once "../Controller/index.php"
   </div>
 </nav>
 </body>
+
+<?php if($message != " "): ?>
+
+  <span style="black"><?=$message?></span>
+
+<?php endif ?>
 </html>
