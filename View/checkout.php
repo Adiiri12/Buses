@@ -1,4 +1,5 @@
 <?php include_once "header.php"?>
+<?php require "../Controller/basket.php"?>
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -11,26 +12,23 @@
  </head>
  <body>
  <h2>CHECKOUT</h2>
- 
-     <div class="column1">
-         <form>
-             Email:&emsp;<input type="text" name="email"><br><br>
-             First Name:&emsp;<input type="text" name="firstname"><br><br>
-             Last Name:&emsp;<input type="text" name="lastname"><br><br>
-         </form>
-         <p>6 seat MPV: £55 x 4hr = £220</p>
-         <p>10 seat VIP: £55 x 2hr =<u> £110</u></p>
-         <p style="margin-left:110px">Total: £330</p>
-         <a href="process.php"><button type="button">CHECKOUT</button></a> 
+ <br>
+    <h3> Create an account or Login</h3>
+ <div class="column1">
+
+         <a href="createAccount.php"><button class="btn btn-primary" type="button">Create an Account</button></a> 
+         <a href="Login.php"><button class="btn btn-primary" type="button">Login</button></a> 
      </div>
-<!--     <div class="column2">
+   <div class="column2">
+    <h3>In your Basket...</h3>
          <div class="scroll">
-             <img src="assets/myBigBus.jpg" alt="6 seat MVP"style="width:200px;height:200px;">
-             <p>6 seat MVP</p>
-             <img src="assets/myBigBus.jpg" alt="10 seat VIP"style="width:200px;height:200px;">
-             <p>10 seat VIP</p>
+         <?php for ($y = 0; $y <count($make); $y=$y+2):?>
+             <img src="<?= $links[$y] ?>" alt="Image of booked Vehicle"style="width:200px;height:200px;">
+             <p><?=$make[$y]?> : £<?= $price[$y] ?> </p>
+         <?php endfor ?>  
          </div>
-     </div>-->
+         <h5> Total: £<?= array_sum($price) / 2?></h5>
+     </div>
 <?php include_once"footer.php" ?>
  
  </body>

@@ -14,7 +14,7 @@
   <div class="container">
   <h2>Login</h2>
 
-  <form action="/action_page.php">
+  <form method="post" action="../Controller/account.php">
     <div class="imgcontainer">
         <img src="../View/assets/user.jpg" height="200" alt="User" class="avatar">
     </div>
