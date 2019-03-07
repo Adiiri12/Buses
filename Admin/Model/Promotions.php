@@ -1,9 +1,9 @@
 <?php
-    class Admin {
-        private $admin_id;
-        private $username;
-        private $user_password;
-        private $admin_name;
+    class Promotions {
+        private $promotion_id;
+        private $vehicle_id;
+        private $promotionDate;
+        private $promotionExpiryDate;
 
         function __get($name) {
             return $this->$name;

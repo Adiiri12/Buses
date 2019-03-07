@@ -1,13 +1,12 @@
 <?php
     class Booking {
         private $booking_id;
-        private $customer_name;
+        private $customer_id;
         private $driver_id;
-        private $vehicle_id;
-        private $email;
-
-     //   private $bookingDate;
-     //   private $bookingReturn;
+        private $numberOfPassengers;
+        private $destanation;
+        private $bookingDate;
+        private $bookingReturn;
 
         function __get($name) {
             return $this->$name;
