@@ -23,10 +23,9 @@ if (isset($_POST["LogIn"]))
     $message = " ";
 
 
-    $results = checkUserExists($user);
-    $Check = $results;
+    $results = getAdminByLoggin($user);
 
-      if($Check)
+      if($results == true)
       {
         header('Location:   ../View/signup.php?error=userTaken');
         exit();
@@ -49,8 +48,7 @@ if (isset($_POST["LogIn"]))
       $admin->admin_name = htmlentities($name);
 
       createAdminAccount($admin);
-      header('Location:   ../View/signup.php?success=success');
-      $message = "$name has been added";
+      header('Location:   ../View/Login.php?successAccounthasbeen'.$user.'Created');
     }
 }
 

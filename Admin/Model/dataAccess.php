@@ -1,4 +1,3 @@
-
 <?php
 $pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
@@ -120,22 +119,27 @@ function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceR
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
 }
+function CheckVehicleExists($vehicleName,$vehicleType)
+{
+    global $pdo;  
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND vehicleType = ?");
+    $statement->execute([$vehicleName,$vehicleType]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results;
+}
+
 /* Vehicle data Access */
 
 /* Admin data Access */
 
-Function getAdminByLoggin($User,$Pass)
+Function getAdminByLoggin($User)
 {
     global $pdo;
-    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =? and user_password =?");
-    $statement->execute([$User,$Pass]);
+    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =? LIMIT 1");
+    $statement->execute([$User]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
     return $results;
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0ff2d9c87eed25234aff6372e5990e9a1535d486
 
 Function createAdminAccount($admin)
 {
@@ -145,24 +149,48 @@ Function createAdminAccount($admin)
     $statement->execute([$admin->email_address,$admin->username,$admin->user_password,$admin->admin_name]);
 
 }
-
+ 
+/*
 Function checkUserExists($user)
 {
     global $pdo;
     $statement = $pdo->prepare("SELECT * FROM admin WHERE username =?");
     $statement->execute([$user]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Admin");
+    $results = $statement->fetch(PDO::FETCH_ASSOC);
     return $results;
 }
+*/
 
 Function AddNewVehicle($admin)
 {
     global $pdo;
-    $statement = $pdo->prepare("INSERT INTO Vehicles (vehicleMake,numberOfSeats,vehicleType,licenceRequried
+    $statement = $pdo->prepare("INSERT INTO Vehicles (vehicleMake,vehicleType,numberOfSeats,licenceRequried,
                                                       hourlyPrice,links)
                                                      VALUES (?,?,?,?,?,?)");
-    $statement->execute([$admin->vehicleMake,$admin->numberOfSeats,$admin->vehicleType,$admin->licenceRequried,
+    $statement->execute([$admin->vehicleMake,$admin->vehicleType,$admin->numberOfSeats,$admin->licenceRequried,
                          $admin->hourlyPrice,$admin->links]);
 
 
 }
+Function deleteVehicleById($id)
+
+{
+    
+        global $pdo;
+        $statement = $pdo->prepare("DELETE FROM Vehicles WHERE vehicle_id =?");
+        $statement->execute([$id]);
+    
+}
+
+Function updateVehicleById($vehicleMake,$vehicleType,$numberOfSeats,$licenceRequried
+                                                          ,$hourlyPrice,$links,$id)
+{
+    global $pdo;
+    $statement = $pdo->prepare("UPDATE Vehicles SET vehicleMake =?, vehicleType =?,numberOfSeats =?,
+                                licenceRequried =?, hourlyPrice =?, links=? WHERE vehicle_id =?");
+    $statement->execute([$vehicleMake,$vehicleType,$numberOfSeats,$licenceRequried
+                                                        ,$hourlyPrice,$links,$id]);
+
+   
+}
+

@@ -13,6 +13,7 @@ require_once "../View/index.php";
 	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <link rel="stylesheet" href="../View/styles/styl4.css" class="stylesheet">
   <title>Berwyn Buses | Vehicle</title>
 </head>
@@ -23,10 +24,13 @@ require_once "../View/index.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body class ="modal-open">
-	
- 
+<body>
+<?php if($Vehicle != " "): ?>
 
+  <span style="color:Green"><?=$Vehicle?></span>
+
+<?php endif ?>
+	
 
 <!-- Search Form -->
 
@@ -59,34 +63,63 @@ require_once "../View/index.php";
         </button>
       </div>
       <div class="modal-body">
-      <form class="form-horizontal" role="form" action >
+      <form class="form-horizontal" role="form" action = "../Controller/Vehicle.php" method="POST" >
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
-                              for="inputEmail3">Email</label>
+                              for="InputvehicleName">vehicleName</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" 
-                        id="inputEmail3" placeholder="Email"/>
+                        <input type="text" class="form-control" 
+                        id="InputvehicleName" placeholder="vehicleName"
+                        name = "vehicleMake" requried/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="inputPassword3" >Password</label>
+                          for="inputVehicleType" >VehicleModel</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control"
-                            id="inputPassword3" placeholder="Password"/>
+                        <input type="text" class="form-control"
+                            id="inputVehicleType" placeholder="vehicleType"
+                            name = "vehicleType" required/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="Vehicle" >Password</label>
+                          for="InputnumberOfSeats" >NumberOfSeats</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control"
-                            id="Vehicle" placeholder="Password"/>
+                        <input type="number" class="form-control"
+                            id="InputnumberOfSeats" placeholder="NumberOfSeats"
+                            name = "numberOfSeats" required/>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="InputlicenceRequried">LicenceRequried</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            id="InputlicenceRequried" placeholder="LicenceRequried"
+                            name = "licenceRequried" required/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="InputhourlyPrice">HourlyPrice</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control"
+                            id="InputhourlyPrice" placeholder="HourlyPrice"
+                            name="hourlyPrice" required/>
+                    </div>
+                  </div><div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="Inputlinks">Imagelinks</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            id="Inputlinks" placeholder="Imagelinks" name="links" required/>
+                    </div>
+                  </div>
+
                   <div class="form-group text-centre">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="Submit" class="btn btn-primary">Sign in</button>
+                      <button type="Submit" name = "Submit" class="btn btn-primary">Add Vehicle</button>
                     </div>
                   </div>
                 </form>
@@ -97,6 +130,7 @@ require_once "../View/index.php";
     </div>
   </div>
 </div>
+
 <!-- Search Form -->
 
 
@@ -108,41 +142,43 @@ require_once "../View/index.php";
                             <div class="card-body" style="padding-left: 5px;padding-right: 5px;padding-top: 8px;">
 							     <div class ="container">
 							        <div class ="row">
-                                    <table class="table" style = "table-layout: fixed; width: 100%;">
+                                    <table class="table" style = "table-layout: fixed;width: 100%;">
                                         <thead class="thead-dark">
                                                 <tr>
-                                                <th scope="col">id</th>
                                                 <th scope="col">vehicleMake</th>
-                                                <th scope="col">numberOfSeats</th>
+                                                <th scope="col">numberOfSeat</th>
                                                 <th scope="col">vehicleType</th>
-                                                <th scope="col">licenceRequried</th>
+                                                <th scope="col">licenceType</th>
                                                 <th scope="col">hourlyPrice</th>
                                                 <th scope="col">links</th>
+                                                <th scope="col-sm-2">Edit</th>
+                                                <th scope="col-sm-2">Delete</th>
 
                                                </tr>
                                         </thead>
                                          <tbody>
                                          <?php foreach ($results as $vehicle) : ?>
                                             <tr>
-                                               <td><?=$vehicle->vehicle_id?></td>
                                                <td><?=$vehicle->vehicleMake?></td>
                                                <td><?=$vehicle->numberOfSeats?></td>
                                                <td><?=$vehicle->vehicleType?></td>
                                                <td><?=$vehicle->licenceRequried?></td>
                                                <td><?=$vehicle->hourlyPrice?></td>
-                                               <td style="word-wrap: break-word"><?=$vehicle->links?></td>
-                                              </tr>
-                                              <?php endforeach ?>  
+                                               <td><img src=<?=$vehicle->links?> height="50" width="50"></td>
+                                               <td >
+                                               <a href="#edit_<?=$vehicle->vehicle_id?>" class="btn btn-success btn-sm" data-toggle="modal" ><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                               </td>
+                                              <td><a href = "../Controller/delete.php?delete=<?=$vehicle->vehicle_id?>"><i class='fas fa-trash-alt' style='font-size:36px'></i></td>
+                                          </tr>    
+                                              <?php include "../View/editModal.php"; ?>
+                                              <?php endforeach ?>
                                          </tbody>
                                     </table>
-						
-										 
-
-
-
-         
-
-
-
-</body>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+	</body>
 </html>

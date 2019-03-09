@@ -10,37 +10,63 @@ if (isset($_POST["LogIn"]))
 {
     $User = $_POST["User"];
     $Pass = $_POST["Pass"];
-    $results = checkUserExists($User);
+    $results = getAdminByLoggin($User);
     $message=" ";
-    
-
+ /*
     if($results == false)
     {
         $message ="UserName/Password Incorrect";
         header('Location:   ../View/Login.php?errorNoUserFound');
         exit();
     }
-    else 
-    { 
-        $HashedPass = $results->user_password;
-        
-        
-        if($ValidPassword == password_verify($Pass, $HashedPass))
+        else{
+            $validpassword = password_verify($Pass, $results['user_password']);
+
+        if($validpassword)
         {
             $_SESSION['Admin_id'] = $results;
-            $_SESSION['Admin_name'] = $results->admin_name;
+            $_SESSION['Admin_name'] = $results->['admin_name'];
             header('Location:   ../View/Index.php?loginSuccess');
             exit();
         }
         else
         {
-            header('Location:   ../View/Login.php?NoMatch');
+            header('Location:   ../View/Login.php?IncorrectPassword');
             exit();
         }
+      }
+      */
+    if($results[0]->username == false)
+    {
+        $message ="UserName/Password Incorrect";
+         header('Location:   ../View/Login.php?IncorrectUser/Password');
+         exit();
     }
+      else
+      {
+          $HashedPass = $results[0]->user_password;
+          $validpassword = password_verify($Pass, $HashedPass);
 
-        header('Location:   ../View/Login.php?NoHelp');
-        exit(); 
-}
+          if($validpassword)
+        {
+            $_SESSION['Admin_id'] = $results[0]->username;
+            $_SESSION['Admin_name'] = $results[0]->admin_name;
+             header('Location:   ../View/index.php?loginSuccess');
+            exit();
+        }
+        else
+        {
+          header('Location:   ../View/Login.php?IncorrectUser/Password');
+           exit();
+        }
+    }
+        
+
+         header('Location:   ../View/Login.php?NoHelp');
+        
+
+    }
+    
+
    require_once "../View/Login.php";
 

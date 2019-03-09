@@ -16,16 +16,12 @@ html,body {
     padding-bottom: 40px;
     background-color: grey;
     -webkit-text-fill-color: black;
-<<<<<<< HEAD
     padding-right:0px !important;
     margin-right:0px !important;
   }
   body.modal-open {
     padding-right:0px !important;
 }
-=======
-  }
->>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
   
   .form-signin {
     width: 100%;
@@ -55,8 +51,4 @@ html,body {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> 568ba6872863a56fbc980df47582b63fe699af80
