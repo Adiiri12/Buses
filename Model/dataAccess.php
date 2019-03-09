@@ -121,3 +121,15 @@ function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceR
 }
 /* Vehicle data Access */
 
+/* Account data access */
+
+function addAccount($account)
+{
+    global $pdo;
+    $statement = $pdo->prepare('INSERT INTO account
+        (email, username, user_password) VALUES (?,?,?)');
+    $statement->execute([$account->email,
+                        $account->username,
+                        $account->user_password]);
+}
+/* Account data access */ 

@@ -24,7 +24,11 @@ require_once "../View/index.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
+<<<<<<< HEAD
 <body>
+=======
+<body class >
+>>>>>>> refs/remotes/origin/master
 <?php if($Vehicle != " "): ?>
 
   <span style="color:Green"><?=$Vehicle?></span>
