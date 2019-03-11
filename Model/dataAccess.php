@@ -1,6 +1,18 @@
 <?php
 $pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
+/*Basket Data Access */
+
+function getVehiclesByIdBasket($id) {
+    global $pdo;
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE vehicle_id = ?");
+    $statement->execute([$id]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results;
+}
+
+/*Basket Data Access */
+
 /* Vehicle data Access */
 function getAllVehicles(){
     global $pdo;
