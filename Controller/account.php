@@ -5,5 +5,10 @@
     if (!isset($_SESSION[""])
 
 
-    
-    $email = $_REQUEST["email"];
+    if (isset($_POST["login"])) !empty($_POST['username']) 
+    && !empty($_POST['user_password'])) 
+    {
+        
+
+    }
+    elseif (isset($_REQUEST[""]))
