@@ -17,9 +17,12 @@
  <div class="column1">
 
 
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
-         <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+        
          <a href="Login.php"><button class="btn btn-primary" type="button">Login</button></a> 
      </div>
    <div class="column2">

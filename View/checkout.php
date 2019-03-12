@@ -15,20 +15,25 @@
  <br>
     <h3> Create an account</h3>
  <div class="column1">
+       <label for="email"><b>Email</b></label>
+       <input type="text" placeholder="Enter Email" name="email" required><br>
 
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <a href="createAccount.php"><button class="btn btn-primary" type="button">Create an Account</button></a> 
+       <label for="username"><b>Username</b></label>
+       <input type="text" placeholder="Enter Username" name="username" required><br>
+
+       <label for="psw"><b>Password</b></label>
+       <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+        <a href="../View/checkoutAfterSignup.php"><button class="btn btn-primary" type="button">Create an Account</button></a> 
          <h3> Or Login...</h3>
 
-         <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-         <a href="Login.php"><button class="btn btn-primary" type="button">Login</button></a> 
+       <label for="email"><b>Email</b></label>
+       <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+       <label for="psw"><b>Password</b></label>
+       <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+        
+       <a href="Login.php"><button class="btn btn-primary" type="button">Login</button></a> 
      </div>
    <div class="column2">
     <h3>In your Basket...</h3>
