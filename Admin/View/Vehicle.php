@@ -24,11 +24,8 @@ require_once "../View/index.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<<<<<<< HEAD
 <body>
-=======
 <body class >
->>>>>>> refs/remotes/origin/master
 <?php if($Vehicle != " "): ?>
 
   <span style="color:Green"><?=$Vehicle?></span>
@@ -112,12 +109,21 @@ require_once "../View/index.php";
                             id="InputhourlyPrice" placeholder="HourlyPrice"
                             name="hourlyPrice" required/>
                     </div>
-                  </div><div class="form-group">
+                  </div>
+                  <div class="form-group">
                     <label class="col-sm-2 control-label"
                           for="Inputlinks">Imagelinks</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
                             id="Inputlinks" placeholder="Imagelinks" name="links" required/>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="Inputlinks">Send to Customers?</label>
+                    <div class="col-sm-10">
+                        <input type="checkbox" value="send" class="form-control" >
                     </div>
                   </div>
 

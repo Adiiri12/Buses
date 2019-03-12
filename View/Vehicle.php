@@ -1,6 +1,6 @@
 <?php include_once "header.php" ?>
-<?php require "../Controller/Vehicle.php"?>
-<?php require "../Controller/basket.php"?>
+<?php require_once "../Controller/Vehicle.php"?>
+<?php require_once "../Controller/basket.php"?>
 
 <!DOCTYPE html>
 <html>

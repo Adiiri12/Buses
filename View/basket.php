@@ -1,5 +1,5 @@
 <?php include_once "header.php" ?>
-<?php require "../Controller/basket.php"?>
+<?php require_once "../Controller/basket.php"?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +53,7 @@
             <?php endfor ?>
             <tr>
             <td><b>Total</b></td>
-            <td><b>£<?=array_sum($total)?></b></td>
+            <td><b>£<?= array_sum($total)?></b></td>
             <td></td>
             <td></td>
             </tr>    
