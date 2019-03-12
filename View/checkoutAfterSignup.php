@@ -13,18 +13,10 @@
  <body>
  <h2>CHECKOUT</h2>
  <br>
-    <h3> Create an account</h3>
+ <h3> Login</h3>
  <div class="column1">
 
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <p>FORM FORM FORM</p>
-        <a href="createAccount.php"><button class="btn btn-primary" type="button">Create an Account</button></a> 
-         <h3> Or Login...</h3>
+
 
          <p>FORM FORM FORM</p>
         <p>FORM FORM FORM</p>
