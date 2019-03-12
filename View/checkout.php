@@ -13,8 +13,9 @@
  <body>
  <h2>CHECKOUT</h2>
  <br>
-    <h3> Create an account</h3>
+   
  <div class="column1">
+    <h3> Create an account</h3>
        <label for="email"><b>Email</b></label>
        <input type="text" placeholder="Enter Email" name="email" required><br>
 
@@ -25,16 +26,16 @@
        <input type="password" placeholder="Enter Password" name="psw" required><br>
 
         <a href="../View/checkoutAfterSignup.php"><button class="btn btn-primary" type="button">Create an Account</button></a> 
-         <h3> Or Login...</h3>
+    <h3> Login</h3>
+        <form action="../Controller/booking.php" method="Post">
+            <input type="text" value = "Email" placeholer="Email" name = "email">
+            <input type="password" value = "Password" name="password">
+            <button type="submit" class="btn btn-primary" value="Place order" name = "placeOrder">Place Order</button>
+        </form>
 
-       <label for="email"><b>Email</b></label>
-       <input type="text" placeholder="Enter Email" name="email" id="email" required>
+</div>
 
-       <label for="psw"><b>Password</b></label>
-       <input type="password" placeholder="Enter Password" name="psw" id="password" required>
-        
-       <a href="Login.php"><button class="btn btn-primary" type="button">Login</button></a> 
-     </div>
+
    <div class="column2">
     <h3>In your Basket...</h3>
          <div class="scroll">
@@ -45,6 +46,7 @@
          </div>
          <h5> Total: £<?= array_sum($total)?></h5>
      </div>
+     <br>
 <?php include_once"footer.php" ?>
  
  </body>

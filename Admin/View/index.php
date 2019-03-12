@@ -1,3 +1,6 @@
+<?php
+require_once "../Controller/index.php"
+?>
 <!DOCTYPE html>
 <html>
 <head>

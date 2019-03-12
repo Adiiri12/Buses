@@ -1,5 +1,7 @@
 <?php include_once "header.php"?>
 <?php require_once "../Controller/basket.php"?>
+<?php require_once "../Controller/booking.php"?>
+
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -15,15 +17,11 @@
  <br>
  <h3> Login</h3>
  <div class="column1">
-
-
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" id="username" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="password" required>
-        
-         <a href="Login.php"><button class="btn btn-primary" type="button">Login</button></a> 
+ <form action="../Controller/booking.php" method="Post">
+            <input type="text" value = "Email" placeholer="Email" name = "email">
+            <input type="password" value = "Password" name="password">
+            <button type="submit" class="btn btn-primary" value="Place order" name = "placeOrder">Place Order</button>
+        </form>
      </div>
    <div class="column2">
     <h3>In your Basket...</h3>
