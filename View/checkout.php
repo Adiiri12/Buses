@@ -22,12 +22,12 @@
    <div class="column2">
     <h3>In your Basket...</h3>
          <div class="scroll">
-         <?php for ($y = 0; $y <count($make); $y=$y+2):?>
-             <img src="<?= $links[$y] ?>" alt="Image of booked Vehicle"style="width:200px;height:200px;">
-             <p><?=$make[$y]?> : £<?= $price[$y] ?> </p>
-         <?php endfor ?>  
+         <?php foreach ($vehicles as $vehicle):?>
+             <img src="<?= $vehicle->links ?>" alt="Image of booked Vehicle"style="width:200px;height:200px;">
+             <p><?=$vehicle->vehicleMake?> : £<?= $vehicle->hourlyPrice ?> </p>
+         <?php endforeach ?>  
          </div>
-         <h5> Total: £<?= array_sum($price) / 2?></h5>
+         <h5> Total: £<?= array_sum($total)?></h5>
      </div>
 <?php include_once"footer.php" ?>
  

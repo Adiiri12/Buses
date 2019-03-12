@@ -4,7 +4,6 @@ require_once "../Model/Admin.php";
 if(!isset($_SESSION)){
   session_start(); 
 }
-/*
 if ( isset( $_SESSION['Admin_id'] ) ) {
   // $message = "Welcome" + $_SESSION['Admin_id'];
 } 
@@ -14,11 +13,6 @@ else {
   header('Location:   ../View/Login.php?NOTADMIN');
   exit();
 }
-
-After everyone has created a login we will close the page with a session 
-
-*/
-
 if (isset($_POST["LogIn"]))
 {
     $email = $_POST["email"];
@@ -29,10 +23,10 @@ if (isset($_POST["LogIn"]))
     $message = " ";
 
 
-    $results = checkUserExists($user);
+    $results = getAdminByLoggin($user);
     $Check = $results;
 
-      if($Check)
+      if($Check > 0)
       {
         header('Location:   ../View/signup.php?error=userTaken');
         exit();
@@ -55,8 +49,7 @@ if (isset($_POST["LogIn"]))
       $admin->admin_name = htmlentities($name);
 
       createAdminAccount($admin);
-      header('Location:   ../View/signup.php?success=success');
-      $message = "$name has been added";
+      header('Location:   ../View/Login.php?successAccounthasbeen'.$user.'Created');
     }
 }
 

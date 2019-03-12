@@ -1,6 +1,7 @@
 <?php
     class Vehicle {
-        private $id;
+
+        private $vehicle_id;
         private $vehicleMake;
         private $numberOfSeats;
         private $vehicleType;

@@ -2,9 +2,14 @@ html,body {
   height: 100%;
   padding-right:0px!important;
 }
-modal-open {
-  overflow: visible;
-}
-.modal-open {
+body.modal-open {
   padding-right:0px!important;
+}
+tbody {
+  border-top: none;
+  }
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
 }

@@ -8,14 +8,16 @@ if(!isset($_SESSION))
     } 
 
 $message = " ";
-if ( isset( $_SESSION['Admin_id'] ) ) {
-     //$message = "Welcome".implode(" ", $_SESSION['Admin_id']);
-}  
-
-else {
+if (!isset( $_SESSION['Admin_id']) || !isset($_SESSION['Admin_name'])) {
     // Redirect them to the login page
     header('Location:   ../View/Login.php?NotLoggedIn');
     exit();
+
+}  
+
+else
+{
+    $message = "Welcome Admin ".$_SESSION['Admin_name'];
 }
 require_once "../View/index.php";
 ?>
