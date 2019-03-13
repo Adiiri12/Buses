@@ -1,61 +1,46 @@
-
 <?php
+
+require_once "../Model/Vehicle.php";
+require_once "../Model/dataAccess.php";
+
+
 if(!isset($_SESSION)){
   session_start(); 
 }
-if(!isset($_SESSION["make"])) 
+if(!isset($_SESSION["vehicles"])&& !isset($_SESSION["totalAmount"])) 
 { 
-   $_SESSION["make"] = [];   
-   $_SESSION["price"] = [];   
-   $_SESSION["links"] = [];   
-   $make = [];
-   $price = [];
-   $links = [];
-} 
+   $_SESSION["totalAmount"] =[];
+   $_SESSION["vehicles"] = [];   
+   $id;
+   $vehicles = [];
+   $total = [];
 
+}
+if(isset($_POST['submit'])) {
+  $id = $_REQUEST["transferedId"];
+  $currentResult =  getVehiclesByIdBasket($id);
 
-if(isset($_POST['submit']))
-{
-  $makeVar =$_REQUEST["make"];
-  $_SESSION["make"][] = $makeVar;
-  $make = $_SESSION["make"];
-
-  $priceVar =$_REQUEST["price"];
-  $_SESSION["price"][] = $priceVar;
-  $price = $_SESSION["price"];
-
-  $linksVar =$_REQUEST["links"];
-  $_SESSION["links"][] = $linksVar;
-  $links = $_SESSION["links"];
+  $_SESSION["vehicles"][] = $currentResult[0];
+  $_SESSION["totalAmount"][] = $currentResult[0]->hourlyPrice;
   require_once "../View/Vehicle.php";
-  
-} 
+}
 
-if(isset($_POST['clear']))
-{
-  $_SESSION["make"] = [];   
-  $_SESSION["price"] = [];   
-  $_SESSION["links"] = [];   
-  $make = [];
-  $price = [];
-  $links = [];
+if(isset($_POST['clear'])) {
+  $_SESSION["vehicles"] = [];
+  $_SESSION["totalAmount"] = [];
+  $vehicles = $_SESSION["vehicles"];
+  $total = $_SESSION["totalAmount"];
   require_once "../View/basket.php";
-} 
-if(isset($_POST['remove']))
-{
-  unset($_SESSION["make"][$_REQUEST["indexVar"]] );   
-  unset($_SESSION["price"][$_REQUEST["indexVar"]] );    
-  unset($_SESSION["links"][$_REQUEST["indexVar"]] );   
-  unset($_SESSION["make"][$_REQUEST["indexVar"] +1] );   
-  unset($_SESSION["price"][$_REQUEST["indexVar"]+1] );    
-  unset($_SESSION["links"][$_REQUEST["indexVar"]+1] );   
+}
+if(isset($_POST['remove'])) {
+  array_splice($_SESSION["vehicles"], $_REQUEST["indexVar"],1);
+  array_splice($_SESSION["totalAmount"], $_REQUEST["indexVar"],1);
+  $vehicles = $_SESSION["vehicles"];
+  $total = $_SESSION["totalAmount"];
   require_once "../View/basket.php";
-} 
+}
 
-
-$make = $_SESSION["make"];
-$links = $_SESSION["links"];
-$price = $_SESSION["price"];
-
+$vehicles = $_SESSION["vehicles"];
+$total = $_SESSION["totalAmount"];
 
 ?>

@@ -24,14 +24,9 @@ if (isset($_POST["LogIn"]))
 
 
     $results = getAdminByLoggin($user);
-<<<<<<< HEAD
-
-      if($results == true)
-=======
     $Check = $results;
 
       if($Check > 0)
->>>>>>> refs/remotes/origin/master
       {
         header('Location:   ../View/signup.php?error=userTaken');
         exit();

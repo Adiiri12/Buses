@@ -1,6 +1,6 @@
 <?php include_once "header.php" ?>
-<?php require "../Controller/Vehicle.php"?>
-<?php require "../Controller/basket.php"?>
+<?php require_once "../Controller/Vehicle.php"?>
+<?php require_once "../Controller/basket.php"?>
 
 <!DOCTYPE html>
 <html>
@@ -158,10 +158,8 @@
                                               <li class="list-group-item" name="nos">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
                                               <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
 													              			<form action="../Controller/basket.php" method="post">
-																								<li>
-																									<input value=<?=$vehicle->vehicleMake?> type="hidden" name="make">
-																									<input value=<?=$vehicle->hourlyPrice?> type="hidden" name="price">
-																									<input value=<?=$vehicle->links?> type="hidden" name="links">
+																								<li>																									
+																									<input value=<?=$vehicle->vehicle_id?> type="hidden" name="transferedId">
 																									<input value="Add To Basket" type="submit" class="btn btn-primary" name="submit" style="width:100%;">
 																								</li> 
 																							</form>

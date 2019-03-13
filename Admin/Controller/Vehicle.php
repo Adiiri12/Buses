@@ -49,7 +49,7 @@ if (!isset( $_SESSION['Admin_id']) || !isset($_SESSION['Admin_name'])) {
       $admin->links = htmlentities($links);
 
       AddNewVehicle($admin);
-     // $Vehicle = "$vehicleMake has been added";
+      $Vehicle = "$vehicleMake has been added";
       header('Location:   ../Controller/Vehicle.php?Vehicle'.$vehicleMake.'hasbeenadded');
       exit();
      }

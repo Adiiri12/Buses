@@ -1,6 +1,16 @@
 <?php
 $pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
+/*Customers data access */
+
+function getAllCustomers() {
+    global $pdo;
+    $statement = $pdo->prepare("SELECT * FROM Customer");
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Customer");
+    return $results;
+}
+
 /* Vehicle data Access */
 function getAllVehicles(){
     global $pdo;
@@ -132,7 +142,7 @@ function CheckVehicleExists($vehicleName,$vehicleType)
 
 /* Admin data Access */
 
-Function getAdminByLoggin($User)
+function getAdminByLoggin($User)
 {
     global $pdo;
     $statement = $pdo->prepare("SELECT * FROM admin WHERE username =? LIMIT 1");
@@ -141,7 +151,7 @@ Function getAdminByLoggin($User)
     return $results;
 }
 
-Function createAdminAccount($admin)
+function createAdminAccount($admin)
 {
     global $pdo;
     $statement = $pdo->prepare("INSERT INTO admin (email_address,username,user_password,admin_name)
@@ -161,7 +171,7 @@ Function checkUserExists($user)
 }
 */
 
-Function AddNewVehicle($admin)
+function AddNewVehicle($admin)
 {
     global $pdo;
     $statement = $pdo->prepare("INSERT INTO Vehicles (vehicleMake,vehicleType,numberOfSeats,licenceRequried,
@@ -172,7 +182,7 @@ Function AddNewVehicle($admin)
 
 
 }
-Function deleteVehicleById($id)
+function deleteVehicleById($id)
 
 {
     
@@ -182,7 +192,7 @@ Function deleteVehicleById($id)
     
 }
 
-Function updateVehicleById($vehicleMake,$vehicleType,$numberOfSeats,$licenceRequried
+function updateVehicleById($vehicleMake,$vehicleType,$numberOfSeats,$licenceRequried
                                                           ,$hourlyPrice,$links,$id)
 {
     global $pdo;
