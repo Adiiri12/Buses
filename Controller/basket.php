@@ -19,7 +19,6 @@ if(!isset($_SESSION["vehicles"])&& !isset($_SESSION["totalAmount"]))
 if(isset($_POST['submit'])) {
   $id = $_REQUEST["transferedId"];
   $currentResult =  getVehiclesByIdBasket($id);
-
   $_SESSION["vehicles"][] = $currentResult[0];
   $_SESSION["totalAmount"][] = $currentResult[0]->hourlyPrice;
   require_once "../View/Vehicle.php";

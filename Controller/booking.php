@@ -2,12 +2,21 @@
 require_once "../Model/dataAccess.php";
 require_once "../Model/Account.php";
 require_once "../Model/Booking.php";
+require_once "../Controller/basket.php";
 
-if(isset($_POST["placeOrder"])) {
+
+if(isset($_REQUEST["placeOrder"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
     $user = getUserByLogin($email);
     $_SESSION["book"]= [];
+    if(!isset($_SESSION["vehicles"])) {
+        echo "not set:(";
+    }
+    else {
+        $vehicles = $_SESSION["vehicles"];
+    }
+  
 
     if($user[0]->username == false)
     {
@@ -17,32 +26,34 @@ if(isset($_POST["placeOrder"])) {
     }      
     else
     {
-        $HashedPass = $user[0]->user_password;
-        $validpassword = password_verify($password, $HashedPass);
+      
+        $dbPassword = $user[0]->user_password;
 
-        if($validpassword)
-      {
-          $_SESSION['username'] = $user[0]->username;
-           header('Location:   ../View/checkoutAfterSignup.php?loginSuccess');
-
-       //    $vehicles = $_SESSION["vehicle"];
-
-       //    foreach ($vehicles as $vehicle) {
-           $booking = new Booking();
-           $booking->$booking_id = 0;
-           $booking->$customer_name = "test";//$user->accountId;
-           $booking->$driver_id = 0;
-           $booking->$vehicle_id = 0;//$vehicle->vehicle_id;
-           addBooking($booking);
-           $_SESSION["book"][] = $booking; 
-     //      }
+        if($password == $dbPassword) {
+          $validpassword = true;
+        }
+        else {
+          $validpassword = false;
+          require_once "../View/checkout.php";
           exit();
-      }
+        }
+       // $validpassword = password_verify($password, $HashedPass);
+        if($validpassword == true)
+      {
+       foreach($vehicles as $vehicle) {
+        $toDb = new Booking();
+        $toDb->customer_id = $user[0]->accountId;
+        $toDb->driver_id = 0;
+        $toDb->vehicle_id = $vehicle->vehicle_id;
+        addBooking($toDb);
+        
+       }
+       $_SESSION["vehicles"] = [];
+       $_SESSION["totalAmount"] = [];
+     }
 }
 
 $name = $user[0]->username;
-
-var_dump($_SESSION["book"][0]);
 require_once "../View/process.php";
 
 

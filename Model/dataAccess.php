@@ -13,8 +13,8 @@ function getVehiclesByIdBasket($id) {
 
 function addBooking($booking) {
     global $pdo;
-    $statement = $pdo->prepare("INSERT INTO Booking (booking_id, customer_name, driver_id, vehicle_id)   VALUES (?,?,?,?)");
-    $statement->execute([$booking->booking_id, $booking->customer_name, $booking->driver_id, $booking->vehicle_id]);
+    $statement = $pdo->prepare("INSERT INTO Booking ( customer_id, driver_id, vehicle_id)   VALUES (?,?,?)");
+    $statement->execute([ $booking->customer_id, $booking->driver_id, $booking->vehicle_id]);
 }
 
 /*Basket Data Access */
