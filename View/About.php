@@ -9,13 +9,10 @@
   <title>About us </title>
 </head>
 <body>
-<<<<<<< HEAD
 <div class="container my-4">
 <div class = "row">
 <div class = "col-md-6">
-=======
 <div class="container">
->>>>>>> b55d0fd0cc7db8a0c2f608d2bb7a617ab25f9f1d
 <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -60,7 +57,6 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
   <div class = "col-md-6">
   <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
@@ -70,8 +66,6 @@
 </div>
 <div>
 </div>
-=======
->>>>>>> b55d0fd0cc7db8a0c2f608d2bb7a617ab25f9f1d
 </div>
 </div>
 </body>

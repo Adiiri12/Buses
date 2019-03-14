@@ -66,7 +66,7 @@
               <input value="Clear Basket" type="submit" class="btn btn-primary" name="clear" style="background-color:#C14242;">
     </form>
     <br>
-    <a href="checkout.php"><button type="Submit" class="btn btn-danger wrn-btn" name="Checkout">Checkout</button></a>
+    <a href="../View/checkout.php"><button type="Submit" class="btn btn-danger wrn-btn" name="Checkout">Checkout</button></a>
     <?php endif ?>
 
 </div>
