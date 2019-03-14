@@ -22,7 +22,14 @@ html,body {
   body.modal-open {
     padding-right:0px !important;
 }
-  
+.modal {
+  overflow-y: auto;
+}
+
+.modal-open {
+  overflow: auto;
+}
+
   .form-signin {
     width: 100%;
     max-width: 330px;

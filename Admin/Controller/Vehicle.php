@@ -1,75 +1,70 @@
 <?php
-
 require_once "../Model/Vehicle.php";
 require_once "../Model/dataAccess.php";
 
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 
+$Vehicle =" ";
 
-if (!isset($_REQUEST["search"]))
-      {  
-      $results = getAllVehicles();
-          //echo "<br> IF statwement </br>";
-      }
-       else
-       {
-          $price = $_REQUEST["price"];
-          $numberOfPassengers = $_REQUEST["Passengers"];
-          $vehicleName = $_REQUEST["Vehicle"];
-          $licenceRequried = $_REQUEST["licenceRequried"];
-          $results = getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceRequried);
-         if($vehicleName == "" && $price == "" && $numberOfPassengers == "" && $licenceRequried == "")
-         {
-            $results = getAllVehicles();           // The user has everything to null
-         }
-         elseif($vehicleName != "" && $price == "" && $numberOfPassengers =="" && $licenceRequried == "" ) 
-         {
-           $results = getVehicleByModel($vehicleName); 
-         }
-         elseif($price !== "" && $vehicleName == "" && $numberOfPassengers == "" && $licenceRequried == "")
-        {
-           $results = getVehicleByPrice($price);
-        }
-         elseif($numberOfPassengers != "" && $vehicleName == "" && $price == "" && $licenceRequried == "")
-        {
-           $results = getVehiclebySeats($numberOfPassengers);
-        }
-       elseif($licenceRequried != "" && $vehicleName == "" && $price == "" && $numberOfPassengers == "")
-        {
-           $results = getVehicleByLicence($licenceRequried);
-        }
-       elseif($numberOfPassengers != "" && $price != "" && $vehicleName == "" && $licenceRequried == "" )
-        {
-           $results =  getVehicleByPriceAndSeats($price,$numberOfPassengers);
-        }
+if (!isset( $_SESSION['Admin_id']) || !isset($_SESSION['Admin_name'])) {
+  // Redirect them to the login page
+  header('Location:   ../View/Login.php?NotLoggedIn');
+  exit();
 
-        elseif($numberOfPassengers != "" && $vehicleName != "" && $price == "" && $licenceRequried == "" )
-        {
-            $results = getVehicleByModelAndSeats($vehicleName,$numberOfPassengers);
-        }
-        elseif($licenceRequried != "" && $price != "" && $vehicleName == "" && $numberOfPassengers == "")
-        {
-           $results = getVehicleByPriceAndLicence($price,$licenceRequried);
-        }
-        elseif($vehicleName != "" && $price != "" && $licenceRequried == "" && $numberOfPassengers == "")
-        {
-           $results = getVehicleByModelAndPrice($vehicleName,$price);
-        }
-        elseif($vehicleName != "" && $price != "" && $licenceRequried != "" && $numberOfPassengers == "")
-        {
-           $results = getVehicleByModelAndPriceAndLicenceRequried($vehicleName,$price,$licenceRequried);
-        }
-        elseif($vehicleName != "" && $price != "" && $numberOfPassengers != "" && $licenceRequried == "")
-        {
-           $results = getVehicleByModelAndPriceAndNumberOfPassengers($vehicleName,$price,$numberOfPassengers);
-        }
-        elseif($licenceRequried != "" && $price != "" && $numberOfPassengers != "" && $vehicleName == "")
-        {
-           $results = getVehicleByPriceAndNumberOfPassengersAndLicenceRequried($licenceRequried,$price,$numberOfPassengers);
-        }
+}  
 
-    }
-         
+ 
+  if (isset($_REQUEST["Submit"]))
+  {
+    $vehicleMake = $_REQUEST["vehicleMake"];
+    $vehicleType = $_REQUEST["vehicleType"];    
+    $numberOfSeats = $_REQUEST["numberOfSeats"];
+    $licenceRequried = $_REQUEST["licenceRequried"];
+    $hourlyPrice = $_REQUEST["hourlyPrice"];
+    $links = $_REQUEST["links"];
+ 
+    
 
+
+      $results = CheckVehicleExists($vehicleMake,$vehicleType);
+
+     if($results == true)
+     {
+      header('Location:   ../Controller/Vehicle.php?VehicleAlreadyExists');
+      exit();
+     }
+
+     else
+     {
+      $admin = new Vehicle();
+      $admin->vehicleMake = htmlentities($vehicleMake);
+      $admin->vehicleType = htmlentities($vehicleType);
+      $admin->numberOfSeats = htmlentities($numberOfSeats);
+      $admin->hourlyPrice = htmlentities($hourlyPrice);
+      $admin->licenceRequried = htmlentities($licenceRequried);
+      $admin->links = htmlentities($links);
+
+      AddNewVehicle($admin);
+      $Vehicle = "$vehicleMake has been added";
+      header('Location:   ../Controller/Vehicle.php?Vehicle'.$vehicleMake.'hasbeenadded');
+      exit();
+     }
+    
+     
+
+  }
+
+  
+      
+  
+     
+  $results = getAllVehicles();
+          
+      //echo "<br> IF statwement </br>";
+     
   require_once "../View/Vehicle.php";
 ?>

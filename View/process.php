@@ -1,4 +1,6 @@
 <?php include_once "header.php"?>
+<?php require_once "../Controller/booking.php"?>
+
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -66,9 +68,10 @@ function myFunction() {
   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
 </script>
- <center><h4 style="padding-top:60px; padding-bottom:10px">Thank you <span>Harry Smith,</span> your order is being processed</h4>
- <a href="Vehicle.php"><button type="button" style="margin-left:100px">Back to Browse</button></a>
- <a href="orders.php"><button type="button" style="margin-left:100px">Your Orders</button></a></center>
+
+ <center><h4 style="padding-top:60px; padding-bottom:10px">Thank you <span><?=$name?></span>, your order is being processed</h4>
+ <a href="../View/Vehicle.php"><button class="btn btn-success" >Back to Browse</button></a>
+ <a href="orders.php"><button class="btn btn-success">Your Orders</button></a></center>
    
 <?php include_once"footer.php" ?>
  

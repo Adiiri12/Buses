@@ -27,4 +27,7 @@ function newFunction() {
         startDate: date
     });
 }
+$('.btn-expand-collapse').click(function() {
+    $('.navbar-primary').toggleClass('collapsed');
+});
 
