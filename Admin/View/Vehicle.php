@@ -12,7 +12,7 @@ require_once "../View/index.php";
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  <link rel="stylesheet" href="../View/styles/styl4.css" class="stylesheet">
+  <link rel="stylesheet" href="../View/styles/style.css" class="stylesheet">
   <script type = "text/javascript" src = "..\js\Amain.js"></script>
  
   <title>Berwyn Buses | Vehicle</title>

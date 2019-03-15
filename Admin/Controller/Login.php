@@ -12,30 +12,7 @@ if (isset($_POST["LogIn"]))
     $Pass = $_POST["Pass"];
     $results = getAdminByLoggin($User);
     $message=" ";
- /*
-    if($results == false)
-    {
-        $message ="UserName/Password Incorrect";
-        header('Location:   ../View/Login.php?errorNoUserFound');
-        exit();
-    }
-        else{
-            $validpassword = password_verify($Pass, $results['user_password']);
 
-        if($validpassword)
-        {
-            $_SESSION['Admin_id'] = $results;
-            $_SESSION['Admin_name'] = $results->['admin_name'];
-            header('Location:   ../View/Index.php?loginSuccess');
-            exit();
-        }
-        else
-        {
-            header('Location:   ../View/Login.php?IncorrectPassword');
-            exit();
-        }
-      }
-      */
     if($results[0]->username == false)
     {
         $message ="UserName/Password Incorrect";
