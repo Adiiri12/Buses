@@ -16,16 +16,18 @@
    
  <div class="column1">
     <h3> Create an account</h3>
-       <label for="email"><b>Email</b></label>
-       <input type="text" placeholder="Enter Email" name="email" required><br>
-
-       <label for="username"><b>Username</b></label>
-       <input type="text" placeholder="Enter Username" name="username" required><br>
-
-       <label for="psw"><b>Password</b></label>
-       <input type="password" placeholder="Enter Password" name="psw" required><br>
-
-        <a href="../View/checkoutAfterSignup.php"><button class="btn btn-primary" type="button">Create an Account</button></a> 
+        <form action="../Controller/account.php" method="POST">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required><br>
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required><br>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required><br>
+            <label for="rpsw"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="rpsw" required><br>
+            <button class="btn btn-primary" type="submit">Create an Account</button>
+            <input name="submit" type="hidden" value="submit"/>
+        </form>
     <h3> Login</h3>
         <form action="../Controller/booking.php" method="Post">
             <input type="text" value = "Email" placeholer="Email" name = "email">

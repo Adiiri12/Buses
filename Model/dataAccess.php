@@ -154,8 +154,8 @@ function getUserByLogin($user)
 function addAccount($account)
 {
     global $pdo;
-    $statement = $pdo->prepare('INSERT INTO account
-        (email, username, user_password) VALUES (?,?,?)');
+    $statement = $pdo->prepare("INSERT INTO Account
+        (email, username, user_password) VALUES (?,?,?)");
     $statement->execute([$account->email,
                         $account->username,
                         $account->user_password]);
