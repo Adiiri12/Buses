@@ -67,4 +67,17 @@ $(document).ready(function(){
           
         });
     });
+
+
+
+
+     $("input#Make").keyup(function(event){
+
+      if(event.keyCode === 13)
+      {
+
+      $("button#ajaxsearchButton").click();
+      }
+
+     });
 });

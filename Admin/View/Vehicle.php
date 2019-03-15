@@ -2,8 +2,6 @@
 require_once "../Controller/Vehicle.php";
 require_once "../View/index.php";
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +13,8 @@ require_once "../View/index.php";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <link rel="stylesheet" href="../View/styles/styl4.css" class="stylesheet">
+  <script type = "text/javascript" src = "..\js\Amain.js"></script>
+ 
   <title>Berwyn Buses | Vehicle</title>
 </head>
 <head>
@@ -25,7 +25,6 @@ require_once "../View/index.php";
 
 </head>
 <body>
-<body class >
 <?php if($Vehicle != " "): ?>
 
   <span style="color:Green"><?=$Vehicle?></span>
@@ -64,14 +63,14 @@ require_once "../View/index.php";
         </button>
       </div>
       <div class="modal-body">
-      <form class="form-horizontal" role="form" action = "../Controller/Vehicle.php" method="POST" >
+     <!-- <form class="form-horizontal" role="form" action = "" method="post" id ="form"> -->
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
                               for="InputvehicleName">vehicleName</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" 
                         id="InputvehicleName" placeholder="vehicleName"
-                        name = "vehicleMake" requried/>
+                        name = "vehicleMake" required/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -109,8 +108,7 @@ require_once "../View/index.php";
                             id="InputhourlyPrice" placeholder="HourlyPrice"
                             name="hourlyPrice" required/>
                     </div>
-                  </div>
-                  <div class="form-group">
+                  </div><div class="form-group">
                     <label class="col-sm-2 control-label"
                           for="Inputlinks">Imagelinks</label>
                     <div class="col-sm-10">
@@ -119,20 +117,12 @@ require_once "../View/index.php";
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label"
-                          for="Inputlinks">Send to Customers?</label>
-                    <div class="col-sm-10">
-                        <input type="checkbox" value="send" class="form-control" >
-                    </div>
-                  </div>
-
                   <div class="form-group text-centre">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="Submit" name = "Submit" class="btn btn-primary">Add Vehicle</button>
+                      <button class="btn btn-primary" id ="Adds">Add Vehicle</button>
                     </div>
                   </div>
-                </form>
+              <!--  </form> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -152,7 +142,7 @@ require_once "../View/index.php";
                             <div class="card-body" style="padding-left: 5px;padding-right: 5px;padding-top: 8px;">
 							     <div class ="container">
 							        <div class ="row">
-                                    <table class="table" style = "table-layout: fixed;width: 100%;">
+                                    <table id = "Vehicle" class="table" style = "table-layout: fixed;width: 100%;">
                                         <thead class="thead-dark">
                                                 <tr>
                                                 <th scope="col">vehicleMake</th>
@@ -176,9 +166,11 @@ require_once "../View/index.php";
                                                <td><?=$vehicle->hourlyPrice?></td>
                                                <td><img src=<?=$vehicle->links?> height="50" width="50"></td>
                                                <td >
-                                               <a href="#edit_<?=$vehicle->vehicle_id?>" class="btn btn-success btn-sm" data-toggle="modal" ><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                               <a href="edit.php?id=<?=$vehicle->vehicle_id?>" class="btn btn-success btn-sm" ><span class="glyphicon glyphicon-edit"></span> Edit</a>
                                                </td>
-                                              <td><a href = "../Controller/delete.php?delete=<?=$vehicle->vehicle_id?>"><i class='fas fa-trash-alt' style='font-size:36px'></i></td>
+                                              <td>
+                                              <a onclick="return confirm('Are you sure you want to delete this entry?<?=$vehicle->vehicleMake?>')" href="../Controller/delete.php?delete=<?=$vehicle->vehicle_id?>" class='btn btn-danger btn-sm'>Delete</a>
+                                              </td>
                                           </tr>    
                                               <?php include "../View/editModal.php"; ?>
                                               <?php endforeach ?>

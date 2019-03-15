@@ -90,7 +90,7 @@
 							<input disabled id="date" data-provide="datapicker" class ="form-control" placeholder="Avaliabilty">
               </div>
 							<div class="col">
-                  <input type="text" class="form-control" placeholder="Vehicle" name="Make"/>
+                  <input type="text" class="form-control" placeholder="Vehicle" name="Make" id = "make"/>
                 </div>
 								<div class="col">
 									 <select name ="Cost" class="form-control search-slt" id="exampleFormControlSelect1">
