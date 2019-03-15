@@ -12,6 +12,6 @@ if(!isset($_REQUEST["Make"]))
 else
 {
     $make = $_REQUEST["Make"];
-    $results = getAllVehicles()
+    $results = getAllVehicles();
     echo json_encode($results);
 }

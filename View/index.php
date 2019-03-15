@@ -1,4 +1,5 @@
-<?php include_once "header.php" ?>
+<?php require_once "../Controller/promotions.php"?>
+<?php include_once "../View/header.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,6 +120,16 @@
     </a>
   </div>
 </div>
+
+  <div>
+  <ul>
+    <?php for($i = sizeof($results)-1; $i> sizeof($results)-4; $i-- ): ?>
+      <li><?= $results[$i]->vehicleMake ?></li>
+    <?php endfor ?>
+    </ul>
+  </div>
+
+
 
 <!-- CAROUSEL END!!-->
 </body>
