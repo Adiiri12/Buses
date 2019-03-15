@@ -12,7 +12,7 @@ require_once "../View/index.php";
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  <link rel="stylesheet" href="../View/styles/style.css" class="stylesheet">
+  <link rel="stylesheet" href="../View/styles/styl4.css" class="stylesheet">
   <script type = "text/javascript" src = "..\js\Amain.js"></script>
  
   <title>Berwyn Buses | Vehicle</title>
@@ -42,7 +42,7 @@ require_once "../View/index.php";
                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Vehicles</h5>
                        <div class="card-body">
                             <div class="form-row mb-3">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addVehicle">
                                          Add Vehicle
                             </button> 
                        </div>
@@ -53,7 +53,7 @@ require_once "../View/index.php";
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="addVehicle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -119,7 +119,7 @@ require_once "../View/index.php";
 
                   <div class="form-group text-centre">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button class="btn btn-primary" id ="Adds">Add Vehicle</button>
+                      <button class="btn btn-primary" id ="Adds" data-dismiss="modal">Add Vehicle</button>
                     </div>
                   </div>
               <!--  </form> -->
@@ -158,7 +158,7 @@ require_once "../View/index.php";
                                         </thead>
                                          <tbody>
                                          <?php foreach ($results as $vehicle) : ?>
-                                            <tr>
+                                            <tr id = "<?=$vehicle->vehicle_id?>">
                                                <td><?=$vehicle->vehicleMake?></td>
                                                <td><?=$vehicle->numberOfSeats?></td>
                                                <td><?=$vehicle->vehicleType?></td>
@@ -169,7 +169,7 @@ require_once "../View/index.php";
                                                <a href="edit.php?id=<?=$vehicle->vehicle_id?>" class="btn btn-success btn-sm" ><span class="glyphicon glyphicon-edit"></span> Edit</a>
                                                </td>
                                               <td>
-                                              <a onclick="return confirm('Are you sure you want to delete this entry?<?=$vehicle->vehicleMake?>')" href="../Controller/delete.php?delete=<?=$vehicle->vehicle_id?>" class='btn btn-danger btn-sm'>Delete</a>
+                                              <button id = "delete" class='btn btn-danger btn-sm'>Delete</button>
                                               </td>
                                           </tr>    
                                               <?php include "../View/editModal.php"; ?>
