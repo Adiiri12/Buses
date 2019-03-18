@@ -121,13 +121,46 @@
   </div>
 </div>
 
-  <div>
-  <ul>
-    <?php for($i = sizeof($results)-1; $i> sizeof($results)-4; $i-- ): ?>
-      <li><?= $results[$i]->vehicleMake ?></li>
-    <?php endfor ?>
-    </ul>
-  </div>
+<br>
+
+<div class="container">
+<div class="row my-4" >
+  <div class="col-md-12">
+		<div class="card" style="padding:0;" >
+       <h5 class="card-header bg-success text-white bg-dark border border-bginfo">New vehicles added recently...</h5>
+          <div class="card-body" id = "cardAjax">
+					  <div class ="container">
+							 <div class ="row">
+               <?php for($i = sizeof($results)-1; $i> sizeof($results)-4; $i-- ): ?>
+										<div class="card-deck col"  style ="padding-right:15px;padding-left:15px;">
+                      <div class="card mb-5" style="width:240px;">
+												<div class="card-header">
+													<?=$results[$i]->vehicleMake?>
+										    </div>
+                        <img class="card-img-top" style="height:180px" src="<?=$results[$i]->links?>" alt="Card image cap">
+										    <ul class="list-group list-group-flush" style=" list-style-type: none;">
+                          <li class="list-group-item" name="nos">NumberOfSeats: <?=$results[$i]->numberOfSeats?></li>
+                          <li class="list-group-item">Price: £<?=$results[$i]->hourlyPrice?></li>
+													<form action="../Controller/basket.php" method="post">
+														<li>																									
+															<input value=<?=$results[$i]->vehicle_id?> type="hidden" name="transferedId">
+															<input value="Add To Basket" type="submit" class="btn btn-primary" name="submit" style="width:100%;">
+														</li> 
+													</form>
+                        </ul>
+                       </div>
+											</div>
+                      <?php endfor ?>             
+							    </div>
+				        </div>
+				     </div>
+				  </div>
+		  </div>
+   </div>
+</div>
+</div>
+
+
 
 
 

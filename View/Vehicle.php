@@ -138,46 +138,40 @@
 <!-- Search Form -->
 
 
-
-			 <div class="row my-4" >
-				<div class="col-md-12">
-				  <div class="card" style="padding:0;" >
-                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">List Of Vehicles</h5>
-                            <div class="card-body" id = "cardAjax">
-							     <div class ="container">
-							        <div class ="row">
-								         <?php foreach ($results as $vehicle):?>
-														<div class="card-deck col"  style ="padding-right:15px;padding-left:15px;">
-                                                            <div class="card mb-5" style="width:240px;">
-																												
-										                         <div class="card-header">
-																     <?=$vehicle->vehicleMake?>
-										                        </div>
-                                              <img class="card-img-top" style="height:180px" src="<?=$vehicle->links?>" alt="Card image cap">
-										                        <ul class="list-group list-group-flush" style=" list-style-type: none;">
-                                              <li class="list-group-item" name="nos">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
-                                              <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
-													              			<form action="../Controller/basket.php" method="post">
-																								<li>																									
-																									<input value=<?=$vehicle->vehicle_id?> type="hidden" name="transferedId">
-																									<input value="Add To Basket" type="submit" class="btn btn-primary" name="submit" style="width:100%;">
-																								</li> 
-																							</form>
-                                            </ul>
-                                                            </div>
-														</div>
-										                 <?php endforeach ?>     
-						               
-							         </div>
-				                 </div>
-				              </div>
-							</div>
-					 </div>
-		         </div>
-			</div>
-
-
-
+<div class="row my-4" >
+  <div class="col-md-12">
+		<div class="card" style="padding:0;" >
+       <h5 class="card-header bg-success text-white bg-dark border border-bginfo">List Of Vehicles</h5>
+          <div class="card-body" id = "cardAjax">
+					  <div class ="container">
+							 <div class ="row">
+							 <?php foreach ($results as $vehicle):?>
+										<div class="card-deck col"  style ="padding-right:15px;padding-left:15px;">
+                      <div class="card mb-5" style="width:240px;">
+												<div class="card-header">
+												<?=$vehicle->vehicleMake?>
+										    </div>
+                        <img class="card-img-top" style="height:180px" src="<?=$vehicle->links?>" alt="Card image cap">
+										    <ul class="list-group list-group-flush" style=" list-style-type: none;">
+                          <li class="list-group-item" name="nos">NumberOfSeats: <?=$vehicle->numberOfSeats?></li>
+                          <li class="list-group-item">Price: £<?=$vehicle->hourlyPrice?></li>
+													<form action="../Controller/basket.php" method="post">
+														<li>																									
+															<input value=<?=$vehicle->vehicle_id?> type="hidden" name="transferedId">
+															<input value="Add To Basket" type="submit" class="btn btn-primary" name="submit" style="width:100%;">
+														</li> 
+													</form>
+                        </ul>
+                       </div>
+											</div>
+                      <?php endforeach ?>             
+							    </div>
+				        </div>
+				     </div>
+				  </div>
+		  </div>
+   </div>
+</div>
          
 </main>
 
