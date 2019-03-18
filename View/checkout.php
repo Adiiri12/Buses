@@ -25,6 +25,9 @@
             <input type="password" placeholder="Enter Password" name="psw" required><br>
             <label for="rpsw"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="rpsw" required><br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
             <button class="btn btn-primary" type="submit">Create an Account</button>
             <input name="submit" type="hidden" value="submit"/>
         </form>
@@ -32,7 +35,10 @@
         <form action="../Controller/booking.php" method="Post">
             <input type="text" value = "Email" placeholer="Email" name = "email">
             <input type="password" value = "Password" name="password">
-            <button type="submit" class="btn btn-primary" value="Place order" name = "placeOrder">Place Order</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+            <button type="submit" class="btn btn-primary" value="placeOrder" name = "placeOrder">Place Order</button>
         </form>
 
 </div>

@@ -20,12 +20,11 @@
         }
         else
         {
-        $passwordHash = password_hash($user_password, PASSWORD_DEFAULT);
-
+       
         $account = new Account();
         $account->email = htmlentities($email);
         $account->username = htmlentities($username);
-        $account->user_password = htmlentities($passwordHash); 
+        $account->user_password = htmlentities($user_password); 
 
         addAccount($account);
         $status = true;
@@ -34,4 +33,14 @@
     }   
 
     require_once ("../View/checkout.php");
+ 
+    if(!empty($_POST["remember"])) {
+        setcookie ("username",$_POST["username"],time()+ 3600);
+        setcookie ("psw",$_POST["psw"],time()+ 3600);
+        echo "Cookies Set Successfuly";
+    } else {
+        setcookie("username","");
+        setcookie("psw","");
+        echo "Cookies Not Set";
+    }
 ?>
