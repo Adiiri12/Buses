@@ -19,6 +19,7 @@ $(document).ready(function(){
                     window.location = "../View/Vehicle.php";
                 
                 }
+                
         });
   });
 });

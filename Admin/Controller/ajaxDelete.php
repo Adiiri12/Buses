@@ -15,4 +15,12 @@ if (isset($_GET["id"]))
 
 }
 
+if(isset($_GET["Id"]))
+{
+    $id = $_GET["Id"];
+    $results = promotionDeleteVehicleById($id);
+    echo json_encode($results);
+
+}
+
 
