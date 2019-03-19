@@ -1,4 +1,3 @@
-
 <?php
 $pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
@@ -11,10 +10,10 @@ function getAllVehicles(){
     return $results;
 }
 
-function getVehiclesByID(){
+function getVehiclesByID($id){
     global $pdo;
-    $statement =$pdo->prepare("SELECT * FROM Vehicles");
-    $statement->execute();
+    $statement =$pdo->prepare("SELECT * FROM Vehicles WHERE vehicle_id = ?");
+    $statement->execute([$id]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
 }
@@ -37,7 +36,12 @@ function getVehicleByPrice($price)
 }
 function getVehicleByModel($vehicleName)
 {  
- 
+
+  if($vehicleName = "")
+  {
+    $results = getAllVehicles();
+    return $results;
+  }
     global $pdo;  
     $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE vehicleMake = ?");
     $statement->execute([$vehicleName]);
@@ -120,6 +124,15 @@ function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceR
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
 }
+function CheckVehicleExists($vehicleName,$vehicleType)
+{
+    global $pdo;  
+    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND vehicleType = ?");
+    $statement->execute([$vehicleName,$vehicleType]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results;
+}
+
 /* Vehicle data Access */
 
 /* Admin data Access */
@@ -141,29 +154,79 @@ Function createAdminAccount($admin)
     $statement->execute([$admin->email_address,$admin->username,$admin->user_password,$admin->admin_name]);
 
 }
-
-/* Function checkUserExists($user)
- {
-     global $pdo;
-     $statement = $pdo->prepare("SELECT * FROM admin WHERE username =?");
-     $statement->execute([$user]);
-     $results = $statement->fetch(PDO::FETCH_ASSOC);
-     return $results;
+ 
+/*
+Function checkUserExists($user)
+{
+    global $pdo;
+    $statement = $pdo->prepare("SELECT * FROM admin WHERE username =?");
+    $statement->execute([$user]);
+    $results = $statement->fetch(PDO::FETCH_ASSOC);
+    return $results;
 }
 */
-
-
-
-
 
 Function AddNewVehicle($admin)
 {
     global $pdo;
-    $statement = $pdo->prepare("INSERT INTO Vehicles (vehicleMake,numberOfSeats,vehicleType,licenceRequried
+    $statement = $pdo->prepare("INSERT INTO Vehicles (vehicleMake,vehicleType,numberOfSeats,licenceRequried,
                                                       hourlyPrice,links)
                                                      VALUES (?,?,?,?,?,?)");
-    $statement->execute([$admin->vehicleMake,$admin->numberOfSeats,$admin->vehicleType,$admin->licenceRequried,
+    $statement->execute([$admin->vehicleMake,$admin->vehicleType,$admin->numberOfSeats,$admin->licenceRequried,
                          $admin->hourlyPrice,$admin->links]);
 
 
 }
+Function deleteVehicleById($id)
+
+{
+    
+        global $pdo;
+        $statement = $pdo->prepare("DELETE FROM Vehicles WHERE vehicle_id =?");
+        $statement->execute([$id]);
+    
+}
+
+Function updateVehicleById($vehicleMake,$vehicleType,$numberOfSeats,$licenceRequried
+                                                          ,$hourlyPrice,$links,$id)
+{
+    global $pdo;
+    $statement = $pdo->prepare("UPDATE Vehicles SET vehicleMake =?, vehicleType =?,numberOfSeats =?,
+                                licenceRequried =?, hourlyPrice =?, links=? WHERE vehicle_id =?");
+    $statement->execute([$vehicleMake,$vehicleType,$numberOfSeats,$licenceRequried
+                                                        ,$hourlyPrice,$links,$id]);
+
+   
+}
+function showPromotion()
+{
+    global $pdo;
+    $statement = $pdo->prepare("SELECT Promotions.promotion_id as promotion_id , Promotions.vehicle_id As vehicle_id,
+                                 Promotions.promotionDate as promotionDate , Promotions.promotionExpiryDate As promotionExpiryDate,
+                                  Vehicles.vehicleMake as Make,Vehicles.vehicleType as Vehicle_type , Vehicles.links As Vehicle_link ,
+                                 Vehicles.hourlyPrice as price FROM Promotions INNER JOIN Vehicles on Promotions.vehicle_id =  Vehicles.vehicle_id");
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Promotion");
+    return $results;
+}
+
+function addPromotion($promotion){
+
+    global $pdo;
+    $statement = $pdo->prepare("INSERT INTO Promotions (vehicle_id,promotionDate,promotionExpiryDate)
+                                                     VALUES (?,?,?)");
+    $statement->execute([$promotion->vehicle_id,$promotion->promotionDate,$promotion->promotionExpiryDate]);
+
+}
+  
+Function promotionDeleteVehicleById($id)
+
+{
+    
+        global $pdo;
+        $statement = $pdo->prepare("DELETE FROM Promotions WHERE promotion_id =?");
+        $statement->execute([$id]);
+    
+}
+
+

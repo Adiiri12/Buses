@@ -4,7 +4,6 @@
         private $customer_name;
         private $driver_id;
         private $vehicle_id;
-        private $email;
 
      //   private $bookingDate;
      //   private $bookingReturn;

@@ -49,8 +49,7 @@ if (isset($_POST["LogIn"]))
       $admin->admin_name = htmlentities($name);
 
       createAdminAccount($admin);
-      header('Location:   ../View/Login.php?successAccountCreated');
-      $message = "$name has been added";
+      header('Location:   ../View/Login.php?successAccounthasbeen'.$user.'Created');
     }
 }
 

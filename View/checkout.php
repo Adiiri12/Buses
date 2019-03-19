@@ -1,5 +1,5 @@
 <?php include_once "header.php"?>
-<?php require "../Controller/basket.php"?>
+<?php require_once "../Controller/basket.php"?>
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -13,22 +13,48 @@
  <body>
  <h2>CHECKOUT</h2>
  <br>
-    <h3> Create an account or Login</h3>
+   
  <div class="column1">
+    <h3> Create an account</h3>
+        <form action="../Controller/account.php" method="POST">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required><br>
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required><br>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required><br>
+            <label for="rpsw"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="rpsw" required><br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+            <button class="btn btn-primary" type="submit">Create an Account</button>
+            <input name="submit" type="hidden" value="submit"/>
+        </form>
+    <h3> Login</h3>
+        <form action="../Controller/booking.php" method="Post">
+            <input type="text" value = "Email" placeholer="Email" name = "email">
+            <input type="password" value = "Password" name="password">
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+            <button type="submit" class="btn btn-primary" value="Place Order" name = "placeOrder">Place Order</button>
+        </form>
 
-         <a href="createAccount.php"><button class="btn btn-primary" type="button">Create an Account</button></a> 
-         <a href="Login.php"><button class="btn btn-primary" type="button">Login</button></a> 
-     </div>
+</div>
+
+
    <div class="column2">
     <h3>In your Basket...</h3>
          <div class="scroll">
-         <?php for ($y = 0; $y <count($make); $y=$y+2):?>
-             <img src="<?= $links[$y] ?>" alt="Image of booked Vehicle"style="width:200px;height:200px;">
-             <p><?=$make[$y]?> : £<?= $price[$y] ?> </p>
-         <?php endfor ?>  
+         <?php foreach ($vehicles as $vehicle):?>
+             <img src="<?= $vehicle->links ?>" alt="Image of booked Vehicle"style="width:200px;height:200px;">
+             <p><?=$vehicle->vehicleMake?> : £<?= $vehicle->hourlyPrice ?> </p>
+         <?php endforeach ?>  
          </div>
-         <h5> Total: £<?= array_sum($price) / 2?></h5>
+         <h5> Total: £<?= array_sum($total)?></h5>
      </div>
+     <br>
 <?php include_once"footer.php" ?>
  
  </body>

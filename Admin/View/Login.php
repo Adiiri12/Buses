@@ -13,6 +13,9 @@
 </head>
 <body class="text-center">
     <form class="form-signin" method="Post" action ="../Controller/Login.php">
+    <? php: if($message != " ") : ?>
+     
+     <span style = "Colour "
       <h1 class="h3 mb-3 font-weight-normal">Admin Sign In</h1>
       <label for="UserName" class="sr-only">username</label>
       <input type="text" id="UserName" name = "User" class="form-control" placeholder="UserName" required >

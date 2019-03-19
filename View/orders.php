@@ -14,7 +14,7 @@
  <h2>Orders</h2>
 
  <center><h4 style="padding-top:60px; padding-bottom:10px">A list of your orders are below</h4>
- <a href="Vehicle.php"><button type="button" style="margin-left:100px">Back to Browse</button></a></center>
+ <a href="../View/Vehicle.php"><button class="btn btn-success">Back to Browse</button></a></center>
    
 <?php include_once"footer.php" ?>
  

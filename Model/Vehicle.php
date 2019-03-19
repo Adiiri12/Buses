@@ -1,6 +1,7 @@
 <?php
-    class Vehicle {
-        private $id;
+    class Vehicle implements JsonSerializable {
+
+        private $vehicle_id;
         private $vehicleMake;
         private $numberOfSeats;
         private $vehicleType;
@@ -15,5 +16,9 @@
             $this->$name = $value;
         }
         
+        public function jsonSerialize()
+        {
+            return get_object_vars($this);
+        }
     }
 ?>

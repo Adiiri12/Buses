@@ -17,7 +17,7 @@ if (!isset( $_SESSION['Admin_id']) || !isset($_SESSION['Admin_name'])) {
 
 else
 {
-    $message = "Welcome ".$_SESSION['Admin_name'];
+    $message = "Welcome Admin ".$_SESSION['Admin_name'];
 }
 require_once "../View/index.php";
 ?>
