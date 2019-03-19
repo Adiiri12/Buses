@@ -71,7 +71,7 @@ function myFunction() {
 
  <center><h4 style="padding-top:60px; padding-bottom:10px">Thank you <span><?=$name?></span>, your order is being processed</h4>
  <a href="../View/Vehicle.php"><button class="btn btn-success" >Back to Browse</button></a>
- <a href="orders.php"><button class="btn btn-success">Your Orders</button></a></center>
+ <a href="../View/orders.php"><button class="btn btn-success">Your Orders</button></a></center>
    
 <?php include_once"footer.php" ?>
  

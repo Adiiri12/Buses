@@ -34,13 +34,14 @@
 
     require_once ("../View/checkout.php");
  
+    /*
     if(!empty($_POST["remember"])) {
         setcookie ("username",$_POST["username"],time()+ 3600);
         setcookie ("psw",$_POST["psw"],time()+ 3600);
-        echo "Cookies Set Successfuly";
+        echo "Cookies Set Successfuly"
     } else {
         setcookie("username","");
         setcookie("psw","");
         echo "Cookies Not Set";
-    }
+    }*/
 ?>
