@@ -16,7 +16,7 @@ if(!isset($_SESSION["vehicles"])&& !isset($_SESSION["totalAmount"]))
    $total = [];
 
 }
-if(isset($_POST['submit'])) {
+if(isset($_POST['addVehicleToBasket'])) {
   $id = $_REQUEST["transferedId"];
   $currentResult =  getVehiclesByIdBasket($id);
   $_SESSION["vehicles"][] = $currentResult[0];

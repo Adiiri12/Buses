@@ -158,7 +158,7 @@
 													<form action="../Controller/basket.php" method="post">
 														<li>																									
 															<input value=<?=$vehicle->vehicle_id?> type="hidden" name="transferedId">
-															<input value="Add To Basket" type="submit" class="btn btn-primary" name="submit" style="width:100%;">
+															<input value="Add To Basket" type="submit" class="btn btn-primary" name="addVehicleToBasket" style="width:100%;">
 														</li> 
 													</form>
                         </ul>

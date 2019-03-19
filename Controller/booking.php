@@ -11,7 +11,6 @@ if(isset($_REQUEST["placeOrder"])) {
     $user = getUserByLogin($email);
     $_SESSION["book"]= [];
     if(!isset($_SESSION["vehicles"])) {
-        echo "not set:(";
     }
     else {
         $vehicles = $_SESSION["vehicles"];
@@ -46,7 +45,6 @@ if(isset($_REQUEST["placeOrder"])) {
         $toDb->driver_id = 0;
         $toDb->vehicle_id = $vehicle->vehicle_id;
         addBooking($toDb);
-        
        }
        $_SESSION["vehicles"] = [];
        $_SESSION["totalAmount"] = [];
