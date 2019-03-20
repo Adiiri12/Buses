@@ -213,7 +213,7 @@ function showPromotion()
 function addPromotion($promotion){
 
     global $pdo;
-    $statement = $pdo->prepare("INSERT INTO promotions (vehicle_id,promotionDate,promotionExpiryDate)
+    $statement = $pdo->prepare("INSERT INTO Promotions (vehicle_id,promotionDate,promotionExpiryDate)
                                                      VALUES (?,?,?)");
     $statement->execute([$promotion->vehicle_id,$promotion->promotionDate,$promotion->promotionExpiryDate]);
 
@@ -223,7 +223,7 @@ function promotionDeleteVehicleById($id) {
     
         //echo("jghkl;jhk");
         global $pdo;
-        $statement = $pdo->prepare("DELETE FROM promotions WHERE vehicle_id =?");
+        $statement = $pdo->prepare("DELETE FROM Promotions WHERE vehicle_id =?");
         return $statement->execute([$id]);
     
 }
