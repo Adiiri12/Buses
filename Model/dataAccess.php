@@ -13,8 +13,8 @@ function getVehiclesByIdBasket($id) {
 
 function addBooking($booking) {
     global $pdo;
-    $statement = $pdo->prepare("INSERT INTO Booking ( customer_id, driver_id, vehicle_id)   VALUES (?,?,?)");
-    $statement->execute([ $booking->customer_id, $booking->driver_id, $booking->vehicle_id]);
+    $statement = $pdo->prepare("INSERT INTO Booking ( customer_id, driver_id, vehicle_id, dateFrom, dateTo)   VALUES (?,?,?,?,?)");
+    $statement->execute([ $booking->customer_id, $booking->driver_id, $booking->vehicle_id, $booking->dateFrom, $booking->dateTo]);
 }
 
 /*Basket Data Access */
@@ -163,3 +163,17 @@ function addAccount($account)
 
 
 /* Account data access */ 
+/* Promotion data access */
+
+
+function showPromotion()
+{
+    global $pdo;
+    $statement = $pdo->prepare("SELECT Promotions.promotion_id as promotion_id , Promotions.vehicle_id As vehicle_id,
+                                 Promotions.promotionDate as promotionDate , Promotions.promotionExpiryDate As promotionExpiryDate,
+                                  Vehicles.vehicleMake as Make,Vehicles.vehicleType as Vehicle_type , Vehicles.links As Vehicle_link ,
+                                 Vehicles.hourlyPrice as price FROM Promotions INNER JOIN Vehicles on Promotions.vehicle_id =  Vehicles.vehicle_id");
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Promotion");
+    return $results;
+}

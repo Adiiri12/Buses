@@ -44,10 +44,15 @@ if(isset($_REQUEST["placeOrder"])) {
         $toDb->customer_id = $user[0]->accountId;
         $toDb->driver_id = 0;
         $toDb->vehicle_id = $vehicle->vehicle_id;
+        $toDb->dateFrom = $_SESSION["dateFrom"][0];
+        $toDb->dateTo = $_SESSION["dateTo"][0];
+        
         addBooking($toDb);
        }
        $_SESSION["vehicles"] = [];
        $_SESSION["totalAmount"] = [];
+       $_SESSION["dateFrom"] = [];
+       $_SESSION["dateTo"] = [];
      }
 }
 
