@@ -4,9 +4,8 @@
         private $customer_name;
         private $driver_id;
         private $vehicle_id;
-
-     //   private $bookingDate;
-     //   private $bookingReturn;
+        private $dateFrom;
+        private $dateTo;
 
         function __get($name) {
             return $this->$name;

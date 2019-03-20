@@ -10,10 +10,14 @@ if(!isset($_SESSION)){
 if(!isset($_SESSION["vehicles"])&& !isset($_SESSION["totalAmount"])) 
 { 
    $_SESSION["totalAmount"] =[];
+   $_SESSION["dateFrom"] =[];
+   $_SESSION["dateTo"] = [];   
    $_SESSION["vehicles"] = [];   
    $id;
    $vehicles = [];
    $total = [];
+   $dateFrom = [];
+   $dateTo = [];
 
 }
 if(isset($_POST['addVehicleToBasket'])) {
@@ -37,6 +41,15 @@ if(isset($_POST['remove'])) {
   $vehicles = $_SESSION["vehicles"];
   $total = $_SESSION["totalAmount"];
   require_once "../View/basket.php";
+}
+if(isset($_POST['checkout'])) {
+  $_SESSION["dateFrom"][] = $_REQUEST["dateFrom"];
+  $_SESSION["dateTo"][] = $_REQUEST["dateTo"];
+  $dateFrom = $_SESSION["dateFrom"];
+  $dateTo = $_SESSION["dateTo"];
+  $vehicles = $_SESSION["vehicles"];
+  $total = $_SESSION["totalAmount"];
+  require_once "../View/checkout.php";
 }
 
 $vehicles = $_SESSION["vehicles"];
