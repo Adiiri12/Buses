@@ -11,7 +11,7 @@
 	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<script type = "text/javascript" src = "..\js\main.js"></script>
+	<script type = "text/javascript" src = "../View/js/main.js"></script>
   <title>Berwyn Buses | Vehicle</title>
 </head>
 <head>
