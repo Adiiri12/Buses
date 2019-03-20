@@ -51,7 +51,7 @@ if (isset($_POST["LogIn"]))
         {
             $_SESSION['Admin_id'] = $results[0]->username;
             $_SESSION['Admin_name'] = $results[0]->admin_name;
-             header('Location:   ../View/Index.php?loginSuccess');
+             header('Location:   ../View/index.php?loginSuccess');
             exit();
         }
         else
