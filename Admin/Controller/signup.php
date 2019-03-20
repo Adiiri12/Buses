@@ -24,9 +24,8 @@ if (isset($_POST["LogIn"]))
 
 
     $results = getAdminByLoggin($user);
-    $Check = $results;
 
-      if($Check > 0)
+      if($results == true)
       {
         header('Location:   ../View/signup.php?error=userTaken');
         exit();

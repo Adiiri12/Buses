@@ -4,14 +4,16 @@ require_once "../Model/Vehicle.php";
 require_once "../Model/dataAccess.php";
 
 
-if(!isset($_REQUEST["Make"]))
+if(isset($_REQUEST["Make"]))
 {
-    echo json_encode([]);
+    $make = $_REQUEST["Make"];
+    $results = getAllVehicles();
+    echo json_encode($results);
 }
 
 else
 {
-    $make = $_REQUEST["Make"];
+    
     $results = getAllVehicles();
     echo json_encode($results);
 }

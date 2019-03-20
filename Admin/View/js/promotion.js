@@ -105,10 +105,9 @@ $(document).ready(function(){
         var id = $(this).parents("tr").attr("id");
         console.log(id);
         //var makes = $("")
-        var confirm = confirm('Are you sure to remove this vehicle ');
-        console.log(confirm);
-            if(confirm){
-                $.get("../Controller/ajaxDelete.php?Id="+id,function(result)
+    
+            if(confirm('Are you sure to remove this vehicle ')){
+                $.get("../Controller/ajaxDelete.php?Promotionid="+id,function(result)
                 {
                     $("#"+id).remove();
                     //alert("Record removed successfully");  

@@ -18,7 +18,7 @@ require_once "../View/index.php";
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
     <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js" type="text/javascript"></script>    
-  <link rel="stylesheet" href="../View/styles/styl4.css" class="stylesheet">
+    <link rel="stylesheet" href="../View/styles/Style.css" class="stylesheet">
   <script type = "text/javascript" src = "../View/js/promotion.js"></script>
  hello
   <title>Admin | Promotion</title>

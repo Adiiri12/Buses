@@ -3,6 +3,7 @@ header('Content-Type: application/json');
 require_once "../Model/dataAccess.php";
 require_once "../Model/Vehicle.php";
 
+
 session_start(); 
 
 
@@ -15,10 +16,12 @@ if (isset($_GET["id"]))
 
 }
 
-if(isset($_GET["Id"]))
+if(isset($_GET["Promotionid"]))
 {
-    $id = $_GET["Id"];
+    $id = $_GET["Promotionid"];
+  
     $results = promotionDeleteVehicleById($id);
+    
     echo json_encode($results);
 
 }
