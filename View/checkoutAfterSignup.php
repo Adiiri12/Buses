@@ -1,6 +1,5 @@
 <?php include_once "header.php"?>
 <?php require_once "../Controller/basket.php"?>
-<?php require_once "../Controller/booking.php"?>
 
  <!DOCTYPE html>
  <html lang="en">

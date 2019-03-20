@@ -38,7 +38,7 @@
             <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
             </label>
-            <button type="submit" class="btn btn-primary" value="placeOrder" name = "placeOrder">Place Order</button>
+            <button type="submit" class="btn btn-primary" value="Place Order" name = "placeOrder">Place Order</button>
         </form>
 
 </div>
