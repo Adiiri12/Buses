@@ -19,7 +19,7 @@ require_once "../View/index.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
     <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js" type="text/javascript"></script>    
   <link rel="stylesheet" href="../View/styles/styl4.css" class="stylesheet">
-  <script type = "text/javascript" src = "..\js\promotion.js"></script>
+  <script type = "text/javascript" src = "../View/js/promotion.js"></script>
  hello
   <title>Admin | Promotion</title>
 </head>
