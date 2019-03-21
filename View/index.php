@@ -36,17 +36,17 @@
                        <div class="card-body">
 											 <form action="../Controller/Vehicle.php" method="get">
                             <div class="form-row mb-3">
-							  <div class = "col">
+							  <div class = "form-group col-lg-2 col-md-4 col-sm-6">
 							    <input type="text" class="controls form-control" placeholder="Date" name = "ReleaseDate" id ="datepicker1" />
 								</div>
-								<div class = "col">
+								<div class = "form-group col-lg-2 col-md-4 col-sm-6">
 								<input type="text" class="controls form-control" placeholder="Date" name = "ExpiryDate" id = "datepicker2" />
 								</div>
 								
-                                <div class="col">
+                                <div class="form-group col-lg-2 col-md-4 col-sm-6">
                                  <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" >
                                   </div>
-                                   <div class="col">
+                                   <div class="form-group col-lg-2 col-md-4 col-sm-6">
 									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1" >
 										   <option value ="">Price</option>
 										   <option value ="15">£15</option>
@@ -59,7 +59,7 @@
 										   <option value ="80">£80</option>
 									   </select>
 									</div>
-								 <div class="col">
+								 <div class="form-group col-lg-2 col-md-4 col-sm-6">
 								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1" >
 										   <option value ="">Passengers</option>
 										   <option value ="15">15</option>
@@ -72,7 +72,7 @@
 										   <option value ="80">80</option>
 									   </select>
                                  </div>
-								 <div class ="col">
+								 <div class ="form-group col-lg-2 col-md-4 col-sm-6">
 								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1" >
 								           <option value ="">LicenceRequried</option>
 										   <option value ="D1">MiniBus(D1)</option>
