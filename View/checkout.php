@@ -35,9 +35,6 @@
         <form action="../Controller/booking.php" method="Post">
             <input type="text" value = "Email" placeholer="Email" name = "email">
             <input type="password" value = "Password" name="password">
-            <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>
             <button type="submit" class="btn btn-primary" value="Place Order" name = "placeOrder">Place Order</button>
         </form>
 
@@ -55,7 +52,7 @@
          <h5> Total: £<?= array_sum($total)?></h5>
      </div>
      <br>
-<?php include_once"footer.php" ?>
+
  
  </body>
  </html>

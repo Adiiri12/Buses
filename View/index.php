@@ -16,8 +16,12 @@
   <title>Berwyn Buses | Home</title>
 </head>
 <body>
-			 
+<br>			 
 
+<h1 class="d-flex justify-content-center">Welcome to Berwyn Buses</h1>
+<h3 class="d-flex justify-content-center">Use the search form below to look for your ideal vehicle, or browse current promotions and the newest vehicles!</h3>
+
+<br>
 
 
   
@@ -142,6 +146,7 @@
           <div class="card-body" id = "cardAjax">
 					  <div class ="container">
 							 <div class ="row">
+							 <?php if(sizeof($results)>0) ?>
                <?php for($i = sizeof($results)-1; $i> sizeof($results)-4; $i-- ): ?>
 										<div class="card-deck col"  style ="padding-right:15px;padding-left:15px;">
                       <div class="card mb-5" style="width:240px;">
