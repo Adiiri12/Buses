@@ -63,8 +63,11 @@
     <br>
     <form action="../Controller/basket.php" method="post">
     <!--TODO: Use js to make min date today-->
+    <!--TODO: Make Return Date greater than date required-->
+    <h5>Date Required:</h5>
      <input type="date" class="controls form-control" placeholder="Date" name = "dateFrom" min="2019-01-01" required/>
      <br>
+     <h5>Return Date:</h5>
      <input type="date" class="controls form-control" placeholder="Date" name = "dateTo" required/>
      <br>
      <a href="../View/checkout.php"><button type="Submit" class="btn btn-danger wrn-btn" name="checkout">Checkout</button></a>
