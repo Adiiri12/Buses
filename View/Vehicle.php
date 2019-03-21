@@ -40,16 +40,16 @@
                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Vehicles</h5>
                        <div class="card-body">
 							<div class="form-row mb-3">
-							<div class = "col">
+							<div class = "form-group col-lg-2 col-md-4 col-sm-6">
 							    <input type="text" class="controls form-control" placeholder="Date" name = "RDate" id ="datepicker1" />
 								</div>
-								<div class = "col">
+								<div class = "form-group col-lg-2 col-md-4 col-sm-6">
 								<input type="text" class="controls form-control" placeholder="Date" name = "EDate" id = "datepicker2" />
 								</div>
-							<div class="col">
+							<div class="form-group col-lg-2 col-md-4 col-sm-6">
                   <input type="text" class="form-control" placeholder="Vehicle" name="Make" id = "make" />
                 </div>
-								<div class="col">
+								<div class="form-group col-lg-2 col-md-4 col-sm-6">
 									 <select name ="Cost" class="form-control search-slt" id="exampleFormControlSelect1" >
 										   <option value ="">Price</option>
 										   <option value ="15">£15</option>
@@ -62,7 +62,7 @@
 										   <option value ="80">£80</option>
 									   </select>
 									</div>
-									<div class="col">
+									<div class="form-group col-lg-2 col-md-4 col-sm-6">
 								 <select name = "Pass" class="form-control search-slt" id="exampleFormControlSelect1" >
 										   <option value ="">Passengers</option>
 										   <option value ="15">15</option>
@@ -75,7 +75,7 @@
 										   <option value ="80">80</option>
 									   </select>
                    </div>
-									 <div class ="col">
+									 <div class ="form-group col-lg-2 col-md-4 col-sm-6">
 								   <select name ="licence" class ="form-control search-slt" id="exampleFormControlSelect1" >
 								           <option value ="">LicenceRequried</option>
 										   <option value ="D1">MiniBus(D1)</option>
@@ -84,7 +84,7 @@
 								</div>
 								</div>
 								<div  class = "form-row ">
-								<div class = "col-sm-2">
+								<div class = "col-lg-2 col-md-4 col-sm-6">
 								  <button type = "submit" id = "ajaxsearchButton" class = "btn btn-primary btn-md">Search</button>
 								</div>
 								</div>
