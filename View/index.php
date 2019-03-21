@@ -106,6 +106,7 @@
           <div class="card-body" id = "cardAjax">
 					  <div class ="container">
 							 <div class ="row">
+							 <?php if(sizeof($promotion > 3)): ?>
                <?php for($i = sizeof($promotion)-1; $i> sizeof($promotion)-4; $i-- ): ?>
 										<div class="card-deck col"  style ="padding-right:15px;padding-left:15px;">
                       <div class="card mb-5" style="width:240px;">
@@ -127,6 +128,8 @@
                        </div>
 											</div>
                       <?php endfor ?> 
+											  
+    <?php endif ?>
                       </div>
 				        </div>
 				     </div>
@@ -146,7 +149,7 @@
           <div class="card-body" id = "cardAjax">
 					  <div class ="container">
 							 <div class ="row">
-							 <?php if(sizeof($results)>0) ?>
+							 <?php if(sizeof($results)>3): ?>
                <?php for($i = sizeof($results)-1; $i> sizeof($results)-4; $i-- ): ?>
 										<div class="card-deck col"  style ="padding-right:15px;padding-left:15px;">
                       <div class="card mb-5" style="width:240px;">
@@ -166,7 +169,8 @@
                         </ul>
                        </div>
 											</div>
-                      <?php endfor ?>             
+                      <?php endfor ?>     			  
+    				<?php endif ?>
 							    </div>
 				        </div>
 				     </div>
