@@ -4,19 +4,26 @@ require_once "../Model/Vehicle.php";
 require_once "../Model/dataAccess.php";
 
 
-if(!isset($_REQUEST["Make"]) && !isset($_REQUEST["Cost"]) && !isset($_REQUEST["Pass"]) && !isset($_REQUEST["Licence"]) )
+if(!isset($_REQUEST["Make"]) && !isset($_REQUEST["Cost"]) && !isset($_REQUEST["Pass"]) && !isset($_REQUEST["Licence"]) && !isset($_REQUEST["Date"]) && !isset($_REQUEST["EDate"]) )
 {
     //$results = getAllVehicles();
     echo json_encode([]);
 }
 else{
-    $vehicleName = $_REQUEST["Make"];
+    $date = $_REQUEST["Date"];
+    $edate = $_REQUEST["EDate"];
+    $make = $_REQUEST["Make"];
     $price = $_REQUEST["Cost"];
-    $numberOfPassengers = $_REQUEST["Pass"];
+    $seats = $_REQUEST["Pass"];
     $licenceRequried = $_REQUEST["Licence"];
 
-    $results = getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceRequried);
+    $results = showAvaliabilty($date,$edate,$make,$seats,$licenceRequried,$price);
+    echo json_encode($results);
 
+
+
+    
+   /*
     if($vehicleName == "" && $price == "" && $numberOfPassengers == "" && $licenceRequried == "")
     {
        $results = getAllVehicles();           // The user has everything to null
@@ -90,6 +97,10 @@ else{
       echo json_encode($results);
    
    }
-    
+   else
+   {
+    $results = getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceRequried);
+   }
+    */
 }
 ?>

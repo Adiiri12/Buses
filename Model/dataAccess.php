@@ -177,3 +177,56 @@ function showPromotion()
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Promotion");
     return $results;
 }
+
+Function showAllAvaliabilty($date,$edate)
+{
+    global $pdo;
+    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type
+                                  Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links
+                                 FROM Vehicles 
+                                 LEFT JOIN (Select * FROM Booking
+                                 WHERE Booking.dateFrom >=? and Booking.dateTo <= ?)
+                                 AS Booking ON Vehicles.vehicle_id = Booking.vehicle_id
+                                 WHERE Booking.vehicle_id IS NULL");
+    $statement->execute([$date,$edate]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehiclebooking");
+    return $results;
+
+}
+Function showAllAvaliabiltyByLicence($date,$edate)
+{
+    global $pdo;
+    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type
+                                  Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links
+                                 FROM Vehicles 
+                                 LEFT JOIN (Select * FROM Booking
+                                 WHERE Booking.dateFrom >=? and Booking.dateTo <= ?)
+                                 AS Booking ON Vehicles.vehicle_id = Booking.vehicle_id
+                                 WHERE Booking.vehicle_id IS NULL");
+    $statement->execute([$date,$edate]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehiclebooking");
+    return $results;
+
+}
+
+function showAvaliabilty($date,$edate,$make,$seats,$licenceRequried,$price)
+{
+    global $pdo;
+    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type,
+                                  Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links,
+                                  Vehicles.licenceRequried as licenceRequried
+                                 FROM Vehicles 
+                                 LEFT JOIN (Select * FROM Booking
+                                 WHERE Booking.dateFrom >=? and Booking.dateTo <= ?)
+                                 AS Booking ON Vehicles.vehicle_id = Booking.vehicle_id
+                                 WHERE Booking.vehicle_id IS NULL
+                                 AND Vehicles.vehicleMake =? AND Vehicles.numberOfSeats >=? AND
+                                 Vehicles.licenceRequried =? AND Vehicles.hourlyPrice >=?
+                                 ORDER BY Vehicles.hourlyPrice");
+    $statement->execute([$date,$edate,$make,$seats,$licenceRequried,$price]);
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
+    return $results;
+
+
+                                 
+}

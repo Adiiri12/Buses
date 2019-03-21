@@ -1,11 +1,15 @@
 $(document).ready(function(){
+
     $("button#ajaxsearchButton").click(function(){
 
        var make = $("input[name=Make]").val().trim();
        var price = $("select[name=Cost]").val();
        var Pass = $("select[name=Pass]").val();
        var licence = $("select[name=licence]").val();
-        $.get("../Controller/Ajax.php?Make="+make+"&Cost="+price+"&Pass="+Pass+"&Licence="+licence,function(results){
+       var rdate = $("input[name=RDate]").val().trim();
+       var edate = $("input[name=EDate]").val().trim();
+       if(make != ''  && price != '' && licence != '' && Pass != '' && rdate != '' && edate != '' ){
+        $.get("../Controller/Ajax.php?Make="+make+"&Cost="+price+"&Pass="+Pass+"&Licence="+licence+"&Date="+rdate+"&Edate="+edate,function(results){
 
           $("div#cardAjax").empty();
         
@@ -66,8 +70,52 @@ $(document).ready(function(){
             }
           
         });
+      }
+      else
+      {
+        alert("fill in the form");
+         return false;
+      }
     });
 
+    $('#datepicker1').datepicker({
+      uiLibrary: 'bootstrap4',
+      format: 'yyyy-mm-dd',
+      minDate : new Date(),
+      maxDate : function(){
+        return $("#datepicker2").val();
+      }
+  
+  
+  
+  });
+  $('#datepicker2').datepicker({
+      uiLibrary: 'bootstrap4',
+      format: 'yyyy-mm-dd',
+      minDate : function(){
+          return $("#datepicker1").val();
+      }
+  
+  });
+  $('#datepicker3').datepicker({
+    uiLibrary: 'bootstrap4',
+    format: 'yyyy-mm-dd',
+    minDate : new Date(),
+    maxDate : function(){
+      return $("#datepicker2").val();
+    }
+  
+  
+  
+  });
+  $('#datepicker4').datepicker({
+    uiLibrary: 'bootstrap4',
+    format: 'yyyy-mm-dd',
+    minDate : function(){
+        return $("#datepicker1").val();
+    }
+  
+  });
 
 
 
@@ -80,4 +128,6 @@ $(document).ready(function(){
       }
 
      });
+
+   
 });

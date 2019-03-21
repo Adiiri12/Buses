@@ -7,8 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+		<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css">
+		<script type = "text/javascript" src = "../View/js/main.js"></script>
   <title>Berwyn Buses | Home</title>
 </head>
 <body>
@@ -26,13 +30,20 @@
 			 <div class="card" style="padding:0;">
                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Vehicles</h5>
                        <div class="card-body">
-					   <form action="../Controller/Vehicle.php" method="get">
+											 <form action="../Controller/Vehicle.php" method="get">
                             <div class="form-row mb-3">
+							  <div class = "col">
+							    <input type="text" class="controls form-control" placeholder="Date" name = "ReleaseDate" id ="datepicker1"required />
+								</div>
+								<div class = "col">
+								<input type="text" class="controls form-control" placeholder="Date" name = "ExpiryDate" id = "datepicker2" required/>
+								</div>
+								
                                 <div class="col">
-                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle">
+                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" required>
                                   </div>
                                    <div class="col">
-									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1">
+									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1" required>
 										   <option value ="">Price</option>
 										   <option value ="15">£15</option>
 										   <option value ="20">£20</option>
@@ -45,7 +56,7 @@
 									   </select>
 									</div>
 								 <div class="col">
-								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1">
+								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1" required>
 										   <option value ="">Passengers</option>
 										   <option value ="15">15</option>
 										   <option value ="20">20</option>
@@ -58,7 +69,7 @@
 									   </select>
                                  </div>
 								 <div class ="col">
-								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1">
+								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1" required>
 								           <option value ="">LicenceRequried</option>
 										   <option value ="D1">MiniBus(D1)</option>
 										   <option value ="D">Bus(D)</option>
@@ -67,9 +78,11 @@
 							</div>
 									
 								 <div class="form-row mb-3 ">
+								   <div class = "col-sm-2">
 										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button>
 								</div>
-                      </form>
+							</div>
+							</form>
                 </div>
             </div>
 		</div>

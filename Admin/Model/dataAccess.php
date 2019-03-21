@@ -228,4 +228,6 @@ function promotionDeleteVehicleById($id) {
     
 }
 
+Function showPromotion
+
 

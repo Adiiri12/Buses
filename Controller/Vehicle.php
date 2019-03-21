@@ -14,9 +14,17 @@ if (!isset($_REQUEST["search"]))
        else
        {
           $price = $_REQUEST["price"];
-          $numberOfPassengers = $_REQUEST["Passengers"];
-          $vehicleName = $_REQUEST["Vehicle"];
+          $seats = $_REQUEST["Passengers"];
+          $make = $_REQUEST["Vehicle"];
           $licenceRequried = $_REQUEST["licenceRequried"];
+          $date =  $_REQUEST["ReleaseDate"];
+          $edate =  $_REQUEST["ExpiryDate"];
+
+          $results = showAvaliabilty($date,$edate,$make,$seats,$licenceRequried,$price);
+
+
+
+          /*
           $results = getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceRequried);
          if($vehicleName == "" && $price == "" && $numberOfPassengers == "" && $licenceRequried == "")
          {
@@ -67,6 +75,7 @@ if (!isset($_REQUEST["search"]))
         {
            $results = getVehicleByPriceAndNumberOfPassengersAndLicenceRequried($licenceRequried,$price,$numberOfPassengers);
         }
+        */
 
     }
          
