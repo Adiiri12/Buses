@@ -37,10 +37,10 @@
 											 <form action="../Controller/Vehicle.php" method="get">
                             <div class="form-row mb-3">
 							  <div class = "col">
-							    <input type="text" class="controls form-control" placeholder="Date" name = "ReleaseDate" id ="datepicker1"required />
+							    <input type="text" class="controls form-control" placeholder="Date" name = "ReleaseDate" id ="datepicker1" />
 								</div>
 								<div class = "col">
-								<input type="text" class="controls form-control" placeholder="Date" name = "ExpiryDate" id = "datepicker2" required/>
+								<input type="text" class="controls form-control" placeholder="Date" name = "ExpiryDate" id = "datepicker2" />
 								</div>
 								
                                 <div class="col">

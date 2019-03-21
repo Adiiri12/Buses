@@ -41,10 +41,10 @@
                        <div class="card-body">
 							<div class="form-row mb-3">
 							<div class = "col">
-							    <input type="text" class="controls form-control" placeholder="Date" name = "RDate" id ="datepicker3" />
+							    <input type="text" class="controls form-control" placeholder="Date" name = "RDate" id ="datepicker1" />
 								</div>
 								<div class = "col">
-								<input type="text" class="controls form-control" placeholder="Date" name = "EDate" id = "datepicker4" />
+								<input type="text" class="controls form-control" placeholder="Date" name = "EDate" id = "datepicker2" />
 								</div>
 							<div class="col">
                   <input type="text" class="form-control" placeholder="Vehicle" name="Make" id = "make" />

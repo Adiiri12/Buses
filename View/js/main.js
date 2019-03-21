@@ -94,10 +94,7 @@ $(document).ready(function(){
       maxDate : function(){
         return $("#datepicker2").val();
       }
-  
-  
-  
-  });
+    });
   $('#datepicker2').datepicker({
       uiLibrary: 'bootstrap4',
       format: 'yyyy-mm-dd',
@@ -106,25 +103,9 @@ $(document).ready(function(){
       }
   
   });
-  $('#datepicker3').datepicker({
-    uiLibrary: 'bootstrap4',
-    format: 'yyyy-mm-dd',
-    minDate : new Date(),
-    maxDate : function(){
-      return $("#datepicker2").val();
-    }
   
   
   
-  });
-  $('#datepicker4').datepicker({
-    uiLibrary: 'bootstrap4',
-    format: 'yyyy-mm-dd',
-    minDate : function(){
-        return $("#datepicker1").val();
-    }
-  
-  });
 
 
 
