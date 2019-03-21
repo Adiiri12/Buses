@@ -44,10 +44,10 @@
 								</div>
 								
                                 <div class="col">
-                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" required>
+                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" >
                                   </div>
                                    <div class="col">
-									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1" required>
+									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1" >
 										   <option value ="">Price</option>
 										   <option value ="15">£15</option>
 										   <option value ="20">£20</option>
@@ -60,7 +60,7 @@
 									   </select>
 									</div>
 								 <div class="col">
-								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1" required>
+								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1" >
 										   <option value ="">Passengers</option>
 										   <option value ="15">15</option>
 										   <option value ="20">20</option>
@@ -73,7 +73,7 @@
 									   </select>
                                  </div>
 								 <div class ="col">
-								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1" required>
+								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1" >
 								           <option value ="">LicenceRequried</option>
 										   <option value ="D1">MiniBus(D1)</option>
 										   <option value ="D">Bus(D)</option>
@@ -83,7 +83,7 @@
 									
 								 <div class="form-row mb-3 ">
 								   <div class = "col-sm-2">
-										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button>
+										<button type ="submit" name ="search" class= "btn btn-primary wrn-btn" name = "Search">Search</button>
 								</div>
 							</div>
 							</form>

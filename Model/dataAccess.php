@@ -28,115 +28,44 @@ function getAllVehicles(){
     return $results;
 }
 
-function getVehiclesByID(){
+function showAvaliabiltyByAllInputs($date,$edate,$make,$seats,$licenceRequried,$price)
+{
     global $pdo;
-    $statement =$pdo->prepare("SELECT * FROM Vehicles");
-    $statement->execute();
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleByLicence($licenceRequried)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE licenceRequried = ?");
-    $statement->execute([$licenceRequried]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleByPrice($price)
-{  
- 
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE hourlyPrice >= ? ORDER BY hourlyPrice");
-    $statement->execute([$price]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleByModel($vehicleName)
-{  
- 
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE vehicleMake = ?");
-    $statement->execute([$vehicleName]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleBySeats($numberOfPassengers)
-{  
- 
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE numberOfSeats >= ?");
-    $statement->execute([$numberOfPassengers]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-
-function getVehicleByPriceAndSeats($price,$numberOfPassengers)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE hourlyPrice >= ? And numberOfSeats >= ? ORDER BY hourlyPrice");
-    $statement->execute([$price,$numberOfPassengers]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleByPriceAndLicence($price,$licenceRequried)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE hourlyPrice >= ? And licenceRequried = ? ORDER BY hourlyPrice");
-    $statement->execute([$price,$licenceRequried]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleByModelAndSeats($numberOfPassengers,$vehicleName)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE numberOfSeats >= ? And vehicleMake = ? ORDER BY hourlyPrice");
-    $statement->execute([$vehicleName,$numberOfPassengers]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleByModelAndPrice($vehicleName,$price)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND hourlyPrice >= ?  ORDER BY hourlyPrice");
-    $statement->execute([$vehicleName,$price]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
-}
-function getVehicleByModelAndPriceAndLicenceRequried($vehicleName,$price,$licenceRequried)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND hourlyPrice >= ? AND licenceRequried = ? ORDER BY hourlyPrice");
-    $statement->execute([$vehicleName,$price,$licenceRequried]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results; 
-}
-function getVehicleByModelAndPriceAndNumberOfPassengers($vehicleName,$price,$numberOfPassengers)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  vehicleMake = ? AND hourlyPrice >= ? AND numberOfSeats >= ? ORDER BY hourlyPrice");
-    $statement->execute([$vehicleName,$price,$numberOfPassengers]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results; 
-}
-function getVehicleByPriceAndNumberOfPassengersAndLicenceRequried($licenceRequried,$price,$numberOfPassengers)
-{
-    global $pdo;  
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE  licenceRequried = ? AND hourlyPrice >= ? AND numberOfSeats >= ? ORDER BY hourlyPrice");
-    $statement->execute([$licenceRequried,$price,$numberOfPassengers]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results; 
-}
-function getVehicleByAllInputs($price,$vehicleName,$numberOfPassengers,$licenceRequried)
-{  
+    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type,
+                                  Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links,
+                                  Vehicles.licenceRequried as licenceRequried
+                                  FROM Vehicles 
+                                  LEFT JOIN (Select * FROM Booking
+                                   WHERE Booking.dateFrom = :date and Booking.dateTo = :edate)
+                                    AS Booking ON Vehicles.vehicle_id = Booking.vehicle_id
+                                    WHERE Booking.vehicle_id IS NULL
+                                    AND Vehicles.vehicleMake LIKE :make AND Vehicles.numberOfSeats >= :seats AND
+                                    Vehicles.licenceRequried LIKE  :licenceRequried  AND Vehicles.hourlyPrice >= :price
+                                    ORDER BY Vehicles.hourlyPrice");
   
 
-    global $pdo;
-    $statement = $pdo->prepare("SELECT * FROM `Vehicles` WHERE hourlyPrice >=? and vehicleMake =? and numberOfSeats >= ? and licenceRequried = ? ORDER BY hourlyPrice");
-    $statement->execute([$price,$vehicleName,$numberOfPassengers,$licenceRequried]);
+    //Create our Wildcards For the Like Opreator 
+    $make = "%$make%";
+    $licenceRequried = "%$licenceRequried%";
+
+    //Bind our parameter
+    $statement->bindValue(':date', $date);
+    $statement->bindValue(':edate', $edate);
+    $statement->bindValue(':make', $make);
+    $statement->bindValue(':seats', $seats);
+    $statement->bindValue(':licenceRequried', $licenceRequried);
+    $statement->bindValue(':price', $price);
+
+    $statement->execute();
+
+
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
+
+
+                                 
 }
+
 /* Vehicle data Access */
 
 /* Account data access */
@@ -178,55 +107,8 @@ function showPromotion()
     return $results;
 }
 
-Function showAllAvaliabilty($date,$edate)
-{
-    global $pdo;
-    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type
-                                  Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links
-                                 FROM Vehicles 
-                                 LEFT JOIN (Select * FROM Booking
-                                 WHERE Booking.dateFrom >=? and Booking.dateTo <= ?)
-                                 AS Booking ON Vehicles.vehicle_id = Booking.vehicle_id
-                                 WHERE Booking.vehicle_id IS NULL");
-    $statement->execute([$date,$edate]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehiclebooking");
-    return $results;
-
-}
-Function showAllAvaliabiltyByLicence($date,$edate)
-{
-    global $pdo;
-    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type
-                                  Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links
-                                 FROM Vehicles 
-                                 LEFT JOIN (Select * FROM Booking
-                                 WHERE Booking.dateFrom >=? and Booking.dateTo <= ?)
-                                 AS Booking ON Vehicles.vehicle_id = Booking.vehicle_id
-                                 WHERE Booking.vehicle_id IS NULL");
-    $statement->execute([$date,$edate]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehiclebooking");
-    return $results;
-
-}
-
-function showAvaliabilty($date,$edate,$make,$seats,$licenceRequried,$price)
-{
-    global $pdo;
-    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type,
-                                  Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links,
-                                  Vehicles.licenceRequried as licenceRequried
-                                 FROM Vehicles 
-                                 LEFT JOIN (Select * FROM Booking
-                                 WHERE Booking.dateFrom >=? and Booking.dateTo <= ?)
-                                 AS Booking ON Vehicles.vehicle_id = Booking.vehicle_id
-                                 WHERE Booking.vehicle_id IS NULL
-                                 AND Vehicles.vehicleMake =? AND Vehicles.numberOfSeats >=? AND
-                                 Vehicles.licenceRequried =? AND Vehicles.hourlyPrice >=?
-                                 ORDER BY Vehicles.hourlyPrice");
-    $statement->execute([$date,$edate,$make,$seats,$licenceRequried,$price]);
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
-    return $results;
 
 
-                                 
-}
+
+
+

@@ -8,16 +8,22 @@ $(document).ready(function(){
        var licence = $("select[name=licence]").val();
        var rdate = $("input[name=RDate]").val().trim();
        var edate = $("input[name=EDate]").val().trim();
-       if(make != ''  && price != '' && licence != '' && Pass != '' && rdate != '' && edate != '' ){
-        $.get("../Controller/Ajax.php?Make="+make+"&Cost="+price+"&Pass="+Pass+"&Licence="+licence+"&Date="+rdate+"&Edate="+edate,function(results){
+
+       if(rdate == '' && edate != ''  || edate == '' && rdate != '' )
+       {
+         alert("both Dates must be filled in");
+         return;
+       }
+       else{
+        $.get("../Controller/Ajax.php?Make="+make+"&Cost="+price+"&Pass="+Pass+"&Licence="+licence+"&Date="+rdate+"&EDate="+edate,function(results){
 
           $("div#cardAjax").empty();
         
            var newcard = "";
             
            newcard += 
-            `  <div class="card-body" id = "cardAjax">
-							     <div class ="container">
+            `  
+							     <div class ="container-fluid">
                       <div class ="row"> `;
                       
 
@@ -33,16 +39,15 @@ $(document).ready(function(){
  
 
                 newcard += `
-                <div class="card-deck col-md-4"  style ="padding-right:15px;padding-left:-35px;">
+                <div class="card-deck col-lg-4 ml-1 "  style ="padding-right:15px;padding-left:15px;">
                 <div class = 'card mb-5' style = 'width:240px;'>
                                <div class = 'card-header'>
                                `+vehicle.vehicleMake+ `
-                               
-                <div> 
+                               </div> 
                   <img class = 'card-img-top' style = 'height:180px' src = "`+vehicle.links+ `" alt = 'Card image cap' > 
                      <ul class='list-group list-group-flush' style=' list-style-type: none;'>
-                      <li class='list-group-item' name='nos'>NumberOfSeats:" `+vehicle.numberOfSeats+ `</li>
-                      <li class='list-group-item'>Price: £" `+vehicle.hourlyPrice+ `"</li>
+                      <li class='list-group-item' name='nos'>NumberOfSeats: `+vehicle.numberOfSeats+ `</li>
+                      <li class='list-group-item'>Price: £ `+vehicle.hourlyPrice+ `</li>
                        <form action='../Controller/basket.php' method='post'>
                      </li>
                  <input value=" `+vehicle.vehicleMake+ `" type='hidden' name='make'>
@@ -54,8 +59,14 @@ $(document).ready(function(){
                </ul>
               </div>
                 </div>
-              </div>
-              </div>
+              
+              
+              
+              
+              
+            
+      
+              
                 `;
 
                 $("div#cardAjax").html(newcard);
@@ -70,13 +81,11 @@ $(document).ready(function(){
             }
           
         });
-      }
-      else
-      {
-        alert("fill in the form");
-         return false;
+      
       }
     });
+
+   
 
     $('#datepicker1').datepicker({
       uiLibrary: 'bootstrap4',

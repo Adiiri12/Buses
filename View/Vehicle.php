@@ -39,59 +39,6 @@
 			 <div class="card" style="padding:0;">
                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Vehicles</h5>
                        <div class="card-body">
-					   <form action="../Controller/Vehicle.php" method="get">
-                            <div class="form-row mb-3">
-							  <div class = "col">
-							    <input type="text" class="controls form-control" placeholder="Date" name = "ReleaseDate" id ="datepicker1"required />
-								</div>
-								<div class = "col">
-								<input type="text" class="controls form-control" placeholder="Date" name = "ExpiryDate" id = "datepicker2" required/>
-								</div>
-								
-                                <div class="col">
-                                 <input type="text" class="form-control" placeholder="Vehicle" name="Vehicle" required>
-                                  </div>
-                                   <div class="col">
-									 <select name = "price" class="form-control search-slt" id="exampleFormControlSelect1" required>
-										   <option value ="">Price</option>
-										   <option value ="15">£15</option>
-										   <option value ="20">£20</option>
-										   <option value ="30">£30</option>
-										   <option value ="40">£40</option>
-										   <option value ="50">£50</option>
-										   <option value ="60">£60</option>
-										   <option value ="70">£70</option>
-										   <option value ="80">£80</option>
-									   </select>
-									</div>
-								 <div class="col">
-								 <select name = "Passengers" class="form-control search-slt" id="exampleFormControlSelect1" required>
-										   <option value ="">Passengers</option>
-										   <option value ="15">15</option>
-										   <option value ="20">20</option>
-										   <option value ="30">30</option>
-										   <option value ="40">40</option>
-										   <option value ="50">50</option>
-										   <option value ="60">60</option>
-										   <option value ="70">70</option>
-										   <option value ="80">80</option>
-									   </select>
-                                 </div>
-								 <div class ="col">
-								   <select name ="licenceRequried" class ="form-control search-slt" id="exampleFormControlSelect1" required>
-								           <option value ="">LicenceRequried</option>
-										   <option value ="D1">MiniBus(D1)</option>
-										   <option value ="D">Bus(D)</option>
-								    </select>
-								</div>
-							</div>
-									
-								 <div class="form-row mb-3 ">
-								   <div class = "col-sm-2">
-										<button type ="submit" name ="search" class= "btn btn-danger wrn-btn" name = "Search">Search</button>
-								</div>
-							</div>
-							</form>
 							<div class="form-row mb-3">
 							<div class = "col">
 							    <input type="text" class="controls form-control" placeholder="Date" name = "RDate" id ="datepicker3" />
@@ -138,7 +85,7 @@
 								</div>
 								<div  class = "form-row ">
 								<div class = "col-sm-2">
-								  <button type = "submit" id = "ajaxsearchButton" class = "btn btn-success btn-md">Search</button>
+								  <button type = "submit" id = "ajaxsearchButton" class = "btn btn-primary btn-md">Search</button>
 								</div>
 								</div>
                 </div>
@@ -156,7 +103,7 @@
 					  <div class ="container">
 							 <div class ="row">
 							 <?php foreach ($results as $vehicle):?>
-										<div class="card-deck col"  style ="padding-right:15px;padding-left:15px;">
+										<div class="card-deck col-lg-4 ml-1"  style ="padding-right:15px;padding-left:15px;">
                       <div class="card mb-5" style="width:240px;">
 												<div class="card-header">
 												<?=$vehicle->vehicleMake?>
