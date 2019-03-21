@@ -34,6 +34,8 @@
           </th>
           <th class="th-sm"> Image
           </th>
+    <th class="th-sm"> Add Driver
+          </th>
           <th class="th-sm"> Remove Item
           </th>
 			</thead>
@@ -43,11 +45,16 @@
               <td><?= $vehicles[$i]->vehicleMake?></td>
               <td>£<?= $vehicles[$i]->hourlyPrice?></td>
               <td><img src ="<?= $vehicles[$i]->links?>" style = "height: 7rem;"></td>
+              <td>
+              <input type="radio" name="Driver" value="Yes" /> Yes
+              <input type="radio" name="Driver" value="No" /> No
+              </td>
               <form action="../Controller/basket.php" method="post">
                 <td>
                   <input value ="Remove" name = "remove" type="submit" class="btn btn-primary">
                   <input type = "hidden" value="<?=$i ?>" name ="indexVar">
                 </td>
+                
               </form>
           </tr>     
             <?php endfor ?>
