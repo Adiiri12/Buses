@@ -15,6 +15,7 @@
  <h2>CHECKOUT</h2>
  <br>
  <h3> Login</h3>
+ <!--Form to log into a user account to place an order-->
  <div class="column1">
  <form action="../Controller/booking.php" method="Post">
             <input type="text" value = "Email" placeholer="Email" name = "email">
@@ -23,6 +24,7 @@
         </form>
      </div>
    <div class="column2">
+   <!--Column detailing items in your basket and total-->
     <h3>In your Basket...</h3>
          <div class="scroll">
          <?php foreach ($vehicles as $vehicle):?>
