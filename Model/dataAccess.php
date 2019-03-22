@@ -1,6 +1,17 @@
 <?php
 $pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
+/* Drivers data access */
+function getAllDrivers(){
+    global $pdo;
+    $statement =$pdo->prepare("SELECT * FROM Driver");
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Driver");
+    return $results;
+}
+/* Drivers data access */
+
+
 /*Basket Data Access */
 
 function getVehiclesByIdBasket($id) {

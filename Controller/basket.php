@@ -2,7 +2,7 @@
 
 require_once "../Model/Vehicle.php";
 require_once "../Model/dataAccess.php";
-
+require_once "../Model/Driver.php";
 
 if(!isset($_SESSION)){
   session_start(); 
@@ -12,12 +12,14 @@ if(!isset($_SESSION["vehicles"])&& !isset($_SESSION["totalAmount"]))
    $_SESSION["totalAmount"] =[];
    $_SESSION["dateFrom"] =[];
    $_SESSION["dateTo"] = [];   
-   $_SESSION["vehicles"] = [];   
+   $_SESSION["vehicles"] = []; 
+   $_SESSION["drivers"] = [];   
    $id;
    $vehicles = [];
    $total = [];
    $dateFrom = [];
    $dateTo = [];
+   $drivers = [];
 
 }
 if(isset($_POST['addVehicleToBasket'])) {
@@ -45,6 +47,10 @@ if(isset($_POST['remove'])) {
 if(isset($_POST['checkout'])) {
   $_SESSION["dateFrom"][] = $_REQUEST["dateFrom"];
   $_SESSION["dateTo"][] = $_REQUEST["dateTo"];
+  if(isset($_POST["driverYes"])) {
+    $_SESSION["drivers"][] = $_REQUEST["driverYes"];
+  }
+  $drivers = $_SESSION["drivers"];
   $dateFrom = $_SESSION["dateFrom"];
   $dateTo = $_SESSION["dateTo"];
   $vehicles = $_SESSION["vehicles"];

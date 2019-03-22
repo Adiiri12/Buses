@@ -14,6 +14,7 @@ if(isset($_REQUEST["placeOrder"])) {
     }
     else {
         $vehicles = $_SESSION["vehicles"];
+        $drivers = $_SESSION["drivers"];
     }
   
 
@@ -42,7 +43,13 @@ if(isset($_REQUEST["placeOrder"])) {
        foreach($vehicles as $vehicle) {
         $toDb = new Booking();
         $toDb->customer_id = $user[0]->accountId;
-        $toDb->driver_id = 0;
+        if(sizeof($drivers)> 0){
+          $listOfDrivers = getAllDrivers();
+          $randomNom = rand(0, sizeof($listOfDrivers));
+           $toDb->driver_id = $listOfDrivers[$randomNom]->driver_id;
+        }
+        
+       
         $toDb->vehicle_id = $vehicle->vehicle_id;
         $toDb->dateFrom = $_SESSION["dateFrom"][0];
         $toDb->dateTo = $_SESSION["dateTo"][0];
