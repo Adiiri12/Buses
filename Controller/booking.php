@@ -15,6 +15,7 @@ if(isset($_REQUEST["placeOrder"])) {
     else {
         $vehicles = $_SESSION["vehicles"];
         $drivers = $_SESSION["drivers"];
+        echo sizeof($drivers);
     }
   
 
@@ -48,7 +49,9 @@ if(isset($_REQUEST["placeOrder"])) {
           $randomNom = rand(0, sizeof($listOfDrivers));
            $toDb->driver_id = $listOfDrivers[$randomNom]->driver_id;
         }
-        
+        else {
+          $toDb->driver_id = null;
+        }
        
         $toDb->vehicle_id = $vehicle->vehicle_id;
         $toDb->dateFrom = $_SESSION["dateFrom"][0];
@@ -60,6 +63,7 @@ if(isset($_REQUEST["placeOrder"])) {
        $_SESSION["totalAmount"] = [];
        $_SESSION["dateFrom"] = [];
        $_SESSION["dateTo"] = [];
+       $_SESSION["drivers"] = [];
      }
 }
 

@@ -50,7 +50,6 @@ if(isset($_POST['checkout'])) {
   if(isset($_POST["driverYes"])) {
     $_SESSION["drivers"][] = $_REQUEST["driverYes"];
   }
-  $drivers = $_SESSION["drivers"];
   $dateFrom = $_SESSION["dateFrom"];
   $dateTo = $_SESSION["dateTo"];
   $vehicles = $_SESSION["vehicles"];

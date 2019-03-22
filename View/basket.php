@@ -75,8 +75,9 @@
      <input type="date" class="controls form-control" placeholder="Date" name = "dateTo" required/>
      <br>
      <h5>Driver Required:</h5>
-     <input type="radio" name="driverYes" value="Yes" /> Yes
-     <input type="radio" name="driverNo" value="No" /> No
+     <input type="radio" name="driver" value="Yes" /> Yes
+     <input type="radio" name="driver" value="No" /> No
+     <br>
      <br>
      <a href="../View/checkout.php"><button type="Submit" class="btn btn-danger wrn-btn" name="checkout">Checkout</button></a>
     </form>
