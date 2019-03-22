@@ -16,6 +16,7 @@
    
  <div class="column1">
     <h3> Create an account</h3>
+    <!--Form to create a user account-->
         <form action="../Controller/account.php" method="POST">
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required><br>
@@ -25,13 +26,11 @@
             <input type="password" placeholder="Enter Password" name="psw" required><br>
             <label for="rpsw"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="rpsw" required><br>
-            <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>
             <button class="btn btn-primary" type="submit">Create an Account</button>
             <input name="submit" type="hidden" value="submit"/>
         </form>
     <h3> Login</h3>
+    <!--Form to log into a user account-->
         <form action="../Controller/booking.php" method="Post">
             <input type="text" value = "Email" placeholer="Email" name = "email">
             <input type="password" value = "Password" name="password">
@@ -40,7 +39,7 @@
 
 </div>
 
-
+    <!--Column detailing items in your basket and total-->
    <div class="column2">
     <h3>In your Basket...</h3>
          <div class="scroll">

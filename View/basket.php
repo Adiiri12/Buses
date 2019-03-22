@@ -34,8 +34,6 @@
           </th>
           <th class="th-sm"> Image
           </th>
-    <th class="th-sm"> Add Driver
-          </th>
           <th class="th-sm"> Remove Item
           </th>
 			</thead>
@@ -46,8 +44,7 @@
               <td>£<?= $vehicles[$i]->hourlyPrice?></td>
               <td><img src ="<?= $vehicles[$i]->links?>" style = "height: 7rem;"></td>
               <td>
-              <input type="radio" name="Driver" value="Yes" /> Yes
-              <input type="radio" name="Driver" value="No" /> No
+              
               </td>
               <form action="../Controller/basket.php" method="post">
                 <td>
@@ -76,6 +73,11 @@
      <br>
      <h5>Return Date:</h5>
      <input type="date" class="controls form-control" placeholder="Date" name = "dateTo" required/>
+     <br>
+     <h5>Driver Required:</h5>
+     <input type="radio" name="driver" value="Yes" /> Yes
+     <input type="radio" name="driver" value="No" /> No
+     <br>
      <br>
      <a href="../View/checkout.php"><button type="Submit" class="btn btn-danger wrn-btn" name="checkout">Checkout</button></a>
     </form>

@@ -1,6 +1,17 @@
 <?php
 $pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
+/* Drivers data access */
+function getAllDrivers(){
+    global $pdo;
+    $statement =$pdo->prepare("SELECT * FROM Driver");
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Driver");
+    return $results;
+}
+/* Drivers data access */
+
+
 /*Basket Data Access */
 
 function getVehiclesByIdBasket($id) {
@@ -78,7 +89,7 @@ function getUserByLogin($user)
     $statement->execute([$user]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Account");
     return $results;
-}
+}//end function to get a user by login
 
 function addAccount($account)
 {
@@ -88,7 +99,7 @@ function addAccount($account)
     $statement->execute([$account->email,
                         $account->username,
                         $account->user_password]);
-}
+}//end function to add a user account to the database
 
 
 /* Account data access */ 

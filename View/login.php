@@ -13,6 +13,7 @@
  <body>
       <div class="container">
         <h2>Login</h2>
+        <!--Form to log into a user account-->
         <form method="post" action="../Controller/account.php">
             <div class="imgcontainer">
                 <img src="../View/assets/user.jpg" height="200" alt="User" class="avatar">
@@ -24,14 +25,11 @@
             <input type="password" placeholder="Enter Password" name="psw" id="password" required>
                 
             <button type="submit" onclick="validate()">Login</button>
-            <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
 
-          <div class="container">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-          </div>
+            <div class="container">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
         </form>
       </div>
       <?php include_once"footer.php" ?>

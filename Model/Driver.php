@@ -3,7 +3,7 @@
         private $driver_id;
         private $driver_name;
         private $driver_surname;
-        private $phone_number;
+        private $email_address;
 
         function __get($name) {
             return $this->$name;
