@@ -8,9 +8,10 @@ if(!isset($_SESSION))
     } 
 
 $message = " ";
-if (!isset( $_SESSION['Admin_id']) || !isset($_SESSION['Admin_name'])) {
+if (!isset( $_SESSION['Admin_id']) && !isset($_SESSION['Admin_name'])) {
     // Redirect them to the login page
-    header('Location:   ../View/Login.php?NotLoggedIn');
+   // echo "Not set";
+    require_once "../View/Login.php";
     exit();
 
 }  

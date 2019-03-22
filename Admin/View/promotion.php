@@ -56,7 +56,7 @@ require_once "../View/index.php";
         </button>
       </div>
       <div class="modal-body">
-     <!-- <form class="form-horizontal" role="form" action = "" method="post" id ="form"> -->
+ 
                   <div class="form-group col">
                     <label for="InputvehicleName">Release_Date</label>
                         <input type="text" class="controls form-control" 
@@ -85,7 +85,7 @@ require_once "../View/index.php";
                       <button class="btn btn-primary" id ="Add" data-dismiss="modal">Add Promotion</button>
                     </div>
                   </div>
-              <!--  </form> -->
+             
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -95,11 +95,11 @@ require_once "../View/index.php";
 </div>
 
 
-<!-- Search Form -->
 
 
 
-			 <!--<div class="row my-4">-->
+
+	
 				<div class="col-md-8">
 				  <div class="card" style="padding:0;">
                      <h5 class="card-header bg-success text-white bg-dark border border-bginfo">List of Promotion</h5>

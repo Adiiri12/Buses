@@ -30,11 +30,7 @@ require_once "../View/index.php";
 
 </head>
 <body>
-<?php if($Vehicle != " "): ?>
 
-  <span style="color:Green"><?=$Vehicle?></span>
-
-<?php endif ?>
 	
 
 <!-- Search Form -->
@@ -68,7 +64,6 @@ require_once "../View/index.php";
         </button>
       </div>
       <div class="modal-body">
-     <!-- <form class="form-horizontal" role="form" action = "" method="post" id ="form"> -->
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
                               for="InputvehicleName">vehicleName</label>
@@ -127,7 +122,7 @@ require_once "../View/index.php";
                       <button class="btn btn-primary" id ="Adds" data-dismiss="modal">Add Vehicle</button>
                     </div>
                   </div>
-              <!--  </form> -->
+              
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -136,11 +131,11 @@ require_once "../View/index.php";
   </div>
 </div>
 
-<!-- Search Form -->
 
 
 
-			 <!--<div class="row my-4">-->
+
+			
 				<div class="col-md-8">
 				  <div class="card" style="padding:0;">
                      <h5 class="card-header bg-success text-white bg-dark border border-bginfo">List Of Vehicles</h5>

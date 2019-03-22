@@ -10,9 +10,9 @@ if(!isset($_SESSION))
 
 $Vehicle =" ";
 
-if (!isset( $_SESSION['Admin_id']) || !isset($_SESSION['Admin_name'])) {
+if (!isset( $_SESSION['Admin_id']) && !isset($_SESSION['Admin_name'])) {
   // Redirect them to the login page
-  header('Location:   ../View/Login.php?NotLoggedIn');
+  require_once "../View/Login.php";
   exit();
 
 }  

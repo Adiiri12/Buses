@@ -15,15 +15,10 @@ require_once "../Controller/edit.php"
   <div class="card mt-5">
     <div class="card-header">
       <h2>Update Vehicle</h2>
-    </div>
-    <div class="card-body">
-      <?php if(!empty($error)): ?>
-        <div class="alert alert-success">
-          <?= $message; ?>
-        </div>
-      <?php endif; ?>
+      
+  
       <?php foreach ($results as $vehicle) : ?>
-      <!--<form method="POST" action = "../Controller/edit.php?id=>-->
+     
         <div class="form-row">
              <div class = "form-group col-md-6">
           <label for="Make">Vehicle Name</label>
