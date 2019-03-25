@@ -22,7 +22,7 @@
       </h5>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
       Berwyn Bus Company has kept the people of London moving for the past 20 years. Our services, seemingly spans
  the width and breadth of all London we take passengers from Glasgow, Heathrow, Gatwick Airports and Surrey
@@ -70,7 +70,7 @@ Berwyn@buseSsales.com General Information, Bus Service Information, Customer Ser
 <div class="container my-4">
 <div class = "row ">
 				  <div class="card col" style="padding:0;">
-                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">List of Promotion</h5>
+                     <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Opening Times</h5>
                             <div class="card-body" style="padding-left: 5px;padding-right: 5px;padding-top: 8px;">
 							     <div class ="container">
 							        <div class ="row">
@@ -120,7 +120,7 @@ Berwyn@buseSsales.com General Information, Bus Service Information, Customer Ser
 
 
 
-
+       
        <div class "col">
        <div class="mapouter">
     <div class="gmap_canvas">
@@ -151,7 +151,7 @@ Berwyn@buseSsales.com General Information, Bus Service Information, Customer Ser
       </h5>
     </div>
 
-    <div id="c1" class="collapse show" aria-labelledby="aboutus1" data-parent="#accordionExample">
+    <div id="c1" class="collapse " aria-labelledby="aboutus1" data-parent="#accordionExample">
       <div class="card-body">
       Obtaining a vehicle has bever been easier. You just need to pick what car you want and your ready to go on a journey with your very own berwyn bus.
       </div>
