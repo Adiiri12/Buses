@@ -1,10 +1,13 @@
 <?php
-$pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+include_once "../Model/database.php";
+//$pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 /* Drivers data access */
 function getAllDrivers(){
-    global $pdo;
-    $statement =$pdo->prepare("SELECT * FROM Driver");
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+ 
+    $statement =$db->prepare("SELECT * FROM Driver");
     $statement->execute();
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Driver");
     return $results;
@@ -15,16 +18,18 @@ function getAllDrivers(){
 /*Basket Data Access */
 
 function getVehiclesByIdBasket($id) {
-    global $pdo;
-    $statement = $pdo->prepare("SELECT * FROM Vehicles WHERE vehicle_id = ?");
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement = $db->prepare("SELECT * FROM Vehicles WHERE vehicle_id = ?");
     $statement->execute([$id]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
 }
 
 function addBooking($booking) {
-    global $pdo;
-    $statement = $pdo->prepare("INSERT INTO Booking ( customer_id, driver_id, vehicle_id, dateFrom, dateTo)   VALUES (?,?,?,?,?)");
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement = $db->prepare("INSERT INTO Booking ( customer_id, driver_id, vehicle_id, dateFrom, dateTo)   VALUES (?,?,?,?,?)");
     $statement->execute([ $booking->customer_id, $booking->driver_id, $booking->vehicle_id, $booking->dateFrom, $booking->dateTo]);
 }
 
@@ -32,8 +37,9 @@ function addBooking($booking) {
 
 /* Vehicle data Access */
 function getAllVehicles(){
-    global $pdo;
-    $statement =$pdo->prepare("SELECT * FROM Vehicles");
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement =$db->prepare("SELECT * FROM Vehicles");
     $statement->execute();
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Vehicle");
     return $results;
@@ -41,8 +47,9 @@ function getAllVehicles(){
 
 function showAvaliabiltyByAllInputs($date,$edate,$make,$seats,$licenceRequried,$price)
 {
-    global $pdo;
-    $statement = $pdo -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type,
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement = $db -> prepare("SELECT Vehicles.vehicle_id as vehicle_id , Vehicles.vehicleMake as vehicleMake ,Vehicles.vehicleType as vehicle_type,
                                   Vehicles.hourlyPrice as hourlyPrice , Vehicles.numberOfSeats as numberOfSeats, Vehicles.links As links,
                                   Vehicles.licenceRequried as licenceRequried
                                   FROM Vehicles 
@@ -84,8 +91,9 @@ function showAvaliabiltyByAllInputs($date,$edate,$make,$seats,$licenceRequried,$
 
 function getUserByLogin($user)
 {
-    global $pdo;
-    $statement = $pdo->prepare("SELECT * FROM Account WHERE email =?");
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement = $db->prepare("SELECT * FROM Account WHERE email =?");
     $statement->execute([$user]);
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Account");
     return $results;
@@ -93,8 +101,9 @@ function getUserByLogin($user)
 
 function addAccount($account)
 {
-    global $pdo;
-    $statement = $pdo->prepare("INSERT INTO Account
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement = $db->prepare("INSERT INTO Account
         (email, username, user_password) VALUES (?,?,?)");
     $statement->execute([$account->email,
                         $account->username,
@@ -108,8 +117,9 @@ function addAccount($account)
 
 function showPromotion()
 {
-    global $pdo;
-    $statement = $pdo->prepare("SELECT Promotions.promotion_id as promotion_id , Promotions.vehicle_id As vehicle_id,
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement = $db->prepare("SELECT Promotions.promotion_id as promotion_id , Promotions.vehicle_id As vehicle_id,
                                  Promotions.promotionDate as promotionDate , Promotions.promotionExpiryDate As promotionExpiryDate,
                                   Vehicles.vehicleMake as Make,Vehicles.vehicleType as Vehicle_type , Vehicles.links As Vehicle_link ,
                                  Vehicles.hourlyPrice as price FROM Promotions INNER JOIN Vehicles on Promotions.vehicle_id =  Vehicles.vehicle_id");
