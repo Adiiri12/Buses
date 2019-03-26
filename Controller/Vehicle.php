@@ -9,7 +9,6 @@ require_once "../Model/dataAccess.php";
 if (!isset($_REQUEST["search"]))
       {  
       $results = getAllVehicles();
-          //echo "<br> IF statwement </br>";
       }
        else
        {
@@ -19,15 +18,7 @@ if (!isset($_REQUEST["search"]))
           $licenceRequried = $_REQUEST["licenceRequried"];
           $date =  $_REQUEST["ReleaseDate"];
           $edate =  $_REQUEST["ExpiryDate"];
-
-          $results = showAvaliabiltyByAllInputs($date,$edate,$make,$seats,$licenceRequried,$price);
-
-
-
-         
-
+          $results = showAvaliabiltyByAllInputs($date,$edate,$make,$seats,$licenceRequried,$price);        
     }
-         
-
   require_once "../View/Vehicle.php";
 ?>

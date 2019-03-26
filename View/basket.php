@@ -18,7 +18,7 @@
 
 <?php if(count($vehicles)==0): ?>
 <br>
-  <h2>Nothing in basket at the moment! Get shopping... Even though we are only in it for the ad revenue</h2>
+  <h2>Nothing in basket at the moment! Get shopping...</h2>
   <a href="../View/Vehicle.php"><button type="Submit" class="btn btn-danger wrn-btn" name="Back To Browse">&larr; Back To Browse</button></a>
 <?php endif ?>
 
@@ -43,9 +43,6 @@
               <td><?= $vehicles[$i]->vehicleMake?></td>
               <td>£<?= $vehicles[$i]->hourlyPrice?></td>
               <td><img src ="<?= $vehicles[$i]->links?>" style = "height: 7rem;"></td>
-              <td>
-              
-              </td>
               <form action="../Controller/basket.php" method="post">
                 <td>
                   <input value ="Remove" name = "remove" type="submit" class="btn btn-primary">
@@ -75,8 +72,8 @@
      <input type="date" class="controls form-control" placeholder="Date" name = "dateTo" required/>
      <br>
      <h5>Driver Required:</h5>
-     <input type="radio" name="driver" value="Yes" /> Yes
-     <input type="radio" name="driver" value="No" /> No
+     <input type="radio" name="driver" value="Yes"/> Yes
+     <input type="radio" name="driver" value="No"/> No
      <br>
      <br>
      <a href="../View/checkout.php"><button type="Submit" class="btn btn-danger wrn-btn" name="checkout">Checkout</button></a>

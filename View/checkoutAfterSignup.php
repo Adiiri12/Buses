@@ -34,7 +34,6 @@
          </div>
          <h5> Total: £<?= array_sum($total)?></h5>
      </div>
-<?php include_once"footer.php" ?>
  
  </body>
  </html>

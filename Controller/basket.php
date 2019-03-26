@@ -47,8 +47,8 @@ if(isset($_POST['remove'])) {
 if(isset($_POST['checkout'])) {
   $_SESSION["dateFrom"][] = $_REQUEST["dateFrom"];
   $_SESSION["dateTo"][] = $_REQUEST["dateTo"];
-  if(isset($_POST["driverYes"])) {
-    $_SESSION["drivers"][] = $_REQUEST["driverYes"];
+  if(isset($_POST["driver"])) {
+    $_SESSION["drivers"][] = $_REQUEST["driver"];
   }
   $dateFrom = $_SESSION["dateFrom"];
   $dateTo = $_SESSION["dateTo"];

@@ -102,7 +102,7 @@
 <div class="row my-4" >
   <div class="col">
 		<div class="card" style="padding:0;" >
-       <h5 class="card-header bg-success text-white bg-dark border border-bginfo">new promotions.</h5>
+       <h5 class="card-header bg-success text-white bg-dark border border-bginfo">Promotions</h5>
           <div class="card-body" id = "cardAjax">
 					  <div class ="container">
 							 <div class ="row">
@@ -115,9 +115,9 @@
 										    </div>
                         <img class="card-img-top" style="height:180px" src="<?=$promotion[$i]->Vehicle_link?>" alt="Card image cap">
 										    <ul class="list-group list-group-flush" style=" list-style-type: none;">
-                        <li class="list-group-item">Date <?=$promotion[$i]->promotionDate?></li>
-                        <li class="list-group-item">ExpiryDate <?=$promotion[$i]->promotionExpiryDate?></li>
-                          <li class="list-group-item">Model <?=$promotion[$i]->Vehicle_type?></li>
+                        <li class="list-group-item">Date: <?=$promotion[$i]->promotionDate?></li>
+                        <li class="list-group-item">Expiry Date: <?=$promotion[$i]->promotionExpiryDate?></li>
+                          <li class="list-group-item">Model: <?=$promotion[$i]->Vehicle_type?></li>
 													<form action="../Controller/basket.php" method="post">
 														<li>																									
 															<input value=<?=$promotion[$i]->vehicle_id?> type="hidden" name="transferedId">
@@ -188,4 +188,3 @@
 </body>
 </html>
 
-<?php include_once "footer.php" ?>

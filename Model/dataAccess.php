@@ -1,6 +1,5 @@
 <?php
 include_once "../Model/database.php";
-//$pdo = new PDO("mysql:host=kunet;dbname=dbAk1738426","k1738426","harry",[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 /* Drivers data access */
 function getAllDrivers(){

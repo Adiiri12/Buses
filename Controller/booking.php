@@ -6,8 +6,8 @@ require_once "../Controller/basket.php";
 
 
 if(isset($_REQUEST["placeOrder"])) {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $email = $_REQUEST["email"];
+    $password = $_REQUEST["password"];
     $user = getUserByLogin($email);
     $_SESSION["book"]= [];
     if(!isset($_SESSION["vehicles"])) {
@@ -15,7 +15,6 @@ if(isset($_REQUEST["placeOrder"])) {
     else {
         $vehicles = $_SESSION["vehicles"];
         $drivers = $_SESSION["drivers"];
-        echo sizeof($drivers);
     }
   
 
@@ -44,13 +43,13 @@ if(isset($_REQUEST["placeOrder"])) {
        foreach($vehicles as $vehicle) {
         $toDb = new Booking();
         $toDb->customer_id = $user[0]->accountId;
-        if(sizeof($drivers)> 0){
-          $listOfDrivers = getAllDrivers();
-          $randomNom = rand(0, sizeof($listOfDrivers));
-           $toDb->driver_id = $listOfDrivers[$randomNom]->driver_id;
+        if(count($drivers)== 0){
+          $toDb->driver_id = null;
         }
         else {
-          $toDb->driver_id = null;
+          $listOfDrivers = getAllDrivers();
+          $randomNom = rand(0, sizeof($listOfDrivers));
+          $toDb->driver_id = $listOfDrivers[$randomNom]->driver_id;
         }
        
         $toDb->vehicle_id = $vehicle->vehicle_id;
