@@ -35,9 +35,6 @@ $(document).ready(function(){
 
             {
                 var vehicle = results[i];
-                //console.log(results[i]);
- 
-
                 newcard += `
                 <div class="card-deck col-lg-4 ml-1 "  style ="padding-right:15px;padding-left:15px;">
                 <div class = 'card mb-5' style = 'width:240px;'>
