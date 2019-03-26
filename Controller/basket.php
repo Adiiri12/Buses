@@ -29,6 +29,13 @@ if(isset($_POST['addVehicleToBasket'])) {
   $_SESSION["totalAmount"][] = $currentResult[0]->hourlyPrice;
   require_once "../View/Vehicle.php";
 }
+if(isset($_POST['addAjax'])) {
+  $id = $_REQUEST["transferedId"];
+  $currentResult =  getVehiclesByIdBasket($id);
+  $_SESSION["vehicles"][] = $currentResult[0];
+  $_SESSION["totalAmount"][] = $currentResult[0]->hourlyPrice;
+  require_once "../View/Vehicle.php";
+}
 
 if(isset($_POST['clear'])) {
   $_SESSION["vehicles"] = [];

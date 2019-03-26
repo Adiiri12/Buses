@@ -50,7 +50,8 @@ $(document).ready(function(){
                  <input value=" `+vehicle.vehicleMake+ `" type='hidden' name='make'>
                       <input value= ` +vehicle.hourlyPrice+ ` type='hidden' name='price'>
                       <input value= `+vehicle.links+ `  type='hidden' name='links'>
-               <input value='Add To Basket' type='submit' class='btn btn-primary' name='submit' style='width:100%;'>
+                      <input value=`+vehicle.vehicle_id+ `  type="hidden" name="transferedId">
+               <input value='Add To Basket' type='submit' class='btn btn-primary' name='addAjax' style='width:100%;'>
                  </li>
                </form>
                </ul>
