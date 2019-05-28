@@ -49,6 +49,7 @@ if (isset($_POST["LogIn"]))
 
           if($validpassword)
         {
+            $_SESSION["Admin_user"] = $results[0]->admin_id;
             $_SESSION['Admin_id'] = $results[0]->username;
             $_SESSION['Admin_name'] = $results[0]->admin_name;
              header('Location:   ../View/index.php?loginSuccess');

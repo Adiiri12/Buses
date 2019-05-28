@@ -8,7 +8,7 @@
         private $licenceRequried;
         private $hourlyPrice;
         private $links;
-
+        private $admin_id;
         function __get($name) {
             return $this->$name;
         }

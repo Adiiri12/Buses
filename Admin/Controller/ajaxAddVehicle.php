@@ -20,6 +20,7 @@ if(isset($_REQUEST["makes"]) && isset($_REQUEST["types"]) && isset($_REQUEST["se
    && isset($_REQUEST["licence"]) && isset($_REQUEST["link"]) )
 
    {
+    $id = $_SESSION["Admin_id"];
     $admin = new Vehicle();
     $admin->vehicleMake = htmlentities($_REQUEST["makes"]);
     $admin->vehicleType = htmlentities($_REQUEST["types"]);
@@ -27,7 +28,10 @@ if(isset($_REQUEST["makes"]) && isset($_REQUEST["types"]) && isset($_REQUEST["se
     $admin->hourlyPrice = htmlentities($_REQUEST["cost"]);
     $admin->licenceRequried = htmlentities($_REQUEST["licence"]);
     $admin->links = htmlentities($_REQUEST["link"]);
-
+    $admin->admin_id = $id;
+    //echo "$id";
+    //echo "what0";
+    //echo '<pre>'; print_r($_SESSION); echo '</pre>';
     AddNewVehicle($admin);
 
     //$result = getVehicleByModel($_REQUEST["makes"]);

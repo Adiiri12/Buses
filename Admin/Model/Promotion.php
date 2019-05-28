@@ -8,6 +8,7 @@
         private $Make;
         private $Vehicle_type;
         private $Vehicle_link;
+        private $admin_id;
 
         function __get($name) {
             return $this->$name;

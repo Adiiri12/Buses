@@ -29,7 +29,8 @@ if(isset($_REQUEST["user"]) && isset($_REQUEST["password"]))
 
           if($validpassword)
         {
-            $_SESSION['Admin_id'] = $results[0]->username;
+            $_SESSION['Admin_user'] = $results[0]->username;
+            $_SESSION["Admin_id"] = $results[0]->admin_id;
             $_SESSION['Admin_name'] = $results[0]->admin_name;
             echo("true");
         }

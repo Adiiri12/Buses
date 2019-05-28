@@ -70,10 +70,10 @@ Function AddNewVehicle($admin)
     $database = Database::getInstance();
     $db = $database->openConnection();
     $statement = $db->prepare("INSERT INTO Vehicles (vehicleMake,vehicleType,numberOfSeats,licenceRequried,
-                                                      hourlyPrice,links)
-                                                     VALUES (?,?,?,?,?,?)");
+                                                      hourlyPrice,links,admin_id)
+                                                     VALUES (?,?,?,?,?,?,?)");
     $statement->execute([$admin->vehicleMake,$admin->vehicleType,$admin->numberOfSeats,$admin->licenceRequried,
-                         $admin->hourlyPrice,$admin->links]);
+                         $admin->hourlyPrice,$admin->links,$admin->admin_id]);
 
 
 }
@@ -117,9 +117,9 @@ function addPromotion($promotion){
 
     $database = Database::getInstance();
     $db = $database->openConnection();
-    $statement = $db->prepare("INSERT INTO Promotions (vehicle_id,promotionDate,promotionExpiryDate)
-                                                     VALUES (?,?,?)");
-    $statement->execute([$promotion->vehicle_id,$promotion->promotionDate,$promotion->promotionExpiryDate]);
+    $statement = $db->prepare("INSERT INTO Promotions (vehicle_id,promotionDate,promotionExpiryDate,admin_id)
+                                                     VALUES (?,?,?,?)");
+    $statement->execute([$promotion->vehicle_id,$promotion->promotionDate,$promotion->promotionExpiryDate,$promotion->admin_id]);
 
 }
   
@@ -133,4 +133,10 @@ function promotionDeleteVehicleById($id) {
     
 }
 
-
+function ShowBookings(){
+    $database = Database::getInstance();
+    $db = $database->openConnection();
+    $statement = $db->prepare("SELECT * FROM Bookings");
+    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Booking");
+    return $results;
+}
